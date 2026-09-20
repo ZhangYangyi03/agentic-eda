@@ -1,0 +1,259 @@
+{
+  "baseline": {
+    "and": 91,
+    "lev": 8
+  },
+  "hand_written_best": {
+    "name": "dc2dch",
+    "and": 77,
+    "lev": 16
+  },
+  "hand_written_strategies": 13,
+  "runs": [
+    {
+      "seed": 0,
+      "llm_area": 78,
+      "llm_depth": 8,
+      "llm_counts": {
+        "ok": 14,
+        "rejected": 0,
+        "invalid_script": 2,
+        "unmeasured": 0
+      },
+      "llm_tokens": {
+        "prompt": 14138,
+        "completion": 6858
+      },
+      "llm_attempts": 16,
+      "llm_seconds": 41.6,
+      "llm_scripts": [
+        "balance; rewrite -l; strash; dc2",
+        "balance; rewrite; balance; rewrite; balance; rewrite -z",
+        "balance; rewrite; if -K 4; strash",
+        "balance; rewrite; if -K 8; strash",
+        "balance; rewrite; renode; mfs; strash; dc2; balance",
+        "balance; rewrite; renode; mfs; strash; dc2; rewrite -z",
+        "balance; rewrite; rewrite -z; balance; rewrite -z",
+        "balance; rewrite; strash; dc2; balance",
+        "balance; rewrite; strash; dc2; balance; rewrite -z",
+        "balance; rewrite; strash; dc2; rewrite -z",
+        "balance; rewrite; strash; dc2; strash; dc2; balance",
+        "balance; rewrite; strash; drw -l; strash; balance; rewrite -z",
+        "balance; rewrite; strash; drw; strash; balance",
+        "strash; balance; drw; drw; balance; rewrite -l"
+      ],
+      "evol_area": 68,
+      "evol_depth": 3,
+      "evol_counts": {
+        "ok": 4,
+        "rejected": 0,
+        "invalid_script": 8,
+        "no_result": 0
+      },
+      "evol_seconds": 2.1
+    },
+    {
+      "seed": 1,
+      "llm_area": 77,
+      "llm_depth": 2,
+      "llm_counts": {
+        "ok": 20,
+        "rejected": 0,
+        "invalid_script": 0,
+        "unmeasured": 0
+      },
+      "llm_tokens": {
+        "prompt": 23820,
+        "completion": 6112
+      },
+      "llm_attempts": 20,
+      "llm_seconds": 43.3,
+      "llm_scripts": [
+        "fx; strash; dc2",
+        "strash; balance; drw -l; balance",
+        "strash; balance; drw -l; drw -l; balance",
+        "strash; balance; drw -l; drw -l; drw -l; balance",
+        "strash; balance; drw -l; drw -l; rewrite -lz; balance",
+        "strash; balance; if -K 4; balance",
+        "strash; balance; if -K 6; balance",
+        "strash; balance; resub -K 8; balance",
+        "strash; balance; rewrite -l; balance; rewrite -l; balance",
+        "strash; balance; rewrite -l; drw -l; balance",
+        "strash; balance; rewrite -lz; balance",
+        "strash; dc2",
+        "strash; dc2; drw -l; balance",
+        "strash; dc2; resub -K 8; balance",
+        "strash; dc2; rewrite -lz; balance",
+        "strash; dch; dch",
+        "strash; if -K 4",
+        "strash; if -K 6",
+        "strash; if -K 8",
+        "strash; if -K 8; balance"
+      ],
+      "evol_area": 68,
+      "evol_depth": 2,
+      "evol_counts": {
+        "ok": 7,
+        "rejected": 0,
+        "invalid_script": 5,
+        "no_result": 0
+      },
+      "evol_seconds": 2.6
+    },
+    {
+      "seed": 2,
+      "llm_area": 77,
+      "llm_depth": 8,
+      "llm_counts": {
+        "ok": 29,
+        "rejected": 0,
+        "invalid_script": 1,
+        "unmeasured": 0
+      },
+      "llm_tokens": {
+        "prompt": 31508,
+        "completion": 8825
+      },
+      "llm_attempts": 30,
+      "llm_seconds": 59.1,
+      "llm_scripts": [
+        "fx; strash; balance; rewrite -lz; balance",
+        "mfs; strash; balance; rewrite -l; balance",
+        "strash; balance; drw -l; balance; drw -l; balance",
+        "strash; balance; drw -l; balance; rewrite -l; balance; drw -l; balance; rewrite -l; balance",
+        "strash; balance; if -K 4; balance; rewrite -l",
+        "strash; balance; if -K 8; strash; balance; if -K 6; strash; balance",
+        "strash; balance; rewrite -l; balance; rewrite -l; balance",
+        "strash; balance; rewrite -l; balance; rewrite -l; balance; rewrite -l; balance",
+        "strash; balance; rewrite -lz; balance; rewrite -lz; balance; rewrite -lz",
+        "strash; balance; rewrite -lz; balance; rewrite -lz; balance; rewrite -lz; balance",
+        "strash; balance; rewrite -z; balance; rewrite -z; balance",
+        "strash; dc2; balance; rewrite -l; balance; rewrite -l; balance",
+        "strash; dc2; if -K 6; strash; balance; rewrite -lz; balance",
+        "strash; dc2; rewrite -lz; balance",
+        "strash; dc2; rewrite -lz; dc2; rewrite -lz; balance",
+        "strash; dc2; rewrite -z; rewrite -z; dc2; rewrite -lz; balance",
+        "strash; dch; balance; rewrite -l; balance",
+        "strash; drw -l; rewrite -l; balance; drw -l; rewrite -l",
+        "strash; drw; balance; rewrite -lz; balance; rewrite -lz",
+        "strash; if -K 3; strash; balance; rewrite -l; balance",
+        "strash; if -K 4; strash; drw -l; rewrite -l; balance",
+        "strash; if -K 6; balance; rewrite -l",
+        "strash; if -K 8; balance; drw; balance",
+        "strash; if -K 8; strash; balance; rewrite -l; drw -l; balance",
+        "strash; resub -K 10; balance; rewrite -l; balance; rewrite -l; balance",
+        "strash; resub -K 10; resub -K 8; dc2; rewrite -lz; balance",
+        "strash; resub -K 6; resub -K 8; resub -K 10; resub -K 8 -N 2; dc2; rewrite -lz; balance",
+        "strash; resub -K 8 -N 2; balance; rewrite -l; balance",
+        "strash; resub -K 8; resub -K 10; resub -K 8; dc2; rewrite -z; balance"
+      ],
+      "evol_area": 68,
+      "evol_depth": 5,
+      "evol_counts": {
+        "ok": 7,
+        "rejected": 0,
+        "invalid_script": 5,
+        "no_result": 0
+      },
+      "evol_seconds": 2.5
+    },
+    {
+      "seed": 3,
+      "llm_area": 77,
+      "llm_depth": 8,
+      "llm_counts": {
+        "ok": 11,
+        "rejected": 0,
+        "invalid_script": 1,
+        "unmeasured": 0
+      },
+      "llm_tokens": {
+        "prompt": 6076,
+        "completion": 3384
+      },
+      "llm_attempts": 12,
+      "llm_seconds": 22.1,
+      "llm_scripts": [
+        "balance; if -K 4; strash",
+        "balance; if -K 6; strash",
+        "balance; rewrite -l; dc2; strash",
+        "balance; rewrite -l; rewrite -lz; strash",
+        "balance; rewrite -lz; dc2; balance; strash",
+        "balance; rewrite -lz; dc2; strash",
+        "balance; rewrite; dc2; strash",
+        "balance; rewrite; dch; strash",
+        "balance; rewrite; resub -K 8; balance; strash",
+        "balance; rewrite; resub -K 8; strash",
+        "balance; rewrite; rewrite -z; strash"
+      ],
+      "evol_area": 68,
+      "evol_depth": 8,
+      "evol_counts": {
+        "ok": 4,
+        "rejected": 0,
+        "invalid_script": 8,
+        "no_result": 0
+      },
+      "evol_seconds": 2.3
+    },
+    {
+      "seed": 4,
+      "llm_area": 77,
+      "llm_depth": 2,
+      "llm_counts": {
+        "ok": 31,
+        "rejected": 0,
+        "invalid_script": 2,
+        "unmeasured": 0
+      },
+      "llm_tokens": {
+        "prompt": 24660,
+        "completion": 7930
+      },
+      "llm_attempts": 33,
+      "llm_seconds": 54.1,
+      "llm_scripts": [
+        "balance",
+        "balance; rewrite -l; balance",
+        "balance; rewrite -l; balance; rewrite -l; balance",
+        "balance; rewrite -l; balance; rewrite -l; rewrite -l; balance",
+        "balance; rewrite; rewrite -z; balance",
+        "balance; rewrite; strash; dc2; balance",
+        "balance; strash; if -K 8",
+        "fx; strash; dc2; balance",
+        "mfs; strash; balance",
+        "strash; balance",
+        "strash; dc2; balance",
+        "strash; dc2; dc2; balance",
+        "strash; dc2; drw -l; balance",
+        "strash; dc2; drw -l; resub -K 8; balance",
+        "strash; dc2; drw; resub -K 8; balance",
+        "strash; dc2; if -K 8",
+        "strash; dc2; resub -K 10; resub -K 8; balance",
+        "strash; dc2; resub -K 8 -N 2; balance",
+        "strash; dc2; resub -K 8; balance",
+        "strash; dc2; resub -K 8; resub -K 10; rewrite -z; balance",
+        "strash; dc2; resub -K 8; rewrite; balance",
+        "strash; dc2; rewrite -z; balance",
+        "strash; dch; balance",
+        "strash; drw -l; balance",
+        "strash; drw -l; balance; drw -l; balance",
+        "strash; drw; balance",
+        "strash; if -K 4",
+        "strash; if -K 6",
+        "strash; if -K 6; balance",
+        "strash; if -K 8",
+        "strash; resub -K 8; balance"
+      ],
+      "evol_area": 68,
+      "evol_depth": 8,
+      "evol_counts": {
+        "ok": 4,
+        "rejected": 0,
+        "invalid_script": 8,
+        "no_result": 0
+      },
+      "evol_seconds": 2.1
+    }
+  ]
+}

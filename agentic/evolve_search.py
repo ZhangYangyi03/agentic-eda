@@ -125,6 +125,10 @@ def evaluate(gold: str, wd: str, seq: bool, model: str, batch: dict, t=1200):
     """One WSL call per generation, exactly as in synth_search and for the same
     reason: concurrent wsl.exe loses stdout, and a lost stdout is indistinguishable
     from a candidate that produced nothing."""
+    # evaluate owns its working directory: it writes gen.sh there before any
+    # mkdir in the script runs, so a caller that passed a not-yet-created path
+    # got FileNotFoundError on a directory it never had to know about.
+    os.makedirs(wd, exist_ok=True)
     lines = ["set -u"]
     for name, script in batch.items():
         cd = os.path.join(wd, name)

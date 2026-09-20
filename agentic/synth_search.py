@@ -55,9 +55,14 @@ _FIELD = re.compile(r"\b(and|aig|lev|lat|nd|edge)\s*=\s*(\d+)")
 
 def parse_stats(body: str):
     """Read the last ABC statistics line in a body. Returns None if there is none."""
-    line = None
+    # The line is recognised by pattern, not by the substring "and =" -- ABC
+    # pads its fields, so the real line reads `aig  =   218` with two spaces,
+    # and a substring test for "aig =" missed it. That silently dropped every
+    # candidate whose script contained `if` into "unmeasured", which is the same
+    # mistake this project already made once with a different regex.
+    line, _stats_re = None, re.compile(r"\b(and|aig|nd)\s*=\s*\d+.*\blev\s*=\s*\d+")
     for l in body.splitlines():
-        if "lev =" in l and ("and =" in l or "aig =" in l):
+        if _stats_re.search(l):
             line = l
     if line is None:
         return None
@@ -76,6 +81,7 @@ def parse_stats(body: str):
     if area is None:
         return None
     return {"area": area, "metric": metric, "lev": f["lev"], "lat": f.get("lat", 0),
+            "lev_unit": "lut" if metric == "aig" else "aig",
             "nd": f.get("nd"), "edge": f.get("edge"), "raw": line.strip()[:120]}
 
 # Every entry below was executed against this berkeley-abc and produced a
@@ -113,6 +119,38 @@ def canonical(netlist: str) -> bytes:
     txt = open(netlist, encoding="utf-8", errors="replace").read()
     lines = [l for l in txt.splitlines() if not l.startswith("# Benchmark")]
     return ("\n".join(lines) + "\n").encode("utf-8")
+
+
+def best_by_metric(rows, key):
+    """Pick the best row **within one metric**, never across two.
+
+    Why this is not defensive coding but a correctness requirement: after `if`,
+    ABC reports `aig = 254 ... lev = 2`, where aig is a post-mapping LUT count
+    and lev is a LUT level count. Before `if` it reports `and = N lev = M`,
+    where M is an AIG level count. Those two `lev` numbers are different units,
+    and comparing them produced a phantom "depth 8 -> 2" win for prio32 (a
+    32-input priority encoder, which cannot be two levels deep). The rule is
+    simple and enforced here: a `aig` row is reported separately and marked
+    non-comparable, never merged into the ranking.
+    """
+    # field naming is not uniform across callers: the ABC parser emits `and`,
+    # while the agent transcript emits `area`. Reading r[key] directly meant that
+    # asking for "area" silently matched nothing and returned no best row at all
+    # -- which reads exactly like "nothing succeeded".
+    def value(r):
+        if key == "lev":
+            return r.get("lev")
+        v = r.get("area")
+        return r.get("and") if v is None else v
+
+    ok = [r for r in rows if r.get("status") == "ok" and value(r) is not None]
+    canon = [r for r in ok if r.get("metric", "and") == "and"]
+    mapped = [r for r in ok if r.get("metric") == "aig"]
+    other = [r for r in ok if r.get("metric") not in ("and", "aig")]
+    pick = lambda xs: min(xs, key=value) if xs else None
+    return {"canonical": pick(canon), "mapped": pick(mapped), "other": pick(other),
+            "n_canonical": len(canon), "n_mapped": len(mapped),
+            "mixed": bool(canon and mapped)}
 
 
 def model_name(blif: str) -> str:

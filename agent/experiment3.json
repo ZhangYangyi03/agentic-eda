@@ -1,0 +1,330 @@
+{
+  "note": "canonical units only ('and'/AIG levels); 'aig' rows never ranked against them. random_legal is the fair arm; random_free measures the cost of not knowing the grammar.",
+  "designs": {
+    "prio32": {
+      "baseline": {
+        "and": 91,
+        "lev": 8
+      },
+      "hand_written": {
+        "name": "dc2dch",
+        "and": 77,
+        "lev": 16
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "llm": {
+            "area": 74,
+            "depth": 11,
+            "ok": 18,
+            "rej": 0,
+            "inv": 6,
+            "unm": 0,
+            "tok": 27225,
+            "s": 45.8,
+            "script": "balance; renode; strash; resub -K 8; rewrite -l; balance; dc2",
+            "mapped_area": 103
+          },
+          "random_free": {
+            "area": 78,
+            "depth": 31,
+            "ok": 2,
+            "inv": 10,
+            "script": "r11",
+            "s": 1.8
+          },
+          "random_legal": {
+            "area": 78,
+            "depth": 8,
+            "ok": 7,
+            "inv": 5,
+            "script": "r01",
+            "s": 2.0
+          }
+        },
+        {
+          "seed": 1,
+          "llm": {
+            "area": 77,
+            "depth": 8,
+            "ok": 12,
+            "rej": 0,
+            "inv": 2,
+            "unm": 0,
+            "tok": 14608,
+            "s": 29.9,
+            "script": "balance; rewrite; dc2; strash; resub -K 8; rewrite -lz; balance",
+            "mapped_area": 145
+          },
+          "random_free": {
+            "area": 85,
+            "depth": 8,
+            "ok": 1,
+            "inv": 11,
+            "script": "r04",
+            "s": 2.0
+          },
+          "random_legal": {
+            "area": 78,
+            "depth": 8,
+            "ok": 6,
+            "inv": 6,
+            "script": "r10",
+            "s": 2.2
+          }
+        },
+        {
+          "seed": 2,
+          "llm": {
+            "area": 73,
+            "depth": 14,
+            "ok": 12,
+            "rej": 0,
+            "inv": 0,
+            "unm": 0,
+            "tok": 13668,
+            "s": 34.3,
+            "script": "fx; mfs; strash; dc2",
+            "mapped_area": 200
+          },
+          "random_free": {
+            "area": 86,
+            "depth": 8,
+            "ok": 4,
+            "inv": 8,
+            "script": "r00",
+            "s": 1.9
+          },
+          "random_legal": {
+            "area": 76,
+            "depth": 8,
+            "ok": 9,
+            "inv": 3,
+            "script": "r05",
+            "s": 2.6
+          }
+        }
+      ],
+      "summary": {
+        "llm_area_median": 74,
+        "random_free_area_median": 85,
+        "random_legal_area_median": 78,
+        "llm_vs_legal": {
+          "llm_wins": 3,
+          "legal_wins": 0,
+          "ties": 0
+        },
+        "llm_vs_free": {
+          "llm_wins": 3,
+          "free_wins": 0,
+          "ties": 0
+        },
+        "llm_tokens": 55501,
+        "llm_seconds": 110.0,
+        "random_seconds": 6.800000000000001,
+        "beat_hand_written": 2
+      }
+    },
+    "arbiter16": {
+      "baseline": {
+        "and": 54,
+        "lev": 13
+      },
+      "hand_written": {
+        "name": "dc2",
+        "and": 43,
+        "lev": 16
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "llm": {
+            "area": 43,
+            "depth": 12,
+            "ok": 18,
+            "rej": 0,
+            "inv": 2,
+            "unm": 0,
+            "tok": 19100,
+            "s": 31.7,
+            "script": "strash; balance; dc2",
+            "mapped_area": 96
+          },
+          "random_free": {
+            "area": 43,
+            "depth": 16,
+            "ok": 2,
+            "inv": 10,
+            "script": "r11",
+            "s": 2.0
+          },
+          "random_legal": {
+            "area": 43,
+            "depth": 12,
+            "ok": 7,
+            "inv": 5,
+            "script": "r01",
+            "s": 2.0
+          }
+        },
+        {
+          "seed": 1,
+          "llm": {
+            "area": 43,
+            "depth": 9,
+            "ok": 18,
+            "rej": 0,
+            "inv": 3,
+            "unm": 0,
+            "tok": 22524,
+            "s": 44.4,
+            "script": "strash; dc2",
+            "mapped_area": 82
+          },
+          "random_free": {
+            "area": 56,
+            "depth": 12,
+            "ok": 1,
+            "inv": 11,
+            "script": "r04",
+            "s": 2.2
+          },
+          "random_legal": {
+            "area": 43,
+            "depth": 12,
+            "ok": 6,
+            "inv": 6,
+            "script": "r10",
+            "s": 2.3
+          }
+        },
+        {
+          "seed": 2,
+          "llm": {
+            "area": 43,
+            "depth": 10,
+            "ok": 20,
+            "rej": 0,
+            "inv": 5,
+            "unm": 0,
+            "tok": 32055,
+            "s": 52.6,
+            "script": "strash; dc2; dch; balance",
+            "mapped_area": null
+          },
+          "random_free": {
+            "area": 58,
+            "depth": 10,
+            "ok": 4,
+            "inv": 8,
+            "script": "r09",
+            "s": 2.2
+          },
+          "random_legal": {
+            "area": 43,
+            "depth": 9,
+            "ok": 9,
+            "inv": 3,
+            "script": "r05",
+            "s": 2.6
+          }
+        }
+      ],
+      "summary": {
+        "llm_area_median": 43,
+        "random_free_area_median": 56,
+        "random_legal_area_median": 43,
+        "llm_vs_legal": {
+          "llm_wins": 0,
+          "legal_wins": 0,
+          "ties": 3
+        },
+        "llm_vs_free": {
+          "llm_wins": 2,
+          "free_wins": 0,
+          "ties": 1
+        },
+        "llm_tokens": 73679,
+        "llm_seconds": 128.7,
+        "random_seconds": 6.9,
+        "beat_hand_written": 0
+      }
+    },
+    "mult8": {
+      "baseline": {
+        "and": 482,
+        "lev": 30
+      },
+      "hand_written": {
+        "name": "mix",
+        "and": 443,
+        "lev": 35
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "llm": {
+            "area": 444,
+            "depth": 28,
+            "ok": 17,
+            "rej": 0,
+            "inv": 2,
+            "unm": 0,
+            "tok": 28641,
+            "s": 48.4,
+            "script": "strash; balance; rewrite; balance; dc2; balance; dch; balance",
+            "mapped_area": 1211
+          },
+          "random_free": {
+            "area": 446,
+            "depth": 36,
+            "ok": 2,
+            "inv": 10,
+            "script": "r11",
+            "s": 3.8
+          },
+          "random_legal": {
+            "area": 446,
+            "depth": 28,
+            "ok": 7,
+            "inv": 5,
+            "script": "r01",
+            "s": 4.6
+          }
+        },
+        {
+          "seed": 1,
+          "llm": {
+            "area": 446,
+            "depth": 29,
+            "ok": 12,
+            "rej": 0,
+            "inv": 0,
+            "unm": 0,
+            "tok": 14016,
+            "s": 50.4,
+            "script": "strash; dc2",
+            "mapped_area": 859
+          },
+          "random_free": {
+            "area": 488,
+            "depth": 30,
+            "ok": 1,
+            "inv": 11,
+            "script": "r04",
+            "s": 4.8
+          },
+          "random_legal": {
+            "area": 446,
+            "depth": 30,
+            "ok": 6,
+            "inv": 6,
+            "script": "r10",
+            "s": 5.3
+          }
+        }
+      ]
+    }
+  }
+}

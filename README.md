@@ -1,11 +1,17 @@
 # agentic-eda
 
-Synthesis-script search on open-source EDA, with a verifier that can veto.
+Synthesis-script search, then place and route to GDSII, on open-source EDA --
+with a verifier that can veto at every stage.
 
 You write Verilog. Something has to turn it into gates. That something is a
 synthesiser with tens of knobs and a script language, and the choice of script
 changes the resulting circuit by 8-30% in area and up to 61% in depth. Nobody
 knows the right script in advance, so you try many.
+
+Below the search, `agentic/physflow.py` carries a verified netlist all the way to
+GDSII: OpenROAD for floorplan/place/CTS/route, magic for stream-out and signoff
+DRC, open_pdks sky130A as the PDK. 11/11 benchmarks route, 11/11 have signoff
+violations this OpenROAD cannot repair, and the README says which number is which.
 
 This is that search, plus the part most such attempts skip:
 
@@ -115,6 +121,17 @@ berkeley-abc`), Python 3.10+.
     python evolve_run.py               # search vs the hand-written set
     python determinism_check.py        # two independent runs, compare hashes
     python selftest_spine.py           # manifest integrity: tamper and truncate
+    python agentic/physflow.py         # 11 benchmarks netlist -> GDSII + signoff DRC
+
+The physical flow additionally needs, in WSL:
+
+    micromamba install -p ~/eda-env -c litex-hub -c conda-forge open_pdks.sky130a magic
+    apt install yosys openroad                    # openroad also ships on litex-hub
+
+and the PDK is 2.7 GB unpacked under `~/eda-env/share/pdk/sky130A` (the 1.26 GB
+tarball lands in micromamba's own cache; if `share/pdk` is empty afterwards the
+package downloaded and unpacked but was not linked into the environment, and a
+symlink is the fix -- not another download).
 
 ## Files
 
@@ -123,16 +140,83 @@ berkeley-abc`), Python 3.10+.
     agentic/evolve_search.py  mutation and selection over scripts
     agentic/bench_gen.py      11 benchmark generators (no external corpus needed)
     agentic/run_bench.py      the 11-benchmark sweep
-    bench/table.json          its result
+    agentic/llm_agent.py      the model-driven searcher (key read from outside the repo)
+    agentic/physflow.py       netlist -> GDSII: OpenROAD, magic, sky130 signoff DRC
+    bench/table.json          the synthesis result
     evolve/results.json       the search result, every candidate row included
+    phys/results.json         the physical result: per-design hashes, both violation counts
 
-## What is not here
+## All the way to GDSII
 
-No place and route, no GDSII, no timing closure, no analogue layout. The flow
-stops at a verified netlist. The interesting directions above that -- circuit
-as code, self-evolving synthesis, compilers for in-memory-compute macros -- all
-need something this repo does not have: an analogue benchmark corpus, a device
-model, a PDK. Writing more code would not supply them, so nothing is claimed
-about them.
+The synthesis search above stops at a verified netlist. `agentic/physflow.py`
+carries that netlist the rest of the way to silicon layout on the same open
+toolchain, and it does it as a driver rather than a recipe:
+
+    verified netlist
+      |  OpenROAD    floorplan -> tracks -> pin place -> global place
+      |              -> detailed place -> CTS -> filler -> route        -> DEF
+      |  magic       stream out with the PDK's own GDSII cell library    -> GDS
+      |  magic       signoff DRC, the PDK's rule deck, by name           -> violations
+      v
+    results.json  (per-design artifact hashes, both violation counts)
+
+11 benchmarks, every stage green on 11/11, 430 s for the sweep:
+
+    design     sky130 cells   area um2   util  router   signoff   GDS
+    adder8            3          229      34%      0        27    50 KB
+    adder16          18          512      31%      0        63   184 KB
+    adder32          30         1085      32%      0       177   363 KB
+    arbiter16        14          214      33%      0        37   122 KB
+    barrel16         20          596      31%      0        74   205 KB
+    lfsr16            6          502      33%      0        39   107 KB   (sequential, CTS ran)
+    mult4            30          382      33%      0        54   238 KB
+    mult8            37         1912      30%      0       293   476 KB
+    mult12           50         4792      30%      0       640   938 KB
+    mult16           57         8647      30%      0      1221  1509 KB
+    prio32           20          425      32%      0        44   195 KB
+
+**Two violation counts, because they are two different claims.** The router
+reports 0 on all 11 designs: TritonRoute is satisfied with what it built. The
+signoff deck disagrees on all 11: 27-1221 boxes. The rules are minimum *area*,
+met1.6 (0.083 um^2), met2.6 (0.0676 um^2), met3.6 (0.24 um^2), and once a met1
+spacing. They are in the technology LEF -- `AREA 0.083` sits right there under
+`LAYER met1` -- but this OpenROAD does not repair them: there is no min-area
+repair pass, no `add_met_fill`, and `detailed_route -help` is not even
+supported. A flow that printed only the router's number would call all 11
+layouts clean.
+
+These three are the same kind of bug as the harness lies above: they report
+success. The order of two commands is the whole difference between them:
+
+  * The technology LEF is `techlef/sky130_fd_sc_hd__nom.tlef`. The corner
+    suffix is part of the name. The LEF under `lef/` carries MACROs and zero
+    `LAYER` statements, so reading it alone yields 0 technology layers and a
+    design that reads, links, floorplans -- and then cannot route.
+  * `make_tracks` must come after `read_liberty` (it takes microns; without a
+    liberty it returns "command units uninitialized" and creates nothing) and
+    after `initialize_floorplan` (tracks are laid over the current die). Wrong
+    order creates zero tracks, and the failure surfaces two stages later in
+    `place_pins` as "no horizontal tracks for met3".
+
+And one that looks like a layout bug and is not: `arbiter16` has a `1'b1`
+constant, yosys turns it into a net, OpenROAD's Verilog reader labels that net
+`GROUND` by name, and TritonRoute refuses it -- "[DRT-0305] Net zero_ of signal
+type GROUND is not routable". Nothing is wrong with the layout; the net's type
+is. The driver demotes GROUND/POWER back to SIGNAL on every net that is not one
+of the PDK's own power nets, before the floorplan. Designs without a constant
+never hit it.
+
+## What is still not here
+
+No timing closure, no analogue layout, no tapeout. The GDS files are real,
+stream-out, DRC-checked layout geometry -- and every one of them has signoff
+violations that this OpenROAD version cannot repair, so they are evidence the
+flow works, not evidence of manufacturability. A newer OpenROAD (litex-hub is
+at 2.0_9990, this is 2.0_3175) may close the min-area gap; that has not been
+measured here.
+
+The analogue and in-memory-compute directions still need what they needed
+before: a device model, an analogue benchmark corpus. The PDK part of that gap
+is now closed -- open_pdks sky130A is installed and in use.
 
 MIT.

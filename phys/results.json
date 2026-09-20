@@ -1,0 +1,789 @@
+{
+ "mult4": {
+  "design": "mult4",
+  "rtl": "D:\\eda\\bench\\src\\mult4.v",
+  "utilization": 30,
+  "clock_period": 10.0,
+  "stages": {
+   "synth": {
+    "ok": true,
+    "seconds": 90.2
+   },
+   "physical": {
+    "ok": true,
+    "seconds": 10.5,
+    "stage_ok": [
+     "read",
+     "floorplan",
+     "tracks",
+     "pin_place",
+     "global_place",
+     "detailed_place",
+     "cts",
+     "filler",
+     "route",
+     "write"
+    ],
+    "error": "",
+    "route_violations": 12
+   },
+   "gds": {
+    "ok": true,
+    "seconds": 2.6,
+    "wrote": true
+   },
+   "drc": {
+    "ok": true,
+    "seconds": 0.9,
+    "violations": 54,
+    "rules": [
+     "Metal1 minimum area < 0.083um^2",
+     "Metal2 minimum area < 0.0676um^2"
+    ]
+   }
+  },
+  "artifacts": {
+   "netlist": {
+    "path": "D:\\eda\\phys\\mult4\\mult4_syn.v",
+    "sha256": "82cf6205b46f92a5d75b05c01c8bec2ba071ddea1c1b92f37b3f3cc7a06eeb13",
+    "bytes": 6717
+   },
+   "def": {
+    "path": "D:\\eda\\phys\\mult4\\mult4.def",
+    "sha256": "f47b3e102f843c523807eb8a4a7e7c019ef9919847a3d5e87dfa6e46a9e657fc",
+    "bytes": 60577
+   },
+   "routed_verilog": {
+    "path": "D:\\eda\\phys\\mult4\\mult4_routed.v",
+    "sha256": "c60d73ed759063224f80cfb5cac85dec67e3adb7e47e3885b737637fdeb3e220",
+    "bytes": 12328
+   },
+   "gds": {
+    "path": "D:\\eda\\phys\\mult4\\mult4.gds",
+    "sha256": "7e5984ccaa1e5e7e11e5f8785d22d8e0b0de4360d3b3efb6f2e4d5f737a023e6",
+    "bytes": 237780
+   }
+  },
+  "ok": true,
+  "mapped_cell_types": 30,
+  "design_area_um2": 382.0,
+  "utilization_pct": 33.0,
+  "manifest": "a22bfebb399b2d9b452d4725a19b00bf6b3ed8b912a25ff54a331681f6968c28"
+ },
+ "adder8": {
+  "design": "adder8",
+  "rtl": "D:\\eda\\bench\\src\\adder8.v",
+  "utilization": 30,
+  "clock_period": 10.0,
+  "stages": {
+   "synth": {
+    "ok": true,
+    "seconds": 0.9
+   },
+   "physical": {
+    "ok": true,
+    "seconds": 3.9,
+    "stage_ok": [
+     "read",
+     "floorplan",
+     "tracks",
+     "pin_place",
+     "global_place",
+     "detailed_place",
+     "cts",
+     "filler",
+     "route",
+     "write"
+    ],
+    "error": "",
+    "route_violations": 0
+   },
+   "gds": {
+    "ok": true,
+    "seconds": 2.3,
+    "wrote": true
+   },
+   "drc": {
+    "ok": true,
+    "seconds": 0.7,
+    "violations": 27,
+    "rules": [
+     "Metal1 minimum area < 0.083um^2",
+     "Metal2 minimum area < 0.0676um^2"
+    ]
+   }
+  },
+  "artifacts": {
+   "netlist": {
+    "path": "D:\\eda\\phys\\adder8\\adder8_syn.v",
+    "sha256": "b9e3ad96a38285c6e4e4d43fafcf8ea3753e0c47666610ed6295115065579094",
+    "bytes": 3977
+   },
+   "def": {
+    "path": "D:\\eda\\phys\\adder8\\adder8.def",
+    "sha256": "717c0ac5541f5db88d2e52e296dead9730da04547d869391356fe37cf8162199",
+    "bytes": 34017
+   },
+   "routed_verilog": {
+    "path": "D:\\eda\\phys\\adder8\\adder8_routed.v",
+    "sha256": "ec308dbeee78a2618ec612fc9c3b536efc8c4b6905c3fb7f1dae7e2ea32ff26c",
+    "bytes": 6723
+   },
+   "gds": {
+    "path": "D:\\eda\\phys\\adder8\\adder8.gds",
+    "sha256": "5331a8fa84872bdb932dc35edff8619d68ea7acec9dac1922fbf1c5f08c7397d",
+    "bytes": 50152
+   }
+  },
+  "ok": true,
+  "mapped_cell_types": 3,
+  "design_area_um2": 229.0,
+  "utilization_pct": 34.0,
+  "manifest": "b587d4c0591dc301af3a133bdc19f11fe30a891b6caf385c56910e7b73341276"
+ },
+ "lfsr16": {
+  "design": "lfsr16",
+  "rtl": "D:\\eda\\bench\\src\\lfsr16.v",
+  "utilization": 30,
+  "clock_period": 10.0,
+  "stages": {
+   "synth": {
+    "ok": true,
+    "seconds": 1.0
+   },
+   "physical": {
+    "ok": true,
+    "seconds": 7.0,
+    "stage_ok": [
+     "read",
+     "floorplan",
+     "tracks",
+     "pin_place",
+     "global_place",
+     "detailed_place",
+     "cts",
+     "filler",
+     "route",
+     "write"
+    ],
+    "error": "",
+    "route_violations": 0
+   },
+   "gds": {
+    "ok": true,
+    "seconds": 2.2,
+    "wrote": true
+   },
+   "drc": {
+    "ok": true,
+    "seconds": 0.9,
+    "violations": 39,
+    "rules": [
+     "Metal1 minimum area < 0.083um^2"
+    ]
+   }
+  },
+  "artifacts": {
+   "netlist": {
+    "path": "D:\\eda\\phys\\lfsr16\\lfsr16_syn.v",
+    "sha256": "1710eeb575c0393cfa45315fc724507dcd0023ab24ec90b1889870b9a5e68624",
+    "bytes": 4569
+   },
+   "def": {
+    "path": "D:\\eda\\phys\\lfsr16\\lfsr16.def",
+    "sha256": "0e0d2253e97881d764db1ba3db10725b2898545f0882b99ab4c7000de170890a",
+    "bytes": 51215
+   },
+   "routed_verilog": {
+    "path": "D:\\eda\\phys\\lfsr16\\lfsr16_routed.v",
+    "sha256": "a9696111f0b845537e58df7601bd1c73fb3f614993f728bbd97899e830998b70",
+    "bytes": 13283
+   },
+   "gds": {
+    "path": "D:\\eda\\phys\\lfsr16\\lfsr16.gds",
+    "sha256": "371a1860b191bb07210628881db26b7058b62a0af2e96f85279363b887b487b7",
+    "bytes": 107112
+   }
+  },
+  "ok": true,
+  "mapped_cell_types": 6,
+  "design_area_um2": 502.0,
+  "utilization_pct": 33.0,
+  "manifest": "5aef7f4b86a54a5767573358c4855899aad4266a0e0a5b76f17de49483873775"
+ },
+ "adder16": {
+  "design": "adder16",
+  "rtl": "D:\\eda\\bench\\src\\adder16.v",
+  "utilization": 30,
+  "clock_period": 10.0,
+  "stages": {
+   "synth": {
+    "ok": true,
+    "seconds": 1.1
+   },
+   "physical": {
+    "ok": true,
+    "seconds": 6.2,
+    "stage_ok": [
+     "read",
+     "floorplan",
+     "tracks",
+     "pin_place",
+     "global_place",
+     "detailed_place",
+     "cts",
+     "filler",
+     "route",
+     "write"
+    ],
+    "error": "",
+    "route_violations": 10
+   },
+   "gds": {
+    "ok": true,
+    "seconds": 2.3,
+    "wrote": true
+   },
+   "drc": {
+    "ok": true,
+    "seconds": 0.9,
+    "violations": 63,
+    "rules": [
+     "Metal1 minimum area < 0.083um^2",
+     "Metal2 minimum area < 0.0676um^2"
+    ]
+   }
+  },
+  "artifacts": {
+   "netlist": {
+    "path": "D:\\eda\\phys\\adder16\\adder16_syn.v",
+    "sha256": "5af57a16af4cb9cc30f2004b9badfbd4be20cfb4c1169df6f36172a45762ffb6",
+    "bytes": 10736
+   },
+   "def": {
+    "path": "D:\\eda\\phys\\adder16\\adder16.def",
+    "sha256": "8341c60710c0d87bbee1fa69098f57dd8b3c468923d46149496280c4d7580ec4",
+    "bytes": 89202
+   },
+   "routed_verilog": {
+    "path": "D:\\eda\\phys\\adder16\\adder16_routed.v",
+    "sha256": "1a8608c1a8f4f13068cd6f37298857f63232d0872cadc45b4c4fa095ac816c1e",
+    "bytes": 17900
+   },
+   "gds": {
+    "path": "D:\\eda\\phys\\adder16\\adder16.gds",
+    "sha256": "17787544fee27ef1096c4037bffe5a2cbb9390748b8578ed8fc58153f0514dcf",
+    "bytes": 184138
+   }
+  },
+  "ok": true,
+  "mapped_cell_types": 18,
+  "design_area_um2": 512.0,
+  "utilization_pct": 31.0,
+  "manifest": "9e8af606283e895631d3b018e6677a64d12a76fdb530aff23bba4cc472945b95"
+ },
+ "adder32": {
+  "design": "adder32",
+  "rtl": "D:\\eda\\bench\\src\\adder32.v",
+  "utilization": 30,
+  "clock_period": 10.0,
+  "stages": {
+   "synth": {
+    "ok": true,
+    "seconds": 1.2
+   },
+   "physical": {
+    "ok": true,
+    "seconds": 13.3,
+    "stage_ok": [
+     "read",
+     "floorplan",
+     "tracks",
+     "pin_place",
+     "global_place",
+     "detailed_place",
+     "cts",
+     "filler",
+     "route",
+     "write"
+    ],
+    "error": "",
+    "route_violations": 57
+   },
+   "gds": {
+    "ok": true,
+    "seconds": 2.5,
+    "wrote": true
+   },
+   "drc": {
+    "ok": true,
+    "seconds": 1.1,
+    "violations": 177,
+    "rules": [
+     "Metal1 minimum area < 0.083um^2",
+     "Metal2 minimum area < 0.0676um^2",
+     "Metal3 minimum area < 0.24um^2"
+    ]
+   }
+  },
+  "artifacts": {
+   "netlist": {
+    "path": "D:\\eda\\phys\\adder32\\adder32_syn.v",
+    "sha256": "e5e402cf041209703d3b0b597a1c767133b0629735dd07843fc03474d04a40a0",
+    "bytes": 22838
+   },
+   "def": {
+    "path": "D:\\eda\\phys\\adder32\\adder32.def",
+    "sha256": "57a5f1f17cf1262ae44b3570be60d45228c39b7c6ec9f37fe5e12e2ef0a0cb77",
+    "bytes": 192832
+   },
+   "routed_verilog": {
+    "path": "D:\\eda\\phys\\adder32\\adder32_routed.v",
+    "sha256": "cc23b99ae458e5d01197fde23083b276b3a2bcdf810cd0e82e1fdf5fd7a126fa",
+    "bytes": 38236
+   },
+   "gds": {
+    "path": "D:\\eda\\phys\\adder32\\adder32.gds",
+    "sha256": "9c813d3424db00b84b6f5e22732c56e482e70012a8f8c28ef4b0739c5a4c01f9",
+    "bytes": 363252
+   }
+  },
+  "ok": true,
+  "mapped_cell_types": 30,
+  "design_area_um2": 1085.0,
+  "utilization_pct": 32.0,
+  "manifest": "1339ef0b0216a14d6e6f81991d8c7fddf9cebf12001a085aeeda9594adbb7839"
+ },
+ "arbiter16": {
+  "design": "arbiter16",
+  "rtl": "D:\\eda\\bench\\src\\arbiter16.v",
+  "utilization": 30,
+  "clock_period": 10.0,
+  "stages": {
+   "synth": {
+    "ok": true,
+    "seconds": 1.0
+   },
+   "physical": {
+    "ok": true,
+    "seconds": 20.1,
+    "stage_ok": [
+     "read",
+     "sanitize",
+     "floorplan",
+     "tracks",
+     "pin_place",
+     "global_place",
+     "detailed_place",
+     "cts",
+     "filler",
+     "route",
+     "write"
+    ],
+    "error": "",
+    "route_violations": 14
+   },
+   "gds": {
+    "ok": true,
+    "seconds": 2.3,
+    "wrote": true
+   },
+   "drc": {
+    "ok": true,
+    "seconds": 0.8,
+    "violations": 37,
+    "rules": [
+     "Metal1 minimum area < 0.083um^2",
+     "Metal2 minimum area < 0.0676um^2"
+    ]
+   }
+  },
+  "artifacts": {
+   "netlist": {
+    "path": "D:\\eda\\phys\\arbiter16\\arbiter16_syn.v",
+    "sha256": "6fd3ad35cfde897017900d64f99ad0656c638b182ffbf53a1188f55d1f67a5a2",
+    "bytes": 5523
+   },
+   "def": {
+    "path": "D:\\eda\\phys\\arbiter16\\arbiter16.def",
+    "sha256": "58340929ee24190910f401cee9d94a60fd2ceacfa968eee8908ae0b00890ebc9",
+    "bytes": 46490
+   },
+   "routed_verilog": {
+    "path": "D:\\eda\\phys\\arbiter16\\arbiter16_routed.v",
+    "sha256": "6708615dae85a145bfe3593cae087ed1b304d57f45c543a5d23357adc9053930",
+    "bytes": 7952
+   },
+   "gds": {
+    "path": "D:\\eda\\phys\\arbiter16\\arbiter16.gds",
+    "sha256": "123154d7a9422d1edb17b6cb1eec867486ce55448b11630bbc81fe2a51ec84b5",
+    "bytes": 122272
+   }
+  },
+  "ok": true,
+  "mapped_cell_types": 14,
+  "design_area_um2": 214.0,
+  "utilization_pct": 33.0,
+  "manifest": "1137effd2aeb67a641282e463c3530513d982a087e51fb02c2d20c1e8299aef7"
+ },
+ "barrel16": {
+  "design": "barrel16",
+  "rtl": "D:\\eda\\bench\\src\\barrel16.v",
+  "utilization": 30,
+  "clock_period": 10.0,
+  "stages": {
+   "synth": {
+    "ok": true,
+    "seconds": 1.1
+   },
+   "physical": {
+    "ok": true,
+    "seconds": 14.7,
+    "stage_ok": [
+     "read",
+     "floorplan",
+     "tracks",
+     "pin_place",
+     "global_place",
+     "detailed_place",
+     "cts",
+     "filler",
+     "route",
+     "write"
+    ],
+    "error": "",
+    "route_violations": 12
+   },
+   "gds": {
+    "ok": true,
+    "seconds": 2.3,
+    "wrote": true
+   },
+   "drc": {
+    "ok": true,
+    "seconds": 0.9,
+    "violations": 74,
+    "rules": [
+     "Metal1 minimum area < 0.083um^2",
+     "Metal2 minimum area < 0.0676um^2"
+    ]
+   }
+  },
+  "artifacts": {
+   "netlist": {
+    "path": "D:\\eda\\phys\\barrel16\\barrel16_syn.v",
+    "sha256": "7f9497c8a4554a2ee2ebe0bc6805dc58d590a4fef903ac64ebaa62399a500613",
+    "bytes": 9893
+   },
+   "def": {
+    "path": "D:\\eda\\phys\\barrel16\\barrel16.def",
+    "sha256": "397ef77c9664510b3b11bc3a75df11b41871a5d50194fab59c851a5d42e4ecb1",
+    "bytes": 97472
+   },
+   "routed_verilog": {
+    "path": "D:\\eda\\phys\\barrel16\\barrel16_routed.v",
+    "sha256": "80c1d5932ffc1729e6e1ea924187aef87167c63194f3c1f958c39232b5d13056",
+    "bytes": 19957
+   },
+   "gds": {
+    "path": "D:\\eda\\phys\\barrel16\\barrel16.gds",
+    "sha256": "b3912afcec65602d4eb4c2535b58a3cd294ba4ff0ec6e6585693fe4a7e4b8ff2",
+    "bytes": 205102
+   }
+  },
+  "ok": true,
+  "mapped_cell_types": 20,
+  "design_area_um2": 596.0,
+  "utilization_pct": 31.0,
+  "manifest": "c573eee9473c9a5e733a14ab7a704965ec15cd70534848e2ce49d7cb7e7729ea"
+ },
+ "mult12": {
+  "design": "mult12",
+  "rtl": "D:\\eda\\bench\\src\\mult12.v",
+  "utilization": 30,
+  "clock_period": 10.0,
+  "stages": {
+   "synth": {
+    "ok": true,
+    "seconds": 1.5
+   },
+   "physical": {
+    "ok": true,
+    "seconds": 93.7,
+    "stage_ok": [
+     "read",
+     "floorplan",
+     "tracks",
+     "pin_place",
+     "global_place",
+     "detailed_place",
+     "cts",
+     "filler",
+     "route",
+     "write"
+    ],
+    "error": "",
+    "route_violations": 208
+   },
+   "gds": {
+    "ok": true,
+    "seconds": 5.6,
+    "wrote": true
+   },
+   "drc": {
+    "ok": true,
+    "seconds": 2.7,
+    "violations": 640,
+    "rules": [
+     "Metal1 minimum area < 0.083um^2",
+     "Metal2 minimum area < 0.0676um^2",
+     "Metal3 minimum area < 0.24um^2"
+    ]
+   }
+  },
+  "artifacts": {
+   "netlist": {
+    "path": "D:\\eda\\phys\\mult12\\mult12_syn.v",
+    "sha256": "6aa424ddb56301e6c84afec639cffd32a10baf13b76f8388864df2cf6ab5475b",
+    "bytes": 81444
+   },
+   "def": {
+    "path": "D:\\eda\\phys\\mult12\\mult12.def",
+    "sha256": "7e1891e6d0e44e5981175060b7ed7fe55c23c3123184056e61a3cfe0c6cf4094",
+    "bytes": 692422
+   },
+   "routed_verilog": {
+    "path": "D:\\eda\\phys\\mult12\\mult12_routed.v",
+    "sha256": "3b08a7825cb4fb2bdca85f3840d4c447f97f9134c0720c23563621f1979916ba",
+    "bytes": 165769
+   },
+   "gds": {
+    "path": "D:\\eda\\phys\\mult12\\mult12.gds",
+    "sha256": "8b1874d735d6e71482f0344e7c521212e2eb1e90c63a03710fad64713c58f18a",
+    "bytes": 938376
+   }
+  },
+  "ok": true,
+  "mapped_cell_types": 50,
+  "design_area_um2": 4792.0,
+  "utilization_pct": 30.0,
+  "manifest": "4900c097d596828ae4d57cc4123b3f4086d5078c46f1fbc9baa7052ce5c0afaa"
+ },
+ "mult16": {
+  "design": "mult16",
+  "rtl": "D:\\eda\\bench\\src\\mult16.v",
+  "utilization": 30,
+  "clock_period": 10.0,
+  "stages": {
+   "synth": {
+    "ok": true,
+    "seconds": 2.3
+   },
+   "physical": {
+    "ok": true,
+    "seconds": 207.4,
+    "stage_ok": [
+     "read",
+     "floorplan",
+     "tracks",
+     "pin_place",
+     "global_place",
+     "detailed_place",
+     "cts",
+     "filler",
+     "route",
+     "write"
+    ],
+    "error": "",
+    "route_violations": 447
+   },
+   "gds": {
+    "ok": true,
+    "seconds": 7.6,
+    "wrote": true
+   },
+   "drc": {
+    "ok": true,
+    "seconds": 4.9,
+    "violations": 1221,
+    "rules": [
+     "Metal1 minimum area < 0.083um^2",
+     "Metal2 minimum area < 0.0676um^2",
+     "Metal3 minimum area < 0.24um^2"
+    ]
+   }
+  },
+  "artifacts": {
+   "netlist": {
+    "path": "D:\\eda\\phys\\mult16\\mult16_syn.v",
+    "sha256": "c516143666c0b75c8042936ec05d13ba0725b20bb7484d5ee98510b04cc230e1",
+    "bytes": 149645
+   },
+   "def": {
+    "path": "D:\\eda\\phys\\mult16\\mult16.def",
+    "sha256": "38c01ecee036cfba2d6b4f0ee6b3f5369c3f2505bebf184539f8b2ae308ddfb0",
+    "bytes": 1281386
+   },
+   "routed_verilog": {
+    "path": "D:\\eda\\phys\\mult16\\mult16_routed.v",
+    "sha256": "38375f8929bc6fcf4bf4a1fe283e3d9bc138450466e57cfdb482f366e7a1ce1e",
+    "bytes": 300354
+   },
+   "gds": {
+    "path": "D:\\eda\\phys\\mult16\\mult16.gds",
+    "sha256": "db633adc14bb23b6b4960f9db7ea514796b6a30e570905984a79e368291fbcf1",
+    "bytes": 1509858
+   }
+  },
+  "ok": true,
+  "mapped_cell_types": 57,
+  "design_area_um2": 8647.0,
+  "utilization_pct": 30.0,
+  "manifest": "f19eb8be7dd3eb5700de2f5e0e2008ea04371ed633b52f69224945f1bfbce93d"
+ },
+ "mult8": {
+  "design": "mult8",
+  "rtl": "D:\\eda\\bench\\src\\mult8.v",
+  "utilization": 30,
+  "clock_period": 10.0,
+  "stages": {
+   "synth": {
+    "ok": true,
+    "seconds": 1.2
+   },
+   "physical": {
+    "ok": true,
+    "seconds": 34.6,
+    "stage_ok": [
+     "read",
+     "floorplan",
+     "tracks",
+     "pin_place",
+     "global_place",
+     "detailed_place",
+     "cts",
+     "filler",
+     "route",
+     "write"
+    ],
+    "error": "",
+    "route_violations": 94
+   },
+   "gds": {
+    "ok": true,
+    "seconds": 2.9,
+    "wrote": true
+   },
+   "drc": {
+    "ok": true,
+    "seconds": 1.4,
+    "violations": 293,
+    "rules": [
+     "Metal1 minimum area < 0.083um^2",
+     "Metal1 spacing < 0.14um",
+     "Metal2 minimum area < 0.0676um^2",
+     "Metal3 minimum area < 0.24um^2"
+    ]
+   }
+  },
+  "artifacts": {
+   "netlist": {
+    "path": "D:\\eda\\phys\\mult8\\mult8_syn.v",
+    "sha256": "10936f906649dd290f3c2b9cb395b9e4549c03a6edbd22ff28204d63eb836e5d",
+    "bytes": 32426
+   },
+   "def": {
+    "path": "D:\\eda\\phys\\mult8\\mult8.def",
+    "sha256": "a1017c5511bb1a700df021740ba6d61b35353b8f0731a757eaf59e7a46cfc71c",
+    "bytes": 287912
+   },
+   "routed_verilog": {
+    "path": "D:\\eda\\phys\\mult8\\mult8_routed.v",
+    "sha256": "e424ef5ed09989c37c11578a7e3613d24608339979089b9c753ec020b096f9f8",
+    "bytes": 65679
+   },
+   "gds": {
+    "path": "D:\\eda\\phys\\mult8\\mult8.gds",
+    "sha256": "2056b04d8486ab367064d48abe029e9e35c49b333adae2c4f405356512aa6be7",
+    "bytes": 476322
+   }
+  },
+  "ok": true,
+  "mapped_cell_types": 37,
+  "design_area_um2": 1912.0,
+  "utilization_pct": 30.0,
+  "manifest": "a44ba7ea9dc0c8787d332880594abbee681c27d0368e3fe55480f5fc6990189d"
+ },
+ "prio32": {
+  "design": "prio32",
+  "rtl": "D:\\eda\\bench\\src\\prio32.v",
+  "utilization": 30,
+  "clock_period": 10.0,
+  "stages": {
+   "synth": {
+    "ok": true,
+    "seconds": 1.0
+   },
+   "physical": {
+    "ok": true,
+    "seconds": 8.3,
+    "stage_ok": [
+     "read",
+     "floorplan",
+     "tracks",
+     "pin_place",
+     "global_place",
+     "detailed_place",
+     "cts",
+     "filler",
+     "route",
+     "write"
+    ],
+    "error": "",
+    "route_violations": 14
+   },
+   "gds": {
+    "ok": true,
+    "seconds": 2.5,
+    "wrote": true
+   },
+   "drc": {
+    "ok": true,
+    "seconds": 1.0,
+    "violations": 44,
+    "rules": [
+     "Metal1 minimum area < 0.083um^2",
+     "Metal2 minimum area < 0.0676um^2",
+     "Metal3 minimum area < 0.24um^2"
+    ]
+   }
+  },
+  "artifacts": {
+   "netlist": {
+    "path": "D:\\eda\\phys\\prio32\\prio32_syn.v",
+    "sha256": "5943fdd6796b8f6a59a7788ea1d80348a1f8d7679caf1b114484d528363acb5a",
+    "bytes": 8967
+   },
+   "def": {
+    "path": "D:\\eda\\phys\\prio32\\prio32.def",
+    "sha256": "050f38a61ea454df2976b05fd4f1ddf7d9dc3d3ad16e53f83c872713bc24886f",
+    "bytes": 79434
+   },
+   "routed_verilog": {
+    "path": "D:\\eda\\phys\\prio32\\prio32_routed.v",
+    "sha256": "f7f75d2401249dc9c31793e5d622d9360dd164e2e04544f8d71baa733b6417c5",
+    "bytes": 14908
+   },
+   "gds": {
+    "path": "D:\\eda\\phys\\prio32\\prio32.gds",
+    "sha256": "37522d02de0dd735d8e82b2dbcccd0869ef90528bf6382982d00f1b7380d5b66",
+    "bytes": 195190
+   }
+  },
+  "ok": true,
+  "mapped_cell_types": 20,
+  "design_area_um2": 425.0,
+  "utilization_pct": 32.0,
+  "manifest": "8fffa3ef1360887476e31ad680ea10b25bde4f39b0cde80610e911983ca9b57f"
+ }
+}

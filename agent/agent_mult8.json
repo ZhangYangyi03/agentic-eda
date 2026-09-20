@@ -1,0 +1,226 @@
+{
+  "design": "mult8",
+  "baseline": {
+    "and": 482,
+    "lev": 30
+  },
+  "steps_used": 13,
+  "attempts": 12,
+  "seconds": 50.4,
+  "tokens": {
+    "prompt": 7746,
+    "completion": 6270
+  },
+  "counts": {
+    "ok": 12,
+    "rejected": 0,
+    "invalid_script": 0,
+    "unmeasured": 0
+  },
+  "transcript": [
+    {
+      "step": 1,
+      "script": "strash; balance; rewrite -l; rewrite -z; balance; rewrite -lz; balance",
+      "reason": "Area-focused: strash then structured rewrite with -l and -z to minimize nodes.",
+      "status": "ok",
+      "area": 465,
+      "lev": 36,
+      "metric": "and",
+      "verify": "cec equivalent",
+      "error": null,
+      "note": null
+    },
+    {
+      "step": 1,
+      "script": "strash; balance; rewrite -l; balance; rewrite -l; balance; rewrite -l; balance",
+      "reason": "Depth-focused: repeated balance + rewrite -l to reduce logic depth.",
+      "status": "ok",
+      "area": 466,
+      "lev": 37,
+      "metric": "and",
+      "verify": "cec equivalent",
+      "error": null,
+      "note": null
+    },
+    {
+      "step": 2,
+      "script": "strash; dc2",
+      "reason": "dc2 is a strong area-oriented script; see how it does on mult8.",
+      "status": "ok",
+      "area": 446,
+      "lev": 36,
+      "metric": "and",
+      "verify": "cec equivalent",
+      "error": null,
+      "note": null
+    },
+    {
+      "step": 2,
+      "script": "strash; dch",
+      "reason": "dch is a depth-oriented script; target lower lev.",
+      "status": "ok",
+      "area": 834,
+      "lev": 29,
+      "metric": "and",
+      "verify": "cec equivalent",
+      "error": null,
+      "note": null
+    },
+    {
+      "step": 2,
+      "script": "strash; if -K 6",
+      "reason": "LUT mapping with K=6 may reduce both area and depth.",
+      "status": "ok",
+      "area": 1002,
+      "lev": 6,
+      "metric": "aig",
+      "verify": "cec equivalent",
+      "error": null,
+      "note": null
+    },
+    {
+      "step": 2,
+      "script": "fx; mfs; strash; balance; rewrite",
+      "reason": "fx+mfs before strash for area reduction, then balance/rewrite.",
+      "status": "ok",
+      "area": 483,
+      "lev": 30,
+      "metric": "and",
+      "verify": "cec equivalent",
+      "error": null,
+      "note": null
+    },
+    {
+      "step": 3,
+      "script": "strash; dch; dc2",
+      "reason": "Depth reduction via dch then area recovery via dc2.",
+      "status": "ok",
+      "area": 450,
+      "lev": 36,
+      "metric": "and",
+      "verify": "cec equivalent",
+      "error": null,
+      "note": null
+    },
+    {
+      "step": 3,
+      "script": "strash; dc2; dch",
+      "reason": "Area via dc2 then depth via dch, hoping for both.",
+      "status": "ok",
+      "area": 473,
+      "lev": 35,
+      "metric": "and",
+      "verify": "cec equivalent",
+      "error": null,
+      "note": null
+    },
+    {
+      "step": 3,
+      "script": "strash; if -K 8",
+      "reason": "K=8 mapping for minimal depth.",
+      "status": "ok",
+      "area": 1211,
+      "lev": 5,
+      "metric": "aig",
+      "verify": "cec equivalent",
+      "error": null,
+      "note": null
+    },
+    {
+      "step": 3,
+      "script": "strash; if -K 4",
+      "reason": "K=4 mapping; check depth and area tradeoff.",
+      "status": "ok",
+      "area": 859,
+      "lev": 9,
+      "metric": "aig",
+      "verify": "cec equivalent",
+      "error": null,
+      "note": null
+    },
+    {
+      "step": 4,
+      "script": "strash; resub -K 8; dc2",
+      "reason": "resub then dc2 should reduce area below dc2's 446.",
+      "status": "ok",
+      "area": 449,
+      "lev": 36,
+      "metric": "and",
+      "verify": "cec equivalent",
+      "error": null,
+      "note": null
+    },
+    {
+      "step": 4,
+      "script": "fx; mfs; strash; dc2",
+      "reason": "fx+mfs preprocessing before strash, then dc2, targeting lower area.",
+      "status": "ok",
+      "area": 446,
+      "lev": 36,
+      "metric": "and",
+      "verify": "cec equivalent",
+      "error": null,
+      "note": null
+    },
+    {
+      "step": 5,
+      "note": "model stopped",
+      "finish_reason": "stop",
+      "say": "All 12 attempts are used. Summary of results:\n\n**Best area (gate count, comparable \"and\" metric): 446**\n- `strash; dc2` → area 446, lev 36 (also matched by `fx; mfs; strash; dc2`)\n\n**Best depth on the comparable logic metric: 29**\n- `strash; dch` → area 834, lev 29\n\n**Best depth overall: 6** (different unit — mapped AIG)\n- `strash; if -K 6` → depth 6 (area 1002 in mapped-AIG units, not comparable "
+    }
+  ],
+  "best_area": {
+    "step": 2,
+    "script": "strash; dc2",
+    "reason": "dc2 is a strong area-oriented script; see how it does on mult8.",
+    "status": "ok",
+    "area": 446,
+    "lev": 36,
+    "metric": "and",
+    "verify": "cec equivalent",
+    "error": null,
+    "note": null
+  },
+  "best_depth": {
+    "step": 2,
+    "script": "strash; dch",
+    "reason": "dch is a depth-oriented script; target lower lev.",
+    "status": "ok",
+    "area": 834,
+    "lev": 29,
+    "metric": "and",
+    "verify": "cec equivalent",
+    "error": null,
+    "note": null
+  },
+  "mapped_best_area": {
+    "step": 3,
+    "script": "strash; if -K 4",
+    "reason": "K=4 mapping; check depth and area tradeoff.",
+    "status": "ok",
+    "area": 859,
+    "lev": 9,
+    "metric": "aig",
+    "verify": "cec equivalent",
+    "error": null,
+    "note": null
+  },
+  "mapped_best_depth": {
+    "step": 3,
+    "script": "strash; if -K 8",
+    "reason": "K=8 mapping for minimal depth.",
+    "status": "ok",
+    "area": 1211,
+    "lev": 5,
+    "metric": "aig",
+    "verify": "cec equivalent",
+    "error": null,
+    "note": null
+  },
+  "units": {
+    "canonical": "'and' rows, area=gate count, lev=AIG levels (n=9)",
+    "mapped": "'aig' rows after a mapping step, NOT comparable (n=3)"
+  },
+  "beats_baseline_area": true,
+  "beats_baseline_depth": true
+}
