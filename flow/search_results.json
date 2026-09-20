@@ -1,0 +1,66 @@
+{
+  "naive": {
+    "cells": null,
+    "wires": null,
+    "equiv": false,
+    "netlist": true,
+    "s": 1.1,
+    "tail": "synth_naive.v:3: ERROR: Re-definition of module `\\alu'!"
+  },
+  "abc_fast": {
+    "cells": null,
+    "wires": null,
+    "equiv": false,
+    "netlist": false,
+    "s": 0.9,
+    "tail": "ERROR: File `synth_abc_fast.v' not found or is a directory"
+  },
+  "abc_gate": {
+    "cells": null,
+    "wires": null,
+    "equiv": false,
+    "netlist": false,
+    "s": 1.0,
+    "tail": "ERROR: File `synth_abc_gate.v' not found or is a directory"
+  },
+  "abc_resub": {
+    "cells": null,
+    "wires": null,
+    "equiv": false,
+    "netlist": false,
+    "s": 1.0,
+    "tail": "ERROR: File `synth_abc_resub.v' not found or is a directory"
+  },
+  "abc_if": {
+    "cells": null,
+    "wires": null,
+    "equiv": false,
+    "netlist": false,
+    "s": 1.0,
+    "tail": "ERROR: File `synth_abc_if.v' not found or is a directory"
+  },
+  "abc_mux": {
+    "cells": null,
+    "wires": null,
+    "equiv": false,
+    "netlist": false,
+    "s": 1.1,
+    "tail": "ERROR: File `synth_abc_mux.v' not found or is a directory"
+  },
+  "abc_dch": {
+    "cells": null,
+    "wires": null,
+    "equiv": false,
+    "netlist": false,
+    "s": 1.1,
+    "tail": "ERROR: File `synth_abc_dch.v' not found or is a directory"
+  },
+  "abc_deep": {
+    "cells": null,
+    "wires": null,
+    "equiv": false,
+    "netlist": false,
+    "s": 1.1,
+    "tail": "ERROR: File `synth_abc_deep.v' not found or is a directory"
+  }
+}

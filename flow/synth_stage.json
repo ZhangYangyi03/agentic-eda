@@ -1,0 +1,50 @@
+{
+  "naive": {
+    "yosys_rc": "1",
+    "netlist": false,
+    "cells": null,
+    "s": 0.7
+  },
+  "abc_fast": {
+    "yosys_rc": "1",
+    "netlist": false,
+    "cells": null,
+    "s": 0.8
+  },
+  "abc_gate": {
+    "yosys_rc": "1",
+    "netlist": false,
+    "cells": null,
+    "s": 0.6
+  },
+  "abc_resub": {
+    "yosys_rc": "1",
+    "netlist": false,
+    "cells": null,
+    "s": 0.6
+  },
+  "abc_if": {
+    "yosys_rc": "1",
+    "netlist": false,
+    "cells": null,
+    "s": 0.6
+  },
+  "abc_mux": {
+    "yosys_rc": "1",
+    "netlist": false,
+    "cells": null,
+    "s": 0.8
+  },
+  "abc_dch": {
+    "yosys_rc": "1",
+    "netlist": false,
+    "cells": null,
+    "s": 0.8
+  },
+  "abc_delay": {
+    "yosys_rc": "1",
+    "netlist": false,
+    "cells": null,
+    "s": 0.8
+  }
+}

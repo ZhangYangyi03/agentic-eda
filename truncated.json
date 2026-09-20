@@ -1,0 +1,27 @@
+{
+  "root": "D:\\eda\\run1",
+  "seed": "synth-search-v1",
+  "env": {
+    "wsl": "Ubuntu-22.04",
+    "elaborator": "apt yosys 0.9 (ABC disabled)",
+    "optimizer": "berkeley-abc 1.01 standalone + cec"
+  },
+  "stages": [
+    {
+      "stage": "elaborate",
+      "ok": true,
+      "hashes": {
+        "blif": {
+          "sha256": "32735a9e5bf23dbbbe5b90445c4a4334815e0dc128ebd21fc1884414a3443465",
+          "path": "D:\\eda\\run1\\work\\elaborate\\gold.blif",
+          "bytes": 60624
+        }
+      },
+      "link": "9ac61dd42564cdecf6903fb9a3afa7a315411b9dea50cb1a18138b132b1f7bb7",
+      "prev": "genesis",
+      "seconds": 0.278,
+      "error": ""
+    }
+  ],
+  "head": "a91b701a8c0c140e4093343e3672f1dbcbdff5dc450c63201902af0ced7314b9"
+}

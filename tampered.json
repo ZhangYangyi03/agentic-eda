@@ -1,0 +1,47 @@
+{
+  "root": "D:\\eda\\run1",
+  "seed": "synth-search-v1",
+  "env": {
+    "wsl": "Ubuntu-22.04",
+    "elaborator": "apt yosys 0.9 (ABC disabled)",
+    "optimizer": "berkeley-abc 1.01 standalone + cec"
+  },
+  "stages": [
+    {
+      "stage": "elaborate",
+      "ok": false,
+      "hashes": {
+        "blif": {
+          "sha256": "32735a9e5bf23dbbbe5b90445c4a4334815e0dc128ebd21fc1884414a3443465",
+          "path": "D:\\eda\\run1\\work\\elaborate\\gold.blif",
+          "bytes": 60624
+        }
+      },
+      "link": "9ac61dd42564cdecf6903fb9a3afa7a315411b9dea50cb1a18138b132b1f7bb7",
+      "prev": "genesis",
+      "seconds": 0.278,
+      "error": ""
+    },
+    {
+      "stage": "search",
+      "ok": true,
+      "hashes": {
+        "search_report": {
+          "sha256": "7d3f3ec667ba1a738cda486fc30f19b7863f363c9f32bc42c0ff5b39994cd84b",
+          "path": "D:\\eda\\run1\\work\\search\\search.json",
+          "bytes": 2508
+        },
+        "netlist": {
+          "sha256": "fad54e6e16b805bf16b86c35a86c5f6e2513134fd5ccf07aff3001a8990854e9",
+          "path": "D:\\eda\\run1\\work\\search\\mix\\mapped.blif",
+          "bytes": 18055
+        }
+      },
+      "link": "a91b701a8c0c140e4093343e3672f1dbcbdff5dc450c63201902af0ced7314b9",
+      "prev": "9ac61dd42564cdecf6903fb9a3afa7a315411b9dea50cb1a18138b132b1f7bb7",
+      "seconds": 1.279,
+      "error": ""
+    }
+  ],
+  "head": "a91b701a8c0c140e4093343e3672f1dbcbdff5dc450c63201902af0ced7314b9"
+}

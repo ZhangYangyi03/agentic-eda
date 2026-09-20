@@ -1,0 +1,43 @@
+{
+  "root": "D:\\eda\\selftest",
+  "seed": "",
+  "env": {
+    "python": "3.13.13"
+  },
+  "stages": [
+    {
+      "stage": "emit_rtl",
+      "ok": true,
+      "hashes": {
+        "rtl": "fb71b9bd9b29b2dc3dba93a45e71448706612dae714fa075fff1eac7dc430f61"
+      },
+      "link": "27e11d5d09ca61a4eea8d15f532efbe90734fb7872131c4b40af0625f2fdbc00",
+      "prev": "genesis",
+      "seconds": 0.011,
+      "error": ""
+    },
+    {
+      "stage": "copy",
+      "ok": true,
+      "hashes": {
+        "rtl_copy": "fb71b9bd9b29b2dc3dba93a45e71448706612dae714fa075fff1eac7dc430f61"
+      },
+      "link": "3eb6e02671e451b94d589a84e016e0ef9b6b82f470506295948313bcf02764b8",
+      "prev": "27e11d5d09ca61a4eea8d15f532efbe90734fb7872131c4b40af0625f2fdbc00",
+      "seconds": 0.002,
+      "error": ""
+    },
+    {
+      "stage": "stats",
+      "ok": true,
+      "hashes": {
+        "stats": "debd78ed41a8dacea9e7c83b012bc7c3e3383642c78c379aba69142113e6a785"
+      },
+      "link": "1cea68b14df27cb6eb279a879016934b0a7537016923a669ce2a96728f0937d4",
+      "prev": "3eb6e02671e451b94d589a84e016e0ef9b6b82f470506295948313bcf02764b8",
+      "seconds": 0.009,
+      "error": ""
+    }
+  ],
+  "head": "1cea68b14df27cb6eb279a879016934b0a7537016923a669ce2a96728f0937d4"
+}

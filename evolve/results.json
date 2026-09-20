@@ -1,0 +1,3806 @@
+{
+  "mult8": {
+    "sequential": false,
+    "generations": [
+      {
+        "gen": 0,
+        "evaluated": 12,
+        "counts": {
+          "ok": 6,
+          "unmeasured": 1,
+          "invalid_script": 5
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 444,
+            "lev": 35
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+            "and": 471,
+            "lev": 33
+          },
+          {
+            "script": "balance; rewrite; strash; balance; rewrite",
+            "and": 482,
+            "lev": 30
+          }
+        ]
+      },
+      {
+        "gen": 1,
+        "evaluated": 7,
+        "counts": {
+          "invalid_script": 4,
+          "ok": 3
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 444,
+            "lev": 35
+          },
+          {
+            "script": "balance; rewrite; strash; drw -l; dch; balance",
+            "and": 460,
+            "lev": 28
+          }
+        ]
+      },
+      {
+        "gen": 2,
+        "evaluated": 4,
+        "counts": {
+          "ok": 4
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 444,
+            "lev": 35
+          },
+          {
+            "script": "balance; rewrite; strash; drw -l; dch; balance",
+            "and": 460,
+            "lev": 28
+          },
+          {
+            "script": "balance; rewrite; strash; dch; balance",
+            "and": 460,
+            "lev": 28
+          },
+          {
+            "script": "balance; strash; drw -l; dch; balance",
+            "and": 460,
+            "lev": 28
+          }
+        ]
+      },
+      {
+        "gen": 3,
+        "evaluated": 6,
+        "counts": {
+          "invalid_script": 2,
+          "ok": 4
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 444,
+            "lev": 35
+          },
+          {
+            "script": "balance; strash; dch; balance",
+            "and": 457,
+            "lev": 28
+          }
+        ]
+      },
+      {
+        "gen": 4,
+        "evaluated": 4,
+        "counts": {
+          "invalid_script": 2,
+          "ok": 2
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 444,
+            "lev": 35
+          },
+          {
+            "script": "balance; strash; dch; balance",
+            "and": 457,
+            "lev": 28
+          },
+          {
+            "script": "balance; dch; strash; balance; resub -K 8 -N 2",
+            "and": 457,
+            "lev": 28
+          }
+        ]
+      },
+      {
+        "gen": 5,
+        "evaluated": 5,
+        "counts": {
+          "invalid_script": 3,
+          "ok": 2
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 444,
+            "lev": 35
+          },
+          {
+            "script": "balance; rewrite; dch; strash; dc2; balance",
+            "and": 450,
+            "lev": 33
+          },
+          {
+            "script": "balance; dch; strash; dc2; dch; balance",
+            "and": 450,
+            "lev": 33
+          },
+          {
+            "script": "balance; strash; dch; balance",
+            "and": 457,
+            "lev": 28
+          },
+          {
+            "script": "balance; dch; strash; balance; resub -K 8 -N 2",
+            "and": 457,
+            "lev": 28
+          }
+        ]
+      },
+      {
+        "gen": 6,
+        "evaluated": 3,
+        "counts": {
+          "ok": 3
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 444,
+            "lev": 35
+          },
+          {
+            "script": "balance; rewrite; dch; strash; dc2; balance",
+            "and": 450,
+            "lev": 33
+          },
+          {
+            "script": "balance; dch; strash; dc2; dch; balance",
+            "and": 450,
+            "lev": 33
+          },
+          {
+            "script": "balance; strash; dch; balance",
+            "and": 457,
+            "lev": 28
+          },
+          {
+            "script": "balance; dch; strash; balance; resub -K 8 -N 2",
+            "and": 457,
+            "lev": 28
+          }
+        ]
+      },
+      {
+        "gen": 7,
+        "evaluated": 4,
+        "counts": {
+          "ok": 3,
+          "invalid_script": 1
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 444,
+            "lev": 35
+          },
+          {
+            "script": "balance; rewrite; dch; strash; dc2; balance",
+            "and": 450,
+            "lev": 33
+          },
+          {
+            "script": "balance; dch; strash; dc2; dch; balance",
+            "and": 450,
+            "lev": 33
+          },
+          {
+            "script": "balance; strash; dch; balance",
+            "and": 457,
+            "lev": 28
+          },
+          {
+            "script": "balance; dch; strash; balance; resub -K 8 -N 2",
+            "and": 457,
+            "lev": 28
+          }
+        ]
+      }
+    ],
+    "evaluated": 45,
+    "status_counts": {
+      "ok": 27,
+      "rejected": 0,
+      "invalid_script": 17,
+      "no_result": 0
+    },
+    "best_area": {
+      "script": "balance; rewrite; strash; dc2; dch; balance",
+      "and": 444,
+      "lev": 35,
+      "gen": 0
+    },
+    "best_depth": {
+      "script": "balance; rewrite; strash; drw -l; dch; balance",
+      "and": 460,
+      "lev": 28,
+      "gen": 1
+    },
+    "gate_selftest": "verifier rejected the corrupted netlist (counterexample Input pattern:  a[0]=1 b[0]=0)",
+    "gate_ok": true,
+    "pareto": [
+      [
+        444,
+        35,
+        "balance; rewrite; strash; dc2; dch; balance"
+      ],
+      [
+        450,
+        33,
+        "balance; dch; strash; dc2; dch; balance"
+      ],
+      [
+        450,
+        33,
+        "balance; rewrite; dch; strash; dc2; balance"
+      ],
+      [
+        457,
+        28,
+        "balance; dch; strash; balance; resub -K 8 -N 2"
+      ],
+      [
+        457,
+        28,
+        "balance; strash; dch; balance"
+      ]
+    ],
+    "rows": [
+      {
+        "gen": 0,
+        "script": "balance; rewrite; strash; balance; rewrite",
+        "status": "ok",
+        "and": 482,
+        "lev": 30,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 0,
+        "script": "balance; rewrite; strash; dc2; dch; balance",
+        "status": "ok",
+        "and": 444,
+        "lev": 35,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 0,
+        "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+        "status": "ok",
+        "and": 445,
+        "lev": 36,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 0,
+        "script": "strash; drw; rewrite; if -K 8",
+        "status": "unmeasured",
+        "and": null,
+        "lev": null,
+        "error": "no stats line (rc=0)",
+        "verify": null
+      },
+      {
+        "gen": 0,
+        "script": "fx; fx; strash; drw; dc2",
+        "status": "ok",
+        "and": 447,
+        "lev": 36,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 0,
+        "script": "fx; strash; dc2; renode; balance; balance",
+        "status": "ok",
+        "and": 504,
+        "lev": 32,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 0,
+        "script": "fx; strash; renode; mfs; rewrite -l",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 0,
+        "script": "strash; mfs; renode; renode",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to a logic network.",
+        "verify": null
+      },
+      {
+        "gen": 0,
+        "script": "renode; mfs; strash; renode; if -K 6; dc2",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: Cannot renode a network that is not an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 0,
+        "script": "strash; rewrite -z; mfs; if -K 8; fx",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to a logic network.",
+        "verify": null
+      },
+      {
+        "gen": 0,
+        "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+        "status": "ok",
+        "and": 471,
+        "lev": 33,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 0,
+        "script": "strash; mfs; if -K 8; if -K 8; fx",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to a logic network.",
+        "verify": null
+      },
+      {
+        "gen": 1,
+        "script": "drw; strash; rewrite -lz; resub -K 8; resub -K 10",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command works only for strashed networks.",
+        "verify": null
+      },
+      {
+        "gen": 1,
+        "script": "resub -K 10; strash; rewrite -lz; resub -K 8; drw",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 1,
+        "script": "dc2; rewrite; strash; balance; dch; balance",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command works only for strashed networks.",
+        "verify": null
+      },
+      {
+        "gen": 1,
+        "script": "resub -K 10; strash; rewrite -lz; drw",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 1,
+        "script": "balance; rewrite; strash; drw -l; dch; balance",
+        "status": "ok",
+        "and": 460,
+        "lev": 28,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 1,
+        "script": "strash; rewrite -lz; resub -K 8; resub -K 8 -N 2; drw",
+        "status": "ok",
+        "and": 468,
+        "lev": 34,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 1,
+        "script": "balance; dc2; rewrite; strash; rewrite",
+        "status": "ok",
+        "and": 447,
+        "lev": 37,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 2,
+        "script": "balance; rewrite; strash; dch; balance",
+        "status": "ok",
+        "and": 460,
+        "lev": 28,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 2,
+        "script": "balance; rewrite; strash; dc2; dch",
+        "status": "ok",
+        "and": 473,
+        "lev": 35,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 2,
+        "script": "balance; strash; drw -l; dch; balance",
+        "status": "ok",
+        "and": 460,
+        "lev": 28,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 2,
+        "script": "balance; rewrite -lz; strash; drw -l; rewrite -z; dch",
+        "status": "ok",
+        "and": 582,
+        "lev": 32,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 3,
+        "script": "rewrite; strash; dch; balance",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 3,
+        "script": "balance; strash; dch; balance",
+        "status": "ok",
+        "and": 457,
+        "lev": 28,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 3,
+        "script": "if -K 8; rewrite; strash; dc2; dch; balance",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 3,
+        "script": "balance; rewrite; strash; dc2; if -K 4; balance",
+        "status": "ok",
+        "and": 446,
+        "lev": 36,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 3,
+        "script": "balance; rewrite; strash; dc2; if -K 6; balance",
+        "status": "ok",
+        "and": 446,
+        "lev": 36,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 3,
+        "script": "balance; strash; rewrite; dc2; dc2; if -K 4; balance",
+        "status": "ok",
+        "and": 446,
+        "lev": 36,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 4,
+        "script": "dch; balance; strash; balance",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command works only for strashed networks.",
+        "verify": null
+      },
+      {
+        "gen": 4,
+        "script": "balance; balance; strash; dch",
+        "status": "ok",
+        "and": 833,
+        "lev": 29,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 4,
+        "script": "resub -K 8 -N 2; rewrite; strash; dc2; dch; balance",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 4,
+        "script": "balance; dch; strash; balance; resub -K 8 -N 2",
+        "status": "ok",
+        "and": 457,
+        "lev": 28,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 5,
+        "script": "balance; mfs; strash; dch; balance",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to a logic network.",
+        "verify": null
+      },
+      {
+        "gen": 5,
+        "script": "balance; balance; strash; dch; resub -K 8 -N 2",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: AIG resynthesis cannot be applied to AIGs with choice nodes.",
+        "verify": null
+      },
+      {
+        "gen": 5,
+        "script": "balance; rewrite; dch; strash; dc2; balance",
+        "status": "ok",
+        "and": 450,
+        "lev": 33,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 5,
+        "script": "balance; fx; strash; balance; resub -K 8 -N 2",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: Fast extract can only be applied to a logic network (run \"renode\" or \"if\"",
+        "verify": null
+      },
+      {
+        "gen": 5,
+        "script": "balance; dch; strash; dc2; dch; balance",
+        "status": "ok",
+        "and": 450,
+        "lev": 33,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 6,
+        "script": "balance; dch; strash; dc2; dch; dch",
+        "status": "ok",
+        "and": 484,
+        "lev": 33,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 6,
+        "script": "balance; dch; strash; resub -K 10; dch; dch",
+        "status": "ok",
+        "and": 492,
+        "lev": 28,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 6,
+        "script": "balance; rewrite -z; strash; dch",
+        "status": "ok",
+        "and": 604,
+        "lev": 29,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 7,
+        "script": "balance; rewrite; dch; strash; dc2; dc2",
+        "status": "ok",
+        "and": 450,
+        "lev": 34,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 7,
+        "script": "balance; strash; dch",
+        "status": "ok",
+        "and": 833,
+        "lev": 29,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 7,
+        "script": "balance; strash; rewrite; dch; balance",
+        "status": "ok",
+        "and": 460,
+        "lev": 28,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 7,
+        "script": "balance; strash; balance; dch; rewrite",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: AIG resynthesis cannot be applied to AIGs with choice nodes.",
+        "verify": null
+      }
+    ],
+    "fixed_best_area": {
+      "name": "mix",
+      "and": 443,
+      "lev": 35
+    },
+    "fixed_best_depth": {
+      "name": "dch",
+      "and": 460,
+      "lev": 28
+    },
+    "evolve_beats_fixed_area": false,
+    "evolve_beats_fixed_depth": false,
+    "seconds": 21.4
+  },
+  "adder32": {
+    "sequential": false,
+    "generations": [
+      {
+        "gen": 0,
+        "evaluated": 12,
+        "counts": {
+          "ok": 6,
+          "unmeasured": 1,
+          "invalid_script": 5
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 330,
+            "lev": 66
+          },
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 358,
+            "lev": 57
+          },
+          {
+            "script": "fx; strash; dc2; renode; balance; balance",
+            "and": 371,
+            "lev": 49
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+            "and": 445,
+            "lev": 37
+          },
+          {
+            "script": "balance; rewrite; strash; balance; rewrite",
+            "and": 459,
+            "lev": 26
+          }
+        ]
+      },
+      {
+        "gen": 1,
+        "evaluated": 4,
+        "counts": {
+          "ok": 3,
+          "invalid_script": 1
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 330,
+            "lev": 66
+          },
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 358,
+            "lev": 57
+          },
+          {
+            "script": "fx; strash; dc2; renode; balance; balance",
+            "and": 371,
+            "lev": 49
+          },
+          {
+            "script": "balance; rewrite; strash; drw -l; dch; balance",
+            "and": 411,
+            "lev": 26
+          }
+        ]
+      },
+      {
+        "gen": 2,
+        "evaluated": 3,
+        "counts": {
+          "ok": 2,
+          "invalid_script": 1
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 330,
+            "lev": 66
+          },
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 358,
+            "lev": 57
+          },
+          {
+            "script": "fx; strash; dc2; renode; balance; balance",
+            "and": 371,
+            "lev": 49
+          },
+          {
+            "script": "balance; rewrite; strash; drw -l; dch; balance",
+            "and": 411,
+            "lev": 26
+          },
+          {
+            "script": "balance; rewrite; strash; dch; balance",
+            "and": 411,
+            "lev": 26
+          }
+        ]
+      },
+      {
+        "gen": 3,
+        "evaluated": 4,
+        "counts": {
+          "ok": 4
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 330,
+            "lev": 66
+          },
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 358,
+            "lev": 57
+          },
+          {
+            "script": "fx; strash; dc2; renode; balance; balance",
+            "and": 371,
+            "lev": 49
+          },
+          {
+            "script": "strash; dch; balance; balance",
+            "and": 408,
+            "lev": 27
+          },
+          {
+            "script": "balance; strash; dch; balance",
+            "and": 411,
+            "lev": 25
+          }
+        ]
+      },
+      {
+        "gen": 4,
+        "evaluated": 3,
+        "counts": {
+          "ok": 2,
+          "unmeasured": 1
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 330,
+            "lev": 66
+          },
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 358,
+            "lev": 57
+          },
+          {
+            "script": "fx; strash; dc2; renode; balance; balance",
+            "and": 371,
+            "lev": 49
+          },
+          {
+            "script": "strash; dch; balance; balance",
+            "and": 408,
+            "lev": 27
+          },
+          {
+            "script": "balance; strash; dch; balance",
+            "and": 411,
+            "lev": 25
+          },
+          {
+            "script": "balance; dch; strash; balance",
+            "and": 411,
+            "lev": 25
+          }
+        ]
+      },
+      {
+        "gen": 5,
+        "evaluated": 3,
+        "counts": {
+          "invalid_script": 2,
+          "ok": 1
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 330,
+            "lev": 66
+          },
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 358,
+            "lev": 57
+          },
+          {
+            "script": "fx; strash; dc2; renode; balance; balance",
+            "and": 371,
+            "lev": 49
+          },
+          {
+            "script": "strash; dch; balance; balance",
+            "and": 408,
+            "lev": 27
+          },
+          {
+            "script": "strash; dch; balance",
+            "and": 408,
+            "lev": 27
+          },
+          {
+            "script": "balance; strash; dch; balance",
+            "and": 411,
+            "lev": 25
+          }
+        ]
+      },
+      {
+        "gen": 6,
+        "evaluated": 3,
+        "counts": {
+          "invalid_script": 2,
+          "ok": 1
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 330,
+            "lev": 66
+          },
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 358,
+            "lev": 57
+          },
+          {
+            "script": "fx; strash; dc2; renode; balance; balance",
+            "and": 371,
+            "lev": 49
+          },
+          {
+            "script": "strash; dch; balance; balance",
+            "and": 408,
+            "lev": 27
+          },
+          {
+            "script": "strash; dch; balance",
+            "and": 408,
+            "lev": 27
+          },
+          {
+            "script": "balance; strash; dch; balance",
+            "and": 411,
+            "lev": 25
+          }
+        ]
+      },
+      {
+        "gen": 7,
+        "evaluated": 4,
+        "counts": {
+          "ok": 3,
+          "invalid_script": 1
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 330,
+            "lev": 66
+          },
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 358,
+            "lev": 57
+          },
+          {
+            "script": "fx; strash; dc2; renode; balance; balance",
+            "and": 371,
+            "lev": 49
+          },
+          {
+            "script": "strash; dch; balance; balance",
+            "and": 408,
+            "lev": 27
+          },
+          {
+            "script": "strash; dch; balance",
+            "and": 408,
+            "lev": 27
+          },
+          {
+            "script": "balance; strash; dch; balance",
+            "and": 411,
+            "lev": 25
+          }
+        ]
+      }
+    ],
+    "evaluated": 36,
+    "status_counts": {
+      "ok": 22,
+      "rejected": 0,
+      "invalid_script": 12,
+      "no_result": 0
+    },
+    "best_area": {
+      "script": "balance; rewrite; strash; dc2; dch; balance",
+      "and": 330,
+      "lev": 66,
+      "gen": 0
+    },
+    "best_depth": {
+      "script": "balance; strash; dch; balance",
+      "and": 411,
+      "lev": 25,
+      "gen": 3
+    },
+    "gate_selftest": "verifier rejected the corrupted netlist (counterexample Input pattern:  cin=0 a[0]=1 b[0]=0)",
+    "gate_ok": true,
+    "pareto": [
+      [
+        330,
+        66,
+        "balance; rewrite; strash; dc2; dch; balance"
+      ],
+      [
+        358,
+        57,
+        "fx; mfs; strash; rewrite -l; resub -K 8; dc2"
+      ],
+      [
+        371,
+        49,
+        "fx; strash; dc2; renode; balance; balance"
+      ],
+      [
+        408,
+        27,
+        "strash; dch; balance"
+      ],
+      [
+        408,
+        27,
+        "strash; dch; balance; balance"
+      ],
+      [
+        411,
+        25,
+        "balance; dch; strash; balance"
+      ],
+      [
+        411,
+        25,
+        "balance; strash; dch; balance"
+      ],
+      [
+        411,
+        25,
+        "strash; balance; balance; dch; balance"
+      ]
+    ],
+    "rows": [
+      {
+        "gen": 0,
+        "script": "balance; rewrite; strash; balance; rewrite",
+        "status": "ok",
+        "and": 459,
+        "lev": 26,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 0,
+        "script": "balance; rewrite; strash; dc2; dch; balance",
+        "status": "ok",
+        "and": 330,
+        "lev": 66,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 0,
+        "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+        "status": "ok",
+        "and": 358,
+        "lev": 57,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 0,
+        "script": "strash; drw; rewrite; if -K 8",
+        "status": "unmeasured",
+        "and": null,
+        "lev": null,
+        "error": "no stats line (rc=0)",
+        "verify": null
+      },
+      {
+        "gen": 0,
+        "script": "fx; fx; strash; drw; dc2",
+        "status": "ok",
+        "and": 331,
+        "lev": 67,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 0,
+        "script": "fx; strash; dc2; renode; balance; balance",
+        "status": "ok",
+        "and": 371,
+        "lev": 49,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 0,
+        "script": "fx; strash; renode; mfs; rewrite -l",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 0,
+        "script": "strash; mfs; renode; renode",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to a logic network.",
+        "verify": null
+      },
+      {
+        "gen": 0,
+        "script": "renode; mfs; strash; renode; if -K 6; dc2",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: Cannot renode a network that is not an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 0,
+        "script": "strash; rewrite -z; mfs; if -K 8; fx",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to a logic network.",
+        "verify": null
+      },
+      {
+        "gen": 0,
+        "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+        "status": "ok",
+        "and": 445,
+        "lev": 37,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 0,
+        "script": "strash; mfs; if -K 8; if -K 8; fx",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to a logic network.",
+        "verify": null
+      },
+      {
+        "gen": 1,
+        "script": "balance; rewrite; balance; strash; rewrite",
+        "status": "ok",
+        "and": 459,
+        "lev": 26,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 1,
+        "script": "balance; rewrite; strash; rewrite",
+        "status": "ok",
+        "and": 460,
+        "lev": 26,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 1,
+        "script": "balance; rewrite; strash; drw -l; dch; balance",
+        "status": "ok",
+        "and": 411,
+        "lev": 26,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 1,
+        "script": "fx; rewrite -l; mfs; strash; resub -K 8; dc2",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 2,
+        "script": "balance; rewrite; strash; dch; balance",
+        "status": "ok",
+        "and": 411,
+        "lev": 26,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 2,
+        "script": "fx; mfs; strash; rewrite -l; resub -K 8",
+        "status": "ok",
+        "and": 463,
+        "lev": 27,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 2,
+        "script": "drw; strash; balance; dch; balance",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command works only for strashed networks.",
+        "verify": null
+      },
+      {
+        "gen": 3,
+        "script": "balance; strash; dch; balance",
+        "status": "ok",
+        "and": 411,
+        "lev": 25,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 3,
+        "script": "balance; rewrite; strash; dch; if -K 6; balance",
+        "status": "ok",
+        "and": 434,
+        "lev": 26,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 3,
+        "script": "balance; rewrite; strash; if -K 6; balance",
+        "status": "ok",
+        "and": 471,
+        "lev": 26,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 3,
+        "script": "strash; dch; balance; balance",
+        "status": "ok",
+        "and": 408,
+        "lev": 27,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 4,
+        "script": "balance; dch; strash; balance",
+        "status": "ok",
+        "and": 411,
+        "lev": 25,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 4,
+        "script": "balance; strash; dch; if -K 8",
+        "status": "unmeasured",
+        "and": null,
+        "lev": null,
+        "error": "no stats line (rc=0)",
+        "verify": null
+      },
+      {
+        "gen": 4,
+        "script": "balance; rewrite; strash; dc2; dch",
+        "status": "ok",
+        "and": 436,
+        "lev": 66,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 5,
+        "script": "dc2; rewrite; strash; dc2; dch; balance",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command works only for strashed networks.",
+        "verify": null
+      },
+      {
+        "gen": 5,
+        "script": "strash; dch; balance",
+        "status": "ok",
+        "and": 408,
+        "lev": 27,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 5,
+        "script": "dc2; strash; dch; balance",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command works only for strashed networks.",
+        "verify": null
+      },
+      {
+        "gen": 6,
+        "script": "resub -K 8 -N 2; mfs; strash; rewrite -l; resub -K 8; dc2",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 6,
+        "script": "fx; balance; dc2; renode; strash; balance",
+        "status": "ok",
+        "and": 375,
+        "lev": 54,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 6,
+        "script": "balance; strash; dc2; dch; rewrite",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: AIG resynthesis cannot be applied to AIGs with choice nodes.",
+        "verify": null
+      },
+      {
+        "gen": 7,
+        "script": "strash; dch; balance; balance; dch",
+        "status": "ok",
+        "and": 513,
+        "lev": 27,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 7,
+        "script": "balance; balance; strash; dch",
+        "status": "ok",
+        "and": 845,
+        "lev": 25,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 7,
+        "script": "mfs; fx; strash; rewrite -l; resub -K 8; dc2",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: Fast extract can only be applied to a logic network with SOP local functi",
+        "verify": null
+      },
+      {
+        "gen": 7,
+        "script": "strash; balance; balance; dch; balance",
+        "status": "ok",
+        "and": 411,
+        "lev": 25,
+        "error": null,
+        "verify": "cec equivalent"
+      }
+    ],
+    "fixed_best_area": {
+      "name": "mix",
+      "and": 329,
+      "lev": 66
+    },
+    "fixed_best_depth": {
+      "name": "baseline",
+      "and": 459,
+      "lev": 26
+    },
+    "evolve_beats_fixed_area": false,
+    "evolve_beats_fixed_depth": true,
+    "seconds": 9.7
+  },
+  "prio32": {
+    "sequential": false,
+    "generations": [
+      {
+        "gen": 0,
+        "evaluated": 12,
+        "counts": {
+          "ok": 6,
+          "unmeasured": 1,
+          "invalid_script": 5
+        },
+        "front": [
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 68,
+            "lev": 31
+          },
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 77,
+            "lev": 16
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+            "and": 78,
+            "lev": 15
+          },
+          {
+            "script": "fx; strash; dc2; renode; balance; balance",
+            "and": 90,
+            "lev": 8
+          }
+        ]
+      },
+      {
+        "gen": 1,
+        "evaluated": 6,
+        "counts": {
+          "ok": 5,
+          "invalid_script": 1
+        },
+        "front": [
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 68,
+            "lev": 31
+          },
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 77,
+            "lev": 16
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+            "and": 78,
+            "lev": 15
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 10; resub -K 8; drw",
+            "and": 78,
+            "lev": 15
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 10; resub -K 8; resub -K 4; drw",
+            "and": 78,
+            "lev": 15
+          },
+          {
+            "script": "strash; rewrite -z; resub -K 10; resub -K 8; drw",
+            "and": 82,
+            "lev": 11
+          }
+        ]
+      },
+      {
+        "gen": 2,
+        "evaluated": 5,
+        "counts": {
+          "invalid_script": 4,
+          "ok": 1
+        },
+        "front": [
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 68,
+            "lev": 31
+          },
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 77,
+            "lev": 16
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+            "and": 78,
+            "lev": 15
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 10; resub -K 8; drw",
+            "and": 78,
+            "lev": 15
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 10; resub -K 8; resub -K 4; drw",
+            "and": 78,
+            "lev": 15
+          },
+          {
+            "script": "strash; balance; rewrite -lz; resub -K 10; resub -K 8; drw",
+            "and": 78,
+            "lev": 15
+          }
+        ]
+      },
+      {
+        "gen": 3,
+        "evaluated": 5,
+        "counts": {
+          "ok": 4,
+          "invalid_script": 1
+        },
+        "front": [
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 68,
+            "lev": 31
+          },
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 77,
+            "lev": 16
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+            "and": 78,
+            "lev": 15
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 10; resub -K 8; drw",
+            "and": 78,
+            "lev": 15
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 10; resub -K 8; resub -K 4; drw",
+            "and": 78,
+            "lev": 15
+          },
+          {
+            "script": "strash; balance; rewrite -lz; resub -K 10; resub -K 8; drw",
+            "and": 78,
+            "lev": 15
+          }
+        ]
+      },
+      {
+        "gen": 4,
+        "evaluated": 4,
+        "counts": {
+          "invalid_script": 2,
+          "ok": 2
+        },
+        "front": [
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 68,
+            "lev": 31
+          },
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 77,
+            "lev": 16
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+            "and": 78,
+            "lev": 15
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 10; resub -K 8; drw",
+            "and": 78,
+            "lev": 15
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 10; resub -K 8; resub -K 4; drw",
+            "and": 78,
+            "lev": 15
+          },
+          {
+            "script": "strash; balance; rewrite -lz; resub -K 10; resub -K 8; drw",
+            "and": 78,
+            "lev": 15
+          }
+        ]
+      },
+      {
+        "gen": 5,
+        "evaluated": 3,
+        "counts": {
+          "ok": 1,
+          "unmeasured": 1,
+          "invalid_script": 1
+        },
+        "front": [
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 68,
+            "lev": 31
+          },
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 77,
+            "lev": 16
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+            "and": 78,
+            "lev": 15
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 10; resub -K 8; drw",
+            "and": 78,
+            "lev": 15
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 10; resub -K 8; resub -K 4; drw",
+            "and": 78,
+            "lev": 15
+          },
+          {
+            "script": "strash; balance; rewrite -lz; resub -K 10; resub -K 8; drw",
+            "and": 78,
+            "lev": 15
+          }
+        ]
+      },
+      {
+        "gen": 6,
+        "evaluated": 4,
+        "counts": {
+          "invalid_script": 4
+        },
+        "front": [
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 68,
+            "lev": 31
+          },
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 77,
+            "lev": 16
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+            "and": 78,
+            "lev": 15
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 10; resub -K 8; drw",
+            "and": 78,
+            "lev": 15
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 10; resub -K 8; resub -K 4; drw",
+            "and": 78,
+            "lev": 15
+          },
+          {
+            "script": "strash; balance; rewrite -lz; resub -K 10; resub -K 8; drw",
+            "and": 78,
+            "lev": 15
+          }
+        ]
+      },
+      {
+        "gen": 7,
+        "evaluated": 3,
+        "counts": {
+          "ok": 3
+        },
+        "front": [
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 68,
+            "lev": 31
+          },
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 77,
+            "lev": 16
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+            "and": 78,
+            "lev": 15
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 10; resub -K 8; drw",
+            "and": 78,
+            "lev": 15
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 10; resub -K 8; resub -K 4; drw",
+            "and": 78,
+            "lev": 15
+          },
+          {
+            "script": "strash; balance; rewrite -lz; resub -K 10; resub -K 8; drw",
+            "and": 78,
+            "lev": 15
+          }
+        ]
+      }
+    ],
+    "evaluated": 42,
+    "status_counts": {
+      "ok": 22,
+      "rejected": 0,
+      "invalid_script": 18,
+      "no_result": 0
+    },
+    "best_area": {
+      "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+      "and": 68,
+      "lev": 31,
+      "gen": 0
+    },
+    "best_depth": {
+      "script": "balance; rewrite; strash; balance; rewrite",
+      "and": 91,
+      "lev": 8,
+      "gen": 0
+    },
+    "gate_selftest": "verifier rejected the corrupted netlist (counterexample Input pattern:  x[2]=1 x[0]=0 x[1]=0)",
+    "gate_ok": true,
+    "pareto": [
+      [
+        68,
+        31,
+        "fx; mfs; strash; rewrite -l; resub -K 8; dc2"
+      ],
+      [
+        77,
+        16,
+        "balance; rewrite; strash; dc2; dch; balance"
+      ],
+      [
+        78,
+        15,
+        "strash; balance; rewrite -lz; resub -K 10; resub -K 8; drw"
+      ],
+      [
+        78,
+        15,
+        "strash; rewrite -l; resub -K 10; resub -K 8; drw"
+      ],
+      [
+        78,
+        15,
+        "strash; rewrite -lz; resub -K 10; resub -K 8; drw"
+      ],
+      [
+        78,
+        15,
+        "strash; rewrite -lz; resub -K 10; resub -K 8; resub -K 4; drw"
+      ],
+      [
+        78,
+        15,
+        "strash; rewrite -lz; resub -K 6; resub -K 10; drw"
+      ],
+      [
+        78,
+        15,
+        "strash; rewrite -lz; resub -K 8; drw"
+      ],
+      [
+        78,
+        15,
+        "strash; rewrite -lz; resub -K 8; resub -K 10; drw"
+      ],
+      [
+        80,
+        13,
+        "strash; resub -K 10; resub -K 8; drw"
+      ],
+      [
+        80,
+        13,
+        "strash; resub -K 8; resub -K 10; drw"
+      ],
+      [
+        80,
+        13,
+        "strash; rewrite; resub -K 8; drw"
+      ],
+      [
+        82,
+        11,
+        "strash; rewrite -z; resub -K 10; resub -K 8; drw"
+      ],
+      [
+        90,
+        8,
+        "fx; strash; dc2; renode; balance; balance"
+      ]
+    ],
+    "rows": [
+      {
+        "gen": 0,
+        "script": "balance; rewrite; strash; balance; rewrite",
+        "status": "ok",
+        "and": 91,
+        "lev": 8,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 0,
+        "script": "balance; rewrite; strash; dc2; dch; balance",
+        "status": "ok",
+        "and": 77,
+        "lev": 16,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 0,
+        "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+        "status": "ok",
+        "and": 68,
+        "lev": 31,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 0,
+        "script": "strash; drw; rewrite; if -K 8",
+        "status": "unmeasured",
+        "and": null,
+        "lev": null,
+        "error": "no stats line (rc=0)",
+        "verify": null
+      },
+      {
+        "gen": 0,
+        "script": "fx; fx; strash; drw; dc2",
+        "status": "ok",
+        "and": 78,
+        "lev": 31,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 0,
+        "script": "fx; strash; dc2; renode; balance; balance",
+        "status": "ok",
+        "and": 90,
+        "lev": 8,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 0,
+        "script": "fx; strash; renode; mfs; rewrite -l",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 0,
+        "script": "strash; mfs; renode; renode",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to a logic network.",
+        "verify": null
+      },
+      {
+        "gen": 0,
+        "script": "renode; mfs; strash; renode; if -K 6; dc2",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: Cannot renode a network that is not an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 0,
+        "script": "strash; rewrite -z; mfs; if -K 8; fx",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to a logic network.",
+        "verify": null
+      },
+      {
+        "gen": 0,
+        "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+        "status": "ok",
+        "and": 78,
+        "lev": 15,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 0,
+        "script": "strash; mfs; if -K 8; if -K 8; fx",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to a logic network.",
+        "verify": null
+      },
+      {
+        "gen": 1,
+        "script": "balance; balance; rewrite; strash; dc2; dch",
+        "status": "ok",
+        "and": 112,
+        "lev": 16,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 1,
+        "script": "strash; rewrite -lz; resub -K 10; resub -K 8; drw",
+        "status": "ok",
+        "and": 78,
+        "lev": 15,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 1,
+        "script": "rewrite; balance; balance; strash; dc2; dch",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 1,
+        "script": "strash; rewrite -lz; resub -K 10; resub -K 8; resub -K 4; drw",
+        "status": "ok",
+        "and": 78,
+        "lev": 15,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 1,
+        "script": "strash; rewrite -z; resub -K 10; resub -K 8; drw",
+        "status": "ok",
+        "and": 82,
+        "lev": 11,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 1,
+        "script": "fx; mfs; mfs; strash; resub -K 8; dc2",
+        "status": "ok",
+        "and": 71,
+        "lev": 31,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 2,
+        "script": "resub -K 6; mfs; strash; rewrite -l; resub -K 8; dc2",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 2,
+        "script": "mfs; fx; strash; rewrite -l; resub -K 8; dc2",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: Fast extract can only be applied to a logic network with SOP local functi",
+        "verify": null
+      },
+      {
+        "gen": 2,
+        "script": "mfs; fx; strash; rewrite -l; resub -K 6; dc2",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: Fast extract can only be applied to a logic network with SOP local functi",
+        "verify": null
+      },
+      {
+        "gen": 2,
+        "script": "strash; balance; rewrite -lz; resub -K 10; resub -K 8; drw",
+        "status": "ok",
+        "and": 78,
+        "lev": 15,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 2,
+        "script": "resub -K 8; strash; rewrite -lz; balance; resub -K 10",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 3,
+        "script": "strash; rewrite -lz; resub -K 8; drw",
+        "status": "ok",
+        "and": 78,
+        "lev": 15,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 3,
+        "script": "balance; rewrite; strash; dc2; dch",
+        "status": "ok",
+        "and": 112,
+        "lev": 16,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 3,
+        "script": "strash; rewrite; resub -K 8; drw",
+        "status": "ok",
+        "and": 80,
+        "lev": 13,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 3,
+        "script": "strash; resub -K 8; resub -K 10; drw",
+        "status": "ok",
+        "and": 80,
+        "lev": 13,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 3,
+        "script": "renode; resub -K 8 -N 2; strash; resub -K 10; drw",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: Cannot renode a network that is not an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 4,
+        "script": "strash; rewrite -lz; if -K 8; resub -K 10; drw",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 4,
+        "script": "if -K 8; mfs; strash; rewrite -l; resub -K 8; dc2",
+        "status": "ok",
+        "and": 77,
+        "lev": 31,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 4,
+        "script": "strash; resub -K 10; resub -K 8; drw",
+        "status": "ok",
+        "and": 80,
+        "lev": 13,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 4,
+        "script": "mfs; strash; if -K 8; rewrite -l; resub -K 8; dc2",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 5,
+        "script": "strash; rewrite -l; resub -K 10; resub -K 8; drw",
+        "status": "ok",
+        "and": 78,
+        "lev": 15,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 5,
+        "script": "strash; rewrite -lz; resub -K 10; resub -K 8; if -K 6",
+        "status": "unmeasured",
+        "and": null,
+        "lev": null,
+        "error": "no stats line (rc=0)",
+        "verify": null
+      },
+      {
+        "gen": 5,
+        "script": "strash; rewrite; resub -K 10; renode; resub -K 4; drw",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 6,
+        "script": "resub -K 8; strash; rewrite -lz; resub -K 10; drw",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 6,
+        "script": "resub -K 8; strash; rewrite; resub -K 10; drw",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 6,
+        "script": "resub -K 8; strash; rewrite -lz; drw",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 6,
+        "script": "resub -K 8 -N 2; fx; strash; rewrite -l; renode",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 7,
+        "script": "strash; rewrite -lz; resub -K 6; resub -K 10; drw",
+        "status": "ok",
+        "and": 78,
+        "lev": 15,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 7,
+        "script": "strash; drw; resub -K 10; resub -K 8; rewrite -lz",
+        "status": "ok",
+        "and": 79,
+        "lev": 20,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 7,
+        "script": "strash; drw; resub -K 6; resub -K 10",
+        "status": "ok",
+        "and": 83,
+        "lev": 11,
+        "error": null,
+        "verify": "cec equivalent"
+      }
+    ],
+    "fixed_best_area": {
+      "name": "dc2dch",
+      "and": 77,
+      "lev": 16
+    },
+    "fixed_best_depth": {
+      "name": "baseline",
+      "and": 91,
+      "lev": 8
+    },
+    "evolve_beats_fixed_area": true,
+    "evolve_beats_fixed_depth": false,
+    "seconds": 8.2
+  },
+  "barrel16": {
+    "sequential": false,
+    "generations": [
+      {
+        "gen": 0,
+        "evaluated": 12,
+        "counts": {
+          "ok": 6,
+          "unmeasured": 1,
+          "invalid_script": 5
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; balance; rewrite",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "fx; fx; strash; drw; dc2",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "fx; strash; dc2; renode; balance; balance",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+            "and": 162,
+            "lev": 8
+          }
+        ]
+      },
+      {
+        "gen": 1,
+        "evaluated": 4,
+        "counts": {
+          "invalid_script": 2,
+          "ok": 2
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; balance; rewrite",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "fx; fx; strash; drw; dc2",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "fx; strash; dc2; renode; balance; balance",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+            "and": 162,
+            "lev": 8
+          }
+        ]
+      },
+      {
+        "gen": 2,
+        "evaluated": 4,
+        "counts": {
+          "ok": 4
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; balance; rewrite",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "fx; fx; strash; drw; dc2",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "fx; strash; dc2; renode; balance; balance",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+            "and": 162,
+            "lev": 8
+          }
+        ]
+      },
+      {
+        "gen": 3,
+        "evaluated": 4,
+        "counts": {
+          "invalid_script": 4
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; balance; rewrite",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "fx; fx; strash; drw; dc2",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "fx; strash; dc2; renode; balance; balance",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+            "and": 162,
+            "lev": 8
+          }
+        ]
+      },
+      {
+        "gen": 4,
+        "evaluated": 2,
+        "counts": {
+          "invalid_script": 2
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; balance; rewrite",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "fx; fx; strash; drw; dc2",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "fx; strash; dc2; renode; balance; balance",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+            "and": 162,
+            "lev": 8
+          }
+        ]
+      },
+      {
+        "gen": 5,
+        "evaluated": 3,
+        "counts": {
+          "invalid_script": 2,
+          "ok": 1
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; balance; rewrite",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "fx; fx; strash; drw; dc2",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "fx; strash; dc2; renode; balance; balance",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+            "and": 162,
+            "lev": 8
+          }
+        ]
+      },
+      {
+        "gen": 6,
+        "evaluated": 5,
+        "counts": {
+          "ok": 5
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; balance; rewrite",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "fx; fx; strash; drw; dc2",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "fx; strash; dc2; renode; balance; balance",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+            "and": 162,
+            "lev": 8
+          }
+        ]
+      },
+      {
+        "gen": 7,
+        "evaluated": 4,
+        "counts": {
+          "invalid_script": 1,
+          "ok": 3
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; balance; rewrite",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "fx; fx; strash; drw; dc2",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "fx; strash; dc2; renode; balance; balance",
+            "and": 162,
+            "lev": 8
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+            "and": 162,
+            "lev": 8
+          }
+        ]
+      }
+    ],
+    "evaluated": 38,
+    "status_counts": {
+      "ok": 21,
+      "rejected": 0,
+      "invalid_script": 16,
+      "no_result": 0
+    },
+    "best_area": {
+      "script": "balance; rewrite; strash; balance; rewrite",
+      "and": 162,
+      "lev": 8,
+      "gen": 0
+    },
+    "best_depth": {
+      "script": "balance; rewrite; strash; balance; rewrite",
+      "and": 162,
+      "lev": 8,
+      "gen": 0
+    },
+    "gate_selftest": "verifier rejected the corrupted netlist (counterexample Input pattern:  s[3]=0 s[2]=0 s[1]=0 d[0]=1 s[0]=0 d[1]=0)",
+    "gate_ok": true,
+    "pareto": [
+      [
+        162,
+        8,
+        "balance; dch; strash; balance; rewrite -l"
+      ],
+      [
+        162,
+        8,
+        "balance; rewrite; strash; balance; dch; dc2"
+      ],
+      [
+        162,
+        8,
+        "balance; rewrite; strash; balance; rewrite"
+      ],
+      [
+        162,
+        8,
+        "balance; rewrite; strash; balance; rewrite -l"
+      ],
+      [
+        162,
+        8,
+        "balance; rewrite; strash; dc2; dch; balance"
+      ],
+      [
+        162,
+        8,
+        "balance; rewrite; strash; dc2; dch; dc2"
+      ],
+      [
+        162,
+        8,
+        "balance; rewrite; strash; dch; dc2"
+      ],
+      [
+        162,
+        8,
+        "balance; rewrite; strash; drw -l; dch; balance"
+      ],
+      [
+        162,
+        8,
+        "balance; rewrite; strash; resub -K 4; dch; dc2"
+      ],
+      [
+        162,
+        8,
+        "balance; rewrite; strash; rewrite"
+      ],
+      [
+        162,
+        8,
+        "balance; strash; dc2; rewrite; balance; rewrite"
+      ],
+      [
+        162,
+        8,
+        "fx; fx; strash; dc2; drw; dc2"
+      ],
+      [
+        162,
+        8,
+        "fx; fx; strash; drw; dc2"
+      ],
+      [
+        162,
+        8,
+        "fx; fx; strash; rewrite -l; resub -K 8; dc2"
+      ],
+      [
+        162,
+        8,
+        "fx; mfs; strash; resub -K 8; rewrite -l; dc2"
+      ],
+      [
+        162,
+        8,
+        "fx; mfs; strash; rewrite -l; resub -K 8; dc2"
+      ],
+      [
+        162,
+        8,
+        "fx; strash; dc2; renode; balance; balance"
+      ],
+      [
+        162,
+        8,
+        "strash; resub -K 4; resub -K 8; resub -K 10; drw"
+      ],
+      [
+        162,
+        8,
+        "strash; resub -K 6; resub -K 8; resub -K 10; drw"
+      ],
+      [
+        162,
+        8,
+        "strash; rewrite -lz; resub -K 8; resub -K 10; drw"
+      ]
+    ],
+    "rows": [
+      {
+        "gen": 0,
+        "script": "balance; rewrite; strash; balance; rewrite",
+        "status": "ok",
+        "and": 162,
+        "lev": 8,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 0,
+        "script": "balance; rewrite; strash; dc2; dch; balance",
+        "status": "ok",
+        "and": 162,
+        "lev": 8,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 0,
+        "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+        "status": "ok",
+        "and": 162,
+        "lev": 8,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 0,
+        "script": "strash; drw; rewrite; if -K 8",
+        "status": "unmeasured",
+        "and": null,
+        "lev": null,
+        "error": "no stats line (rc=0)",
+        "verify": null
+      },
+      {
+        "gen": 0,
+        "script": "fx; fx; strash; drw; dc2",
+        "status": "ok",
+        "and": 162,
+        "lev": 8,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 0,
+        "script": "fx; strash; dc2; renode; balance; balance",
+        "status": "ok",
+        "and": 162,
+        "lev": 8,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 0,
+        "script": "fx; strash; renode; mfs; rewrite -l",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 0,
+        "script": "strash; mfs; renode; renode",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to a logic network.",
+        "verify": null
+      },
+      {
+        "gen": 0,
+        "script": "renode; mfs; strash; renode; if -K 6; dc2",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: Cannot renode a network that is not an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 0,
+        "script": "strash; rewrite -z; mfs; if -K 8; fx",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to a logic network.",
+        "verify": null
+      },
+      {
+        "gen": 0,
+        "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+        "status": "ok",
+        "and": 162,
+        "lev": 8,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 0,
+        "script": "strash; mfs; if -K 8; if -K 8; fx",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to a logic network.",
+        "verify": null
+      },
+      {
+        "gen": 1,
+        "script": "fx; renode; strash; dc2; balance; balance",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: Cannot renode a network that is not an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 1,
+        "script": "balance; rewrite; strash; rewrite",
+        "status": "ok",
+        "and": 162,
+        "lev": 8,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 1,
+        "script": "balance; rewrite; strash; drw -l; dch; balance",
+        "status": "ok",
+        "and": 162,
+        "lev": 8,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 1,
+        "script": "fx; rewrite -l; mfs; strash; resub -K 8; dc2",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 2,
+        "script": "balance; rewrite; strash; dc2; dch; dc2",
+        "status": "ok",
+        "and": 162,
+        "lev": 8,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 2,
+        "script": "balance; rewrite; strash; dch; dc2",
+        "status": "ok",
+        "and": 162,
+        "lev": 8,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 2,
+        "script": "balance; rewrite; strash; dc2; dch",
+        "status": "ok",
+        "and": 302,
+        "lev": 8,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 2,
+        "script": "balance; rewrite; strash; resub -K 4; dch; dc2",
+        "status": "ok",
+        "and": 162,
+        "lev": 8,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 3,
+        "script": "renode; balance; rewrite; strash; balance; rewrite",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: Cannot renode a network that is not an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 3,
+        "script": "renode; balance; strash; balance; rewrite",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: Cannot renode a network that is not an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 3,
+        "script": "if -K 8; rewrite; strash; dc2; dch; balance",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 3,
+        "script": "resub -K 8; mfs; strash; fx; rewrite -z; dc2",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 4,
+        "script": "rewrite -lz; strash; resub -K 8; resub -K 10; drw",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 4,
+        "script": "fx; fx; drw -l; strash; dc2; dc2",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command works only for strashed networks.",
+        "verify": null
+      },
+      {
+        "gen": 5,
+        "script": "dc2; rewrite; strash; balance; rewrite",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command works only for strashed networks.",
+        "verify": null
+      },
+      {
+        "gen": 5,
+        "script": "fx; fx; strash; dc2; drw; dc2",
+        "status": "ok",
+        "and": 162,
+        "lev": 8,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 5,
+        "script": "fx; strash; if -K 6; dc2",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command works only for strashed networks.",
+        "verify": null
+      },
+      {
+        "gen": 6,
+        "script": "strash; resub -K 4; resub -K 8; resub -K 10; drw",
+        "status": "ok",
+        "and": 162,
+        "lev": 8,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 6,
+        "script": "balance; rewrite; strash; balance; dch; dc2",
+        "status": "ok",
+        "and": 162,
+        "lev": 8,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 6,
+        "script": "fx; mfs; strash; resub -K 8; rewrite -l; dc2",
+        "status": "ok",
+        "and": 162,
+        "lev": 8,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 6,
+        "script": "strash; resub -K 6; resub -K 8; resub -K 10; drw",
+        "status": "ok",
+        "and": 162,
+        "lev": 8,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 6,
+        "script": "balance; strash; dc2; rewrite; balance; rewrite",
+        "status": "ok",
+        "and": 162,
+        "lev": 8,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 7,
+        "script": "fx; fx; dc2; strash; drw",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command works only for strashed networks.",
+        "verify": null
+      },
+      {
+        "gen": 7,
+        "script": "balance; rewrite; strash; balance; rewrite -l",
+        "status": "ok",
+        "and": 162,
+        "lev": 8,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 7,
+        "script": "fx; fx; strash; rewrite -l; resub -K 8; dc2",
+        "status": "ok",
+        "and": 162,
+        "lev": 8,
+        "error": null,
+        "verify": "cec equivalent"
+      },
+      {
+        "gen": 7,
+        "script": "balance; dch; strash; balance; rewrite -l",
+        "status": "ok",
+        "and": 162,
+        "lev": 8,
+        "error": null,
+        "verify": "cec equivalent"
+      }
+    ],
+    "fixed_best_area": {
+      "name": "baseline",
+      "and": 162,
+      "lev": 8
+    },
+    "fixed_best_depth": {
+      "name": "baseline",
+      "and": 162,
+      "lev": 8
+    },
+    "evolve_beats_fixed_area": false,
+    "evolve_beats_fixed_depth": false,
+    "seconds": 8.2
+  },
+  "lfsr16": {
+    "sequential": true,
+    "generations": [
+      {
+        "gen": 0,
+        "evaluated": 12,
+        "counts": {
+          "ok": 6,
+          "unmeasured": 1,
+          "invalid_script": 5
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; balance; rewrite",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "fx; fx; strash; drw; dc2",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "fx; strash; dc2; renode; balance; balance",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+            "and": 28,
+            "lev": 7
+          }
+        ]
+      },
+      {
+        "gen": 1,
+        "evaluated": 4,
+        "counts": {
+          "invalid_script": 2,
+          "ok": 2
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; balance; rewrite",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "fx; fx; strash; drw; dc2",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "fx; strash; dc2; renode; balance; balance",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+            "and": 28,
+            "lev": 7
+          }
+        ]
+      },
+      {
+        "gen": 2,
+        "evaluated": 4,
+        "counts": {
+          "ok": 4
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; balance; rewrite",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "fx; fx; strash; drw; dc2",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "fx; strash; dc2; renode; balance; balance",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+            "and": 28,
+            "lev": 7
+          }
+        ]
+      },
+      {
+        "gen": 3,
+        "evaluated": 4,
+        "counts": {
+          "invalid_script": 4
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; balance; rewrite",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "fx; fx; strash; drw; dc2",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "fx; strash; dc2; renode; balance; balance",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+            "and": 28,
+            "lev": 7
+          }
+        ]
+      },
+      {
+        "gen": 4,
+        "evaluated": 2,
+        "counts": {
+          "invalid_script": 2
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; balance; rewrite",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "fx; fx; strash; drw; dc2",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "fx; strash; dc2; renode; balance; balance",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+            "and": 28,
+            "lev": 7
+          }
+        ]
+      },
+      {
+        "gen": 5,
+        "evaluated": 3,
+        "counts": {
+          "invalid_script": 2,
+          "ok": 1
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; balance; rewrite",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "fx; fx; strash; drw; dc2",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "fx; strash; dc2; renode; balance; balance",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+            "and": 28,
+            "lev": 7
+          }
+        ]
+      },
+      {
+        "gen": 6,
+        "evaluated": 5,
+        "counts": {
+          "ok": 5
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; balance; rewrite",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "fx; fx; strash; drw; dc2",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "fx; strash; dc2; renode; balance; balance",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+            "and": 28,
+            "lev": 7
+          }
+        ]
+      },
+      {
+        "gen": 7,
+        "evaluated": 4,
+        "counts": {
+          "invalid_script": 1,
+          "ok": 3
+        },
+        "front": [
+          {
+            "script": "balance; rewrite; strash; balance; rewrite",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "balance; rewrite; strash; dc2; dch; balance",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "fx; fx; strash; drw; dc2",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "fx; strash; dc2; renode; balance; balance",
+            "and": 28,
+            "lev": 7
+          },
+          {
+            "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+            "and": 28,
+            "lev": 7
+          }
+        ]
+      }
+    ],
+    "evaluated": 38,
+    "status_counts": {
+      "ok": 21,
+      "rejected": 0,
+      "invalid_script": 16,
+      "no_result": 0
+    },
+    "best_area": {
+      "script": "balance; rewrite; strash; balance; rewrite",
+      "and": 28,
+      "lev": 7,
+      "gen": 0
+    },
+    "best_depth": {
+      "script": "balance; rewrite; strash; balance; rewrite",
+      "and": 28,
+      "lev": 7,
+      "gen": 0
+    },
+    "gate_selftest": "verifier rejected the corrupted netlist (1/16 unproven)",
+    "gate_ok": true,
+    "pareto": [
+      [
+        28,
+        7,
+        "balance; dch; strash; balance; rewrite -l"
+      ],
+      [
+        28,
+        7,
+        "balance; rewrite; strash; balance; dch; dc2"
+      ],
+      [
+        28,
+        7,
+        "balance; rewrite; strash; balance; rewrite"
+      ],
+      [
+        28,
+        7,
+        "balance; rewrite; strash; balance; rewrite -l"
+      ],
+      [
+        28,
+        7,
+        "balance; rewrite; strash; dc2; dch; balance"
+      ],
+      [
+        28,
+        7,
+        "balance; rewrite; strash; dc2; dch; dc2"
+      ],
+      [
+        28,
+        7,
+        "balance; rewrite; strash; dch; dc2"
+      ],
+      [
+        28,
+        7,
+        "balance; rewrite; strash; drw -l; dch; balance"
+      ],
+      [
+        28,
+        7,
+        "balance; rewrite; strash; resub -K 4; dch; dc2"
+      ],
+      [
+        28,
+        7,
+        "balance; rewrite; strash; rewrite"
+      ],
+      [
+        28,
+        7,
+        "balance; strash; dc2; rewrite; balance; rewrite"
+      ],
+      [
+        28,
+        7,
+        "fx; fx; strash; dc2; drw; dc2"
+      ],
+      [
+        28,
+        7,
+        "fx; fx; strash; drw; dc2"
+      ],
+      [
+        28,
+        7,
+        "fx; fx; strash; rewrite -l; resub -K 8; dc2"
+      ],
+      [
+        28,
+        7,
+        "fx; mfs; strash; resub -K 8; rewrite -l; dc2"
+      ],
+      [
+        28,
+        7,
+        "fx; mfs; strash; rewrite -l; resub -K 8; dc2"
+      ],
+      [
+        28,
+        7,
+        "fx; strash; dc2; renode; balance; balance"
+      ],
+      [
+        28,
+        7,
+        "strash; resub -K 4; resub -K 8; resub -K 10; drw"
+      ],
+      [
+        28,
+        7,
+        "strash; resub -K 6; resub -K 8; resub -K 10; drw"
+      ],
+      [
+        28,
+        7,
+        "strash; rewrite -lz; resub -K 8; resub -K 10; drw"
+      ]
+    ],
+    "rows": [
+      {
+        "gen": 0,
+        "script": "balance; rewrite; strash; balance; rewrite",
+        "status": "ok",
+        "and": 28,
+        "lev": 7,
+        "error": null,
+        "verify": "16/16 proven"
+      },
+      {
+        "gen": 0,
+        "script": "balance; rewrite; strash; dc2; dch; balance",
+        "status": "ok",
+        "and": 28,
+        "lev": 7,
+        "error": null,
+        "verify": "16/16 proven"
+      },
+      {
+        "gen": 0,
+        "script": "fx; mfs; strash; rewrite -l; resub -K 8; dc2",
+        "status": "ok",
+        "and": 28,
+        "lev": 7,
+        "error": null,
+        "verify": "16/16 proven"
+      },
+      {
+        "gen": 0,
+        "script": "strash; drw; rewrite; if -K 8",
+        "status": "unmeasured",
+        "and": null,
+        "lev": null,
+        "error": "no stats line (rc=0)",
+        "verify": null
+      },
+      {
+        "gen": 0,
+        "script": "fx; fx; strash; drw; dc2",
+        "status": "ok",
+        "and": 28,
+        "lev": 7,
+        "error": null,
+        "verify": "16/16 proven"
+      },
+      {
+        "gen": 0,
+        "script": "fx; strash; dc2; renode; balance; balance",
+        "status": "ok",
+        "and": 28,
+        "lev": 7,
+        "error": null,
+        "verify": "16/16 proven"
+      },
+      {
+        "gen": 0,
+        "script": "fx; strash; renode; mfs; rewrite -l",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 0,
+        "script": "strash; mfs; renode; renode",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to a logic network.",
+        "verify": null
+      },
+      {
+        "gen": 0,
+        "script": "renode; mfs; strash; renode; if -K 6; dc2",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: Cannot renode a network that is not an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 0,
+        "script": "strash; rewrite -z; mfs; if -K 8; fx",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to a logic network.",
+        "verify": null
+      },
+      {
+        "gen": 0,
+        "script": "strash; rewrite -lz; resub -K 8; resub -K 10; drw",
+        "status": "ok",
+        "and": 28,
+        "lev": 7,
+        "error": null,
+        "verify": "16/16 proven"
+      },
+      {
+        "gen": 0,
+        "script": "strash; mfs; if -K 8; if -K 8; fx",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to a logic network.",
+        "verify": null
+      },
+      {
+        "gen": 1,
+        "script": "fx; renode; strash; dc2; balance; balance",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: Cannot renode a network that is not an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 1,
+        "script": "balance; rewrite; strash; rewrite",
+        "status": "ok",
+        "and": 28,
+        "lev": 7,
+        "error": null,
+        "verify": "16/16 proven"
+      },
+      {
+        "gen": 1,
+        "script": "balance; rewrite; strash; drw -l; dch; balance",
+        "status": "ok",
+        "and": 28,
+        "lev": 7,
+        "error": null,
+        "verify": "16/16 proven"
+      },
+      {
+        "gen": 1,
+        "script": "fx; rewrite -l; mfs; strash; resub -K 8; dc2",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 2,
+        "script": "balance; rewrite; strash; dc2; dch; dc2",
+        "status": "ok",
+        "and": 28,
+        "lev": 7,
+        "error": null,
+        "verify": "16/16 proven"
+      },
+      {
+        "gen": 2,
+        "script": "balance; rewrite; strash; dch; dc2",
+        "status": "ok",
+        "and": 28,
+        "lev": 7,
+        "error": null,
+        "verify": "16/16 proven"
+      },
+      {
+        "gen": 2,
+        "script": "balance; rewrite; strash; dc2; dch",
+        "status": "ok",
+        "and": 35,
+        "lev": 7,
+        "error": null,
+        "verify": "16/16 proven"
+      },
+      {
+        "gen": 2,
+        "script": "balance; rewrite; strash; resub -K 4; dch; dc2",
+        "status": "ok",
+        "and": 28,
+        "lev": 7,
+        "error": null,
+        "verify": "16/16 proven"
+      },
+      {
+        "gen": 3,
+        "script": "renode; balance; rewrite; strash; balance; rewrite",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: Cannot renode a network that is not an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 3,
+        "script": "renode; balance; strash; balance; rewrite",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: Cannot renode a network that is not an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 3,
+        "script": "if -K 8; rewrite; strash; dc2; dch; balance",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 3,
+        "script": "resub -K 8; mfs; strash; fx; rewrite -z; dc2",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 4,
+        "script": "rewrite -lz; strash; resub -K 8; resub -K 10; drw",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command can only be applied to an AIG (run \"strash\").",
+        "verify": null
+      },
+      {
+        "gen": 4,
+        "script": "fx; fx; drw -l; strash; dc2; dc2",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command works only for strashed networks.",
+        "verify": null
+      },
+      {
+        "gen": 5,
+        "script": "dc2; rewrite; strash; balance; rewrite",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command works only for strashed networks.",
+        "verify": null
+      },
+      {
+        "gen": 5,
+        "script": "fx; fx; strash; dc2; drw; dc2",
+        "status": "ok",
+        "and": 28,
+        "lev": 7,
+        "error": null,
+        "verify": "16/16 proven"
+      },
+      {
+        "gen": 5,
+        "script": "fx; strash; if -K 6; dc2",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command works only for strashed networks.",
+        "verify": null
+      },
+      {
+        "gen": 6,
+        "script": "strash; resub -K 4; resub -K 8; resub -K 10; drw",
+        "status": "ok",
+        "and": 28,
+        "lev": 7,
+        "error": null,
+        "verify": "16/16 proven"
+      },
+      {
+        "gen": 6,
+        "script": "balance; rewrite; strash; balance; dch; dc2",
+        "status": "ok",
+        "and": 28,
+        "lev": 7,
+        "error": null,
+        "verify": "16/16 proven"
+      },
+      {
+        "gen": 6,
+        "script": "fx; mfs; strash; resub -K 8; rewrite -l; dc2",
+        "status": "ok",
+        "and": 28,
+        "lev": 7,
+        "error": null,
+        "verify": "16/16 proven"
+      },
+      {
+        "gen": 6,
+        "script": "strash; resub -K 6; resub -K 8; resub -K 10; drw",
+        "status": "ok",
+        "and": 28,
+        "lev": 7,
+        "error": null,
+        "verify": "16/16 proven"
+      },
+      {
+        "gen": 6,
+        "script": "balance; strash; dc2; rewrite; balance; rewrite",
+        "status": "ok",
+        "and": 28,
+        "lev": 7,
+        "error": null,
+        "verify": "16/16 proven"
+      },
+      {
+        "gen": 7,
+        "script": "fx; fx; dc2; strash; drw",
+        "status": "invalid_script",
+        "and": null,
+        "lev": null,
+        "error": "Error: This command works only for strashed networks.",
+        "verify": null
+      },
+      {
+        "gen": 7,
+        "script": "balance; rewrite; strash; balance; rewrite -l",
+        "status": "ok",
+        "and": 28,
+        "lev": 7,
+        "error": null,
+        "verify": "16/16 proven"
+      },
+      {
+        "gen": 7,
+        "script": "fx; fx; strash; rewrite -l; resub -K 8; dc2",
+        "status": "ok",
+        "and": 28,
+        "lev": 7,
+        "error": null,
+        "verify": "16/16 proven"
+      },
+      {
+        "gen": 7,
+        "script": "balance; dch; strash; balance; rewrite -l",
+        "status": "ok",
+        "and": 28,
+        "lev": 7,
+        "error": null,
+        "verify": "16/16 proven"
+      }
+    ],
+    "fixed_best_area": {
+      "name": "baseline",
+      "and": 28,
+      "lev": 7
+    },
+    "fixed_best_depth": {
+      "name": "baseline",
+      "and": 28,
+      "lev": 7
+    },
+    "evolve_beats_fixed_area": false,
+    "evolve_beats_fixed_depth": false,
+    "seconds": 6.2
+  }
+}

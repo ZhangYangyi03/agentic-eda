@@ -1,0 +1,50 @@
+{
+  "baseline": {
+    "and": 482,
+    "lev": 30,
+    "equiv": true,
+    "s": 0.5
+  },
+  "drw": {
+    "and": 463,
+    "lev": 37,
+    "equiv": true,
+    "s": 0.5
+  },
+  "resub": {
+    "and": 483,
+    "lev": 30,
+    "equiv": true,
+    "s": 0.5
+  },
+  "resub8": {
+    "and": 459,
+    "lev": 30,
+    "equiv": true,
+    "s": 0.5
+  },
+  "dc2": {
+    "and": 446,
+    "lev": 36,
+    "equiv": true,
+    "s": 0.4
+  },
+  "if6": {
+    "and": 483,
+    "lev": 30,
+    "equiv": true,
+    "s": 0.4
+  },
+  "mix": {
+    "and": 445,
+    "lev": 36,
+    "equiv": true,
+    "s": 0.4
+  },
+  "compress": {
+    "and": null,
+    "lev": null,
+    "equiv": false,
+    "s": 0.4
+  }
+}

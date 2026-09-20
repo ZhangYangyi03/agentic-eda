@@ -1,0 +1,959 @@
+{
+  "mult4": {
+    "kind": "mult",
+    "stages": [
+      [
+        "elaborate",
+        true
+      ],
+      [
+        "search",
+        true
+      ]
+    ],
+    "manifest_ok": true,
+    "manifest_problems": [],
+    "proved": 10,
+    "tried": 13,
+    "counts": {
+      "ok": 10,
+      "invalid_script": 3
+    },
+    "verifier": "abc cec",
+    "gate_selftest": "verifier rejected the corrupted netlist (counterexample Input pattern:  a[0]=1 b[0]=0)",
+    "best_area": {
+      "name": "dc2dch",
+      "and": 82,
+      "lev": 16
+    },
+    "best_depth": {
+      "name": "dch",
+      "and": 88,
+      "lev": 15
+    },
+    "area_spread_pct": 11.8,
+    "depth_spread_pct": 6.2,
+    "pareto": [
+      [
+        82,
+        16,
+        "dc2dch"
+      ],
+      [
+        82,
+        16,
+        "mix"
+      ],
+      [
+        84,
+        16,
+        "dc2"
+      ],
+      [
+        85,
+        16,
+        "resub8"
+      ],
+      [
+        87,
+        16,
+        "drw"
+      ],
+      [
+        88,
+        15,
+        "dch"
+      ],
+      [
+        91,
+        16,
+        "resub6"
+      ],
+      [
+        93,
+        16,
+        "baseline"
+      ],
+      [
+        93,
+        16,
+        "if6"
+      ],
+      [
+        93,
+        16,
+        "if8"
+      ]
+    ]
+  },
+  "mult8": {
+    "kind": "mult",
+    "stages": [
+      [
+        "elaborate",
+        true
+      ],
+      [
+        "search",
+        true
+      ]
+    ],
+    "manifest_ok": true,
+    "manifest_problems": [],
+    "proved": 10,
+    "tried": 13,
+    "counts": {
+      "ok": 10,
+      "invalid_script": 3
+    },
+    "verifier": "abc cec",
+    "gate_selftest": "verifier rejected the corrupted netlist (counterexample Input pattern:  a[0]=1 b[0]=0)",
+    "best_area": {
+      "name": "mix",
+      "and": 443,
+      "lev": 35
+    },
+    "best_depth": {
+      "name": "dch",
+      "and": 460,
+      "lev": 28
+    },
+    "area_spread_pct": 8.3,
+    "depth_spread_pct": 22.2,
+    "pareto": [
+      [
+        443,
+        35,
+        "mix"
+      ],
+      [
+        444,
+        35,
+        "dc2dch"
+      ],
+      [
+        446,
+        36,
+        "dc2"
+      ],
+      [
+        459,
+        30,
+        "drw"
+      ],
+      [
+        459,
+        30,
+        "resub8"
+      ],
+      [
+        460,
+        28,
+        "dch"
+      ],
+      [
+        482,
+        30,
+        "baseline"
+      ],
+      [
+        483,
+        30,
+        "if6"
+      ],
+      [
+        483,
+        30,
+        "if8"
+      ],
+      [
+        483,
+        30,
+        "resub6"
+      ]
+    ]
+  },
+  "mult12": {
+    "kind": "mult",
+    "stages": [
+      [
+        "elaborate",
+        true
+      ],
+      [
+        "search",
+        true
+      ]
+    ],
+    "manifest_ok": true,
+    "manifest_problems": [],
+    "proved": 10,
+    "tried": 13,
+    "counts": {
+      "ok": 10,
+      "invalid_script": 3
+    },
+    "verifier": "abc cec",
+    "gate_selftest": "verifier rejected the corrupted netlist (counterexample Input pattern:  a[0]=1 b[0]=0)",
+    "best_area": {
+      "name": "mix",
+      "and": 1075,
+      "lev": 51
+    },
+    "best_depth": {
+      "name": "dch",
+      "and": 1108,
+      "lev": 35
+    },
+    "area_spread_pct": 8.0,
+    "depth_spread_pct": 34.0,
+    "pareto": [
+      [
+        1075,
+        51,
+        "mix"
+      ],
+      [
+        1077,
+        51,
+        "dc2dch"
+      ],
+      [
+        1079,
+        53,
+        "dc2"
+      ],
+      [
+        1108,
+        35,
+        "dch"
+      ],
+      [
+        1113,
+        37,
+        "drw"
+      ],
+      [
+        1114,
+        37,
+        "resub8"
+      ],
+      [
+        1168,
+        37,
+        "baseline"
+      ],
+      [
+        1168,
+        37,
+        "resub6"
+      ],
+      [
+        1169,
+        37,
+        "if6"
+      ],
+      [
+        1169,
+        37,
+        "if8"
+      ]
+    ]
+  },
+  "mult16": {
+    "kind": "mult",
+    "stages": [
+      [
+        "elaborate",
+        true
+      ],
+      [
+        "search",
+        true
+      ]
+    ],
+    "manifest_ok": true,
+    "manifest_problems": [],
+    "proved": 10,
+    "tried": 13,
+    "counts": {
+      "ok": 10,
+      "invalid_script": 3
+    },
+    "verifier": "abc cec",
+    "gate_selftest": "verifier rejected the corrupted netlist (counterexample Input pattern:  a[0]=1 b[0]=0)",
+    "best_area": {
+      "name": "mix",
+      "and": 1983,
+      "lev": 68
+    },
+    "best_depth": {
+      "name": "dch",
+      "and": 2034,
+      "lev": 40
+    },
+    "area_spread_pct": 7.5,
+    "depth_spread_pct": 41.2,
+    "pareto": [
+      [
+        1983,
+        68,
+        "mix"
+      ],
+      [
+        1990,
+        65,
+        "dc2dch"
+      ],
+      [
+        1996,
+        67,
+        "dc2"
+      ],
+      [
+        2034,
+        40,
+        "dch"
+      ],
+      [
+        2036,
+        42,
+        "resub8"
+      ],
+      [
+        2037,
+        42,
+        "drw"
+      ],
+      [
+        2140,
+        42,
+        "baseline"
+      ],
+      [
+        2140,
+        42,
+        "resub6"
+      ],
+      [
+        2143,
+        42,
+        "if6"
+      ],
+      [
+        2143,
+        42,
+        "if8"
+      ]
+    ]
+  },
+  "adder8": {
+    "kind": "adder",
+    "stages": [
+      [
+        "elaborate",
+        true
+      ],
+      [
+        "search",
+        true
+      ]
+    ],
+    "manifest_ok": true,
+    "manifest_problems": [],
+    "proved": 10,
+    "tried": 13,
+    "counts": {
+      "ok": 10,
+      "invalid_script": 3
+    },
+    "verifier": "abc cec",
+    "gate_selftest": "verifier rejected the corrupted netlist (counterexample Input pattern:  cin=1 a[0]=0 b[0]=0)",
+    "best_area": {
+      "name": "dc2dch",
+      "and": 77,
+      "lev": 17
+    },
+    "best_depth": {
+      "name": "dch",
+      "and": 86,
+      "lev": 14
+    },
+    "area_spread_pct": 26.0,
+    "depth_spread_pct": 22.2,
+    "pareto": [
+      [
+        77,
+        17,
+        "dc2dch"
+      ],
+      [
+        77,
+        17,
+        "mix"
+      ],
+      [
+        79,
+        18,
+        "dc2"
+      ],
+      [
+        86,
+        14,
+        "dch"
+      ],
+      [
+        93,
+        15,
+        "resub8"
+      ],
+      [
+        98,
+        15,
+        "drw"
+      ],
+      [
+        101,
+        15,
+        "baseline"
+      ],
+      [
+        104,
+        15,
+        "if6"
+      ],
+      [
+        104,
+        15,
+        "if8"
+      ],
+      [
+        104,
+        15,
+        "resub6"
+      ]
+    ]
+  },
+  "adder16": {
+    "kind": "adder",
+    "stages": [
+      [
+        "elaborate",
+        true
+      ],
+      [
+        "search",
+        true
+      ]
+    ],
+    "manifest_ok": true,
+    "manifest_problems": [],
+    "proved": 10,
+    "tried": 13,
+    "counts": {
+      "ok": 10,
+      "invalid_script": 3
+    },
+    "verifier": "abc cec",
+    "gate_selftest": "verifier rejected the corrupted netlist (counterexample Input pattern:  cin=1 a[0]=0 b[0]=0)",
+    "best_area": {
+      "name": "mix",
+      "and": 161,
+      "lev": 34
+    },
+    "best_depth": {
+      "name": "baseline",
+      "and": 216,
+      "lev": 20
+    },
+    "area_spread_pct": 27.8,
+    "depth_spread_pct": 42.9,
+    "pareto": [
+      [
+        161,
+        34,
+        "mix"
+      ],
+      [
+        162,
+        34,
+        "dc2dch"
+      ],
+      [
+        164,
+        35,
+        "dc2"
+      ],
+      [
+        189,
+        20,
+        "dch"
+      ],
+      [
+        199,
+        20,
+        "resub8"
+      ],
+      [
+        213,
+        20,
+        "drw"
+      ],
+      [
+        216,
+        20,
+        "baseline"
+      ],
+      [
+        223,
+        20,
+        "if6"
+      ],
+      [
+        223,
+        20,
+        "if8"
+      ],
+      [
+        223,
+        20,
+        "resub6"
+      ]
+    ]
+  },
+  "adder32": {
+    "kind": "adder",
+    "stages": [
+      [
+        "elaborate",
+        true
+      ],
+      [
+        "search",
+        true
+      ]
+    ],
+    "manifest_ok": true,
+    "manifest_problems": [],
+    "proved": 10,
+    "tried": 13,
+    "counts": {
+      "ok": 10,
+      "invalid_script": 3
+    },
+    "verifier": "abc cec",
+    "gate_selftest": "verifier rejected the corrupted netlist (counterexample Input pattern:  cin=1 a[0]=1 b[0]=0)",
+    "best_area": {
+      "name": "mix",
+      "and": 329,
+      "lev": 66
+    },
+    "best_depth": {
+      "name": "baseline",
+      "and": 459,
+      "lev": 26
+    },
+    "area_spread_pct": 30.1,
+    "depth_spread_pct": 61.2,
+    "pareto": [
+      [
+        329,
+        66,
+        "mix"
+      ],
+      [
+        330,
+        66,
+        "dc2dch"
+      ],
+      [
+        333,
+        67,
+        "dc2"
+      ],
+      [
+        411,
+        26,
+        "dch"
+      ],
+      [
+        422,
+        26,
+        "resub8"
+      ],
+      [
+        455,
+        26,
+        "drw"
+      ],
+      [
+        459,
+        26,
+        "baseline"
+      ],
+      [
+        468,
+        26,
+        "resub6"
+      ],
+      [
+        471,
+        26,
+        "if6"
+      ],
+      [
+        471,
+        26,
+        "if8"
+      ]
+    ]
+  },
+  "arbiter16": {
+    "kind": "control",
+    "stages": [
+      [
+        "elaborate",
+        true
+      ],
+      [
+        "search",
+        true
+      ]
+    ],
+    "manifest_ok": true,
+    "manifest_problems": [],
+    "proved": 10,
+    "tried": 13,
+    "counts": {
+      "ok": 10,
+      "invalid_script": 3
+    },
+    "verifier": "abc cec",
+    "gate_selftest": "verifier rejected the corrupted netlist (counterexample Input pattern:  req[0]=1 req[1]=0)",
+    "best_area": {
+      "name": "dc2",
+      "and": 43,
+      "lev": 16
+    },
+    "best_depth": {
+      "name": "baseline",
+      "and": 54,
+      "lev": 13
+    },
+    "area_spread_pct": 25.9,
+    "depth_spread_pct": 18.8,
+    "pareto": [
+      [
+        43,
+        16,
+        "dc2"
+      ],
+      [
+        43,
+        16,
+        "dc2dch"
+      ],
+      [
+        43,
+        16,
+        "mix"
+      ],
+      [
+        46,
+        13,
+        "dch"
+      ],
+      [
+        47,
+        13,
+        "drw"
+      ],
+      [
+        48,
+        13,
+        "resub6"
+      ],
+      [
+        48,
+        13,
+        "resub8"
+      ],
+      [
+        54,
+        13,
+        "baseline"
+      ],
+      [
+        58,
+        13,
+        "if6"
+      ],
+      [
+        58,
+        13,
+        "if8"
+      ]
+    ]
+  },
+  "prio32": {
+    "kind": "control",
+    "stages": [
+      [
+        "elaborate",
+        true
+      ],
+      [
+        "search",
+        true
+      ]
+    ],
+    "manifest_ok": true,
+    "manifest_problems": [],
+    "proved": 10,
+    "tried": 13,
+    "counts": {
+      "ok": 10,
+      "invalid_script": 3
+    },
+    "verifier": "abc cec",
+    "gate_selftest": "verifier rejected the corrupted netlist (counterexample Input pattern:  x[2]=1 x[0]=0 x[1]=0)",
+    "best_area": {
+      "name": "dc2dch",
+      "and": 77,
+      "lev": 16
+    },
+    "best_depth": {
+      "name": "baseline",
+      "and": 91,
+      "lev": 8
+    },
+    "area_spread_pct": 16.3,
+    "depth_spread_pct": 50.0,
+    "pareto": [
+      [
+        77,
+        16,
+        "dc2dch"
+      ],
+      [
+        77,
+        16,
+        "mix"
+      ],
+      [
+        78,
+        16,
+        "dc2"
+      ],
+      [
+        85,
+        8,
+        "dch"
+      ],
+      [
+        86,
+        8,
+        "resub6"
+      ],
+      [
+        86,
+        8,
+        "resub8"
+      ],
+      [
+        88,
+        8,
+        "drw"
+      ],
+      [
+        91,
+        8,
+        "baseline"
+      ],
+      [
+        92,
+        8,
+        "if6"
+      ],
+      [
+        92,
+        8,
+        "if8"
+      ]
+    ]
+  },
+  "barrel16": {
+    "kind": "shifter",
+    "stages": [
+      [
+        "elaborate",
+        true
+      ],
+      [
+        "search",
+        true
+      ]
+    ],
+    "manifest_ok": true,
+    "manifest_problems": [],
+    "proved": 10,
+    "tried": 13,
+    "counts": {
+      "ok": 10,
+      "invalid_script": 3
+    },
+    "verifier": "abc cec",
+    "gate_selftest": "verifier rejected the corrupted netlist (counterexample Input pattern:  s[3]=0 s[2]=0 s[1]=0 d[0]=1 s[0]=0 d[1]=0)",
+    "best_area": {
+      "name": "baseline",
+      "and": 162,
+      "lev": 8
+    },
+    "best_depth": {
+      "name": "baseline",
+      "and": 162,
+      "lev": 8
+    },
+    "area_spread_pct": 0.0,
+    "depth_spread_pct": 0.0,
+    "pareto": [
+      [
+        162,
+        8,
+        "baseline"
+      ],
+      [
+        162,
+        8,
+        "dc2"
+      ],
+      [
+        162,
+        8,
+        "dc2dch"
+      ],
+      [
+        162,
+        8,
+        "dch"
+      ],
+      [
+        162,
+        8,
+        "drw"
+      ],
+      [
+        162,
+        8,
+        "if6"
+      ],
+      [
+        162,
+        8,
+        "if8"
+      ],
+      [
+        162,
+        8,
+        "mix"
+      ],
+      [
+        162,
+        8,
+        "resub6"
+      ],
+      [
+        162,
+        8,
+        "resub8"
+      ]
+    ]
+  },
+  "lfsr16": {
+    "kind": "sequential",
+    "stages": [
+      [
+        "elaborate",
+        true
+      ],
+      [
+        "search",
+        true
+      ]
+    ],
+    "manifest_ok": true,
+    "manifest_problems": [],
+    "proved": 10,
+    "tried": 13,
+    "counts": {
+      "ok": 10,
+      "invalid_script": 3
+    },
+    "verifier": "yosys equiv_induct",
+    "gate_selftest": "verifier rejected the corrupted netlist (1/16 unproven)",
+    "best_area": {
+      "name": "baseline",
+      "and": 28,
+      "lev": 7
+    },
+    "best_depth": {
+      "name": "baseline",
+      "and": 28,
+      "lev": 7
+    },
+    "area_spread_pct": 0.0,
+    "depth_spread_pct": 0.0,
+    "pareto": [
+      [
+        28,
+        7,
+        "baseline"
+      ],
+      [
+        28,
+        7,
+        "dc2"
+      ],
+      [
+        28,
+        7,
+        "dc2dch"
+      ],
+      [
+        28,
+        7,
+        "dch"
+      ],
+      [
+        28,
+        7,
+        "drw"
+      ],
+      [
+        28,
+        7,
+        "if6"
+      ],
+      [
+        28,
+        7,
+        "if8"
+      ],
+      [
+        28,
+        7,
+        "mix"
+      ],
+      [
+        28,
+        7,
+        "resub6"
+      ],
+      [
+        28,
+        7,
+        "resub8"
+      ]
+    ]
+  }
+}
