@@ -1,0 +1,333 @@
+[
+ {
+  "id": "edal-04e795a43cf2c592",
+  "scope": "organization_general",
+  "problem": "CTS reported success and the router then blamed CTS's own inserted buffer: pin of clkbuf_1_0__f_clk outside the die.",
+  "decision": "CTS does not legalize the buffers it inserts. Legalize after CTS, before routing.",
+  "applicability": "Any clocked design going through CTS in this flow.",
+  "prevention_action": "Treat 'stage returned success' as a claim to verify against the next stage's preconditions, not as a fact about the layout.",
+  "evidence": {
+   "blamed_by": "detailed_route",
+   "subsystem": "cts"
+  },
+  "artifact_sha256": null,
+  "tags": [
+   "cts",
+   "openroad"
+  ]
+ },
+ {
+  "id": "edal-1f274d86e7e4b95b",
+  "scope": "organization_general",
+  "problem": "Three separate unit errors, each a factor of 1000, each silent: pins in micrometres multiplied by 1000 again in the router (bond wires 750 mm long), and the same again in the Gerber writer (pads at 1.65 m on a 6.1 mm substrate).",
+  "decision": "Carry units in the name (_um, _mm) and assert at the boundary. The Gerber writer now checks every coordinate it emits against the outline the record declares and raises if one falls outside, because a coordinate outside the board is not a cosmetic bug, it is the units being wrong.",
+  "applicability": "Any two components that exchange numbers without types: a parser, a router, an exporter.",
+  "prevention_action": "Make the boundary check part of the producer, not a test someone has to remember to run. Verified by breaking it deliberately: multiplying the pins by 1000 again makes the writer raise 'coordinate (0.0, 1800000.0) um is outside the 6100 um substrate outline: units are wrong'.",
+  "evidence": {
+   "caught_by": "outline containment assertion in write_gerber",
+   "occurrences": 3
+  },
+  "artifact_sha256": null,
+  "tags": [
+   "assertions",
+   "silent-failure",
+   "units"
+  ]
+ },
+ {
+  "id": "edal-2c296555455a0f3a",
+  "scope": "organization_general",
+  "problem": "Every design reported 0.0000 coverage and no tool raised an error: fault simulation ran, printed a number, and the number was meaningless.",
+  "decision": "BLIF `.names <fanin...> <output>` defines the net in the LAST token, not the second; the parser had been taking token[1] as the output, so every net was registered under the name of its first fanin and no real net had a driver.",
+  "applicability": "Any consumer of yosys BLIF that indexes the output as field 1.",
+  "prevention_action": "Cross-check the simulator against a second simulator on the same vectors before trusting any coverage number. 1200 vectors x adder8 and adder16: python simulator == iverilog == integer addition, 0 mismatches.",
+  "evidence": {
+   "cross_check": "iverilog 11.0, 1200 vectors, 0 divergences",
+   "expected_after_fix": "0.9324 on adder8",
+   "observed": "coverage 0.0000 on 11/11 designs"
+  },
+  "artifact_sha256": null,
+  "tags": [
+   "blif",
+   "parsing",
+   "silent-failure"
+  ]
+ },
+ {
+  "id": "edal-2db57ab68331780a",
+  "scope": "organization_general",
+  "problem": "Cone-accelerated fault simulation with an INPUT cone returned no differences and coverage far too low, because nets in the cone have other fanins whose values were never computed and evaluate to X.",
+  "decision": "The correct shape is a full good simulation once per vector, then per fault copy those values, force the faulted net, and re-evaluate only its FANOUT cone.",
+  "applicability": "Any fault simulator that wants per-fault cost proportional to cone size.",
+  "prevention_action": "Validate the accelerated path against the unaccelerated one on random probes before using it for a number that anyone will read.",
+  "evidence": {
+   "after_fix": "0 disagreements in 1470 probes",
+   "observed": "19/100 probes disagreed with the full simulation on adder8, 10/100 on prio32"
+  },
+  "artifact_sha256": null,
+  "tags": [
+   "atpg",
+   "cone",
+   "performance"
+  ]
+ },
+ {
+  "id": "edal-33478a4f1b6302f0",
+  "scope": "organization_general",
+  "problem": "Layer count was reported by a formula -- 1 + crossings/(traces/4) -- which is not a routing decision, and DRC then counted crossings between traces on DIFFERENT layers, so the number the formula produced could never have helped.",
+  "decision": "Build the crossing graph (a vertex per trace, an edge per crossing) and colour it greedily in decreasing degree order. The colours ARE the layer assignment and the number of colours IS the layer count. DRC checks same-layer crossings only, because a plan-view crossing on two layers is a designed-in fact.",
+  "applicability": "Any flow that reports a resource count it did not actually allocate.",
+  "prevention_action": "A reported count must come from the allocation, not from a function of the same inputs. Then the check that consumes the count has to be written against the allocation, or the two disagree and both look wrong.",
+  "evidence": {
+   "crossings_before": "3-12 on one layer, after colouring 0",
+   "layers_needed": "1-3 across 6 designs, all met"
+  },
+  "artifact_sha256": null,
+  "tags": [
+   "layers",
+   "substrate"
+  ]
+ },
+ {
+  "id": "edal-342fcd5f602c4995",
+  "scope": "organization_general",
+  "problem": "`make_tracks` produced zero tracks and the failure surfaced two stages later as 'no horizontal tracks on met3' during pin placement.",
+  "decision": "make_tracks must follow read_liberty (it takes micrometres) and follow initialize_floorplan (it lays tracks over the current die).",
+  "applicability": "Every OpenROAD script that places pins.",
+  "prevention_action": "Check the track count immediately after make_tracks and fail there, not two stages later where the message no longer names the cause.",
+  "evidence": {
+   "error": "no horizontal tracks on met3, at place_pins",
+   "tools": "OpenROAD 2.0_3175"
+  },
+  "artifact_sha256": null,
+  "tags": [
+   "error-locality",
+   "openroad",
+   "ordering"
+  ]
+ },
+ {
+  "id": "edal-58f29a0d5dd810d3",
+  "scope": "organization_general",
+  "problem": "A wall-clock budget was checked once per fault, so a single fault with a wide fanout cone could spend an entire stage that then reported the fault as attempted.",
+  "decision": "Check the budget inside the candidate loop and inside the local search, and count a fault as skipped when the time runs out mid-attempt. Report `cut_mid_fault`.",
+  "applicability": "Any budgeted search whose inner loop is unbounded in the input size.",
+  "prevention_action": "A budget checked at the outer granularity is not a budget. Test it by setting the budget far below the cost of one iteration: if the stage overruns and reports success, the check is in the wrong loop.",
+  "evidence": {
+   "inner": "per_fault candidates x 40 local moves",
+   "stage": "guided_vectors"
+  },
+  "artifact_sha256": null,
+  "tags": [
+   "budget",
+   "search"
+  ]
+ },
+ {
+  "id": "edal-592a4a356601dd7e",
+  "scope": "organization_general",
+  "problem": "Exhaustive enumeration completed and then the design was vetoed for falling short of the target: mult4 reached 0.4747 against 0.99, with 166 of 316 faults proven redundant in the same report. The veto contradicted the proof beside it.",
+  "decision": "When enumeration completes, coverage has a ceiling and the ceiling is the result. Veto only if the achieved coverage differs from the enumerated ceiling; if the ceiling is under target, say the target is unreachable on this netlist and give the count.",
+  "applicability": "Any target applied to a metric that has a design-dependent upper bound. Coverage, yield, and 'all tests pass' share the shape.",
+  "prevention_action": "Before comparing a number to a target, ask whether the target is reachable. A veto is a statement about the design; a target that no correct design of this shape could meet is a statement about the target.",
+  "evidence": {
+   "after": "ok=True, ceiling reported",
+   "before": "vetoed as coverage 0.4747 < target 0.99",
+   "ceiling": "0.4747 = (316-166)/316 exactly",
+   "faults": 316,
+   "redundant": 166
+  },
+  "artifact_sha256": null,
+  "tags": [
+   "atpg",
+   "targets",
+   "verification"
+  ]
+ },
+ {
+  "id": "edal-5eb38acd09088248",
+  "scope": "organization_general",
+  "problem": "A physical flow printed 'router reported 0 violations' for all 11 designs and could have declared every layout clean; the PDK's own signoff deck disagreed on all 11.",
+  "decision": "Record both counts and name both: 'violations_router' and 'violations_signoff'. Neither is called clean on its own, and the signoff number is the one that gates.",
+  "applicability": "Any flow where DRC is reported by the router and again by a deck.",
+  "prevention_action": "Never let a router's self-report stand as a DRC result. Run the deck and publish both numbers and the tool version beside them.",
+  "evidence": {
+   "cause": "min-area (met1.6 = 0.083 um2) unfixed by OpenROAD 2.0_3175, no add_met_fill",
+   "router": "0 on 11/11",
+   "signoff_deck": "27 to 1221",
+   "tools": "OpenROAD 2.0_3175, magic, sky130A PDK"
+  },
+  "artifact_sha256": null,
+  "tags": [
+   "drc",
+   "honesty",
+   "signoff"
+  ]
+ },
+ {
+  "id": "edal-7991ae997b389786",
+  "scope": "organization_general",
+  "problem": "The warpage check refused every design, including ceramic packages that plainly work: Stoney curvature reported 0.22-4.9 percent of the package diagonal against a 0.08 percent limit.",
+  "decision": "Stoney's derivation needs tf/ts < 0.1, and 0.3 mm die on 0.63 mm alumina is 0.48 ¡ª outside its own regime by a factor of ten. The check now returns an admissibility flag, and when tf/ts >= 0.1 the design is neither credited nor penalised on it; the run records 'NOT EVALUATED' with the ratio that made it so.",
+  "applicability": "Every closed-form model in a verification loop: each has a regime, and outside it the number is not a conservative estimate, it is noise with units.",
+  "prevention_action": "Give every analytic check an admissibility condition and make the condition part of the result. A check that cannot say when it does not apply will refuse good designs and, worse, will be believed.",
+  "evidence": {
+   "after": "6/6 designs converge; warpage marked inadmissible",
+   "observed": "FR4 3.59-4.91 percent, Al2O3 0.22-0.30 percent, limit 0.08 percent",
+   "tf_over_ts": 0.37
+  },
+  "artifact_sha256": null,
+  "tags": [
+   "honesty",
+   "model-validity",
+   "thermal"
+  ]
+ },
+ {
+  "id": "edal-7ab5adea5907d926",
+  "scope": "organization_general",
+  "problem": "A substrate was sized from the DIE and came out smaller than the part it carried: a 250 um ring for a 1.36x1.86 mm DSBGA, and 4560 um nowhere near it.",
+  "decision": "The substrate outline is max(die edge, package body) + 2*margin + 2*scribe, and the pin positions come from the real .kicad_mod pad coordinates rather than from a synthesised ring. The record names which of the two drove the size.",
+  "applicability": "Every package flow: the floorplan question 'how big is the substrate' is answered by the package, and the die only matters when it is bigger.",
+  "prevention_action": "Never synthesise pin geometry when the library already has it. The synthesised ring was a second implementation of a fact on disk, and its errors were of a class the real data cannot have.",
+  "evidence": {
+   "right": "4560 um BT/DSBGA, 5700 um BGA-81, driven_by=package",
+   "wrong": "outline 250-1090 um for packages of 1.36-6.1 mm"
+  },
+  "artifact_sha256": null,
+  "tags": [
+   "packaging",
+   "single-source",
+   "units"
+  ]
+ },
+ {
+  "id": "edal-999c118ab4e6aaad",
+  "scope": "organization_general",
+  "problem": "The same clearance rule was enforced at the die end of a 60 um-pitch pad ring and at the package end of a 0.4 mm-pitch BGA, producing 228 violations against a physical gap of 20 um and 1-7 between pads whose own separation was under the rule.",
+  "decision": "Stop tuning the rule. Constant-width straight escapes cannot satisfy a constant clearance rule across a pad field whose own separation varies 20x. Report the MEASURED minimum distance with the rule beside it, veto only what is consistent (same-layer crossings, outline containment, bond span), and say in the report that pad clearance is measured and not vetoed.",
+  "applicability": "Any checker whose rule is not satisfied by the geometry its own router generates. Each fix that moves the contradiction instead of removing it is evidence the contradiction is in the model.",
+  "prevention_action": "When a rule fires on geometry produced by the same file, ask whether the rule and the geometry are on the same footing before changing either. Three successive fixes here each reduced the count without removing the contradiction, which was the signal.",
+  "evidence": {
+   "after": "violations 0 on 6 designs; measured minima 13.3-50.7 um die side, 14.0-69.3 um package side, reported not vetoed",
+   "die_side": "20 um physical gap vs 150 um rule",
+   "pkg_side": "0.4 mm pitch, own separation 400 um, rule 150 um"
+  },
+  "artifact_sha256": null,
+  "tags": [
+   "drc",
+   "honesty",
+   "model-validity"
+  ]
+ },
+ {
+  "id": "edal-b6ec34054f2901cb",
+  "scope": "organization_general",
+  "problem": "A guided ATPG stage improved coverage by about 1% over random and stalled, because the objective was flat: a deep fault flips no output until every side condition holds at once, so hill climbing had no gradient.",
+  "decision": "Add a controllability term: count the cone fanins already sitting at a non-controlling value, computed from each block's own truth table rather than assumed from the gate name. That is the term that finds a 15-way conjunction.",
+  "applicability": "Faults behind wide and/or deep reconvergent logic, i.e. priority encoders, deep carry chains, wide multipliers.",
+  "prevention_action": "Measure the objective's gradient, not only the final coverage: if extra search time buys ~1%, the objective is flat and more time will not fix it.",
+  "evidence": {
+   "observed": "prio32 0.4552 -> 0.4670 with 300 extra vectors, 226 faults still undetected",
+   "stage_2": "guided stage under a wall-clock budget"
+  },
+  "artifact_sha256": null,
+  "tags": [
+   "atpg",
+   "gradient",
+   "search"
+  ]
+ },
+ {
+  "id": "edal-d6d98aa894b0c894",
+  "scope": "organization_general",
+  "problem": "A net that yosys defines with four separate .names blocks was losing three of them; one of those blocks held the empty-table constant 0 that made $false false.",
+  "decision": "BLIF permits a net to be defined by several .names blocks and the function is the OR of them. Store all blocks per net; evaluate per block and OR the results.",
+  "applicability": "Any BLIF reader; yosys 0.9 emits this for $false and for want-of-'.alu' nets.",
+  "prevention_action": "Assert before simulating that every primary output has a block and that the netlist is acyclic; do not let a missing definition become an X.",
+  "evidence": {
+   "expected_after_fix": "60 of 60",
+   "observed": "36 of 60 .names parsed, 18 nets with duplicate blocks"
+  },
+  "artifact_sha256": null,
+  "tags": [
+   "blif",
+   "parsing"
+  ]
+ },
+ {
+  "id": "edal-da0a3a66156dad86",
+  "scope": "organization_general",
+  "problem": "Coverage was reported too low because the ground-truth oracle never applied the fault: stuck-at faults on primary inputs were counted as undetected.",
+  "decision": "simulate() injected the fault only inside the topological sweep, and primary inputs are not in that sweep. Inject before the sweep when the net has no driver.",
+  "applicability": "Matters for pad-level defects and any design where the fault list includes primary inputs, i.e. always.",
+  "prevention_action": "Keep two independent detection paths (full simulation, and full-good + fanout-cone) and treat a disagreement between them as a bug in one of them, not as noise. 3 of 150 probes disagreed; the cone path was right.",
+  "evidence": {
+   "after_fix": "three-way agreement 210/210 on 7 designs",
+   "observed": "oracle said not_detected for faults never applied"
+  },
+  "artifact_sha256": null,
+  "tags": [
+   "atpg",
+   "oracle"
+  ]
+ },
+ {
+  "id": "edal-e30998910559e28f",
+  "scope": "organization_general",
+  "problem": "A function was called and never defined: `exhaustive_report`, so mult4 and lfsr16 returned `NameError` and were written to results.json as errors. Two of nine designs were silently absent from the summary because the summary kept the error string.",
+  "decision": "Define it -- enumerate the whole input space, decide each fault at the first vector that distinguishes it, and report done/vectors/undetectable. And keep the error in the record either way, so a missing implementation is visible as a missing implementation and not as a design with no result.",
+  "applicability": "Any refactor that moves code between files: a call site is preserved and the definition is lost, and the failure appears only on the code path that reaches it.",
+  "prevention_action": "Compile and import the module as part of the edit, and run every benchmark rather than a subset. Both failed designs were the ones whose code path reached the missing definition; the other seven never called it and looked fine.",
+  "evidence": {
+   "designs_affected": [
+    "mult4",
+    "lfsr16"
+   ],
+   "how_found": "reading the saved record's error field, not the printed table"
+  },
+  "artifact_sha256": null,
+  "tags": [
+   "coverage",
+   "refactor",
+   "silent-failure"
+  ]
+ },
+ {
+  "id": "edal-e9c5a82aed9cebca",
+  "scope": "organization_general",
+  "problem": "A structural controllability analysis was re-computed on every _score call, so a 4-bit multiplier spent its whole wall-clock budget inside the analysis and returned nothing. `_ANA_CACHE.setdefault(id(blif), analysis(blif))` reads as a cache and is not one: setdefault evaluates its second argument whether or not the key is present.",
+  "decision": "Explicit get, call, store. Also cache the per-block controllability on the block's own content (fanin tuple, table tuple), because it depends on the block alone and never on the candidate vector, and refuse blocks above 16 fanins rather than enumerating 2**17 assignments.",
+  "applicability": "Any memo written as `d.setdefault(k, expensive(k))` or `d.get(k) or expensive(k)` where the expensive call has a side effect or a real cost.",
+  "prevention_action": "When a cache does not change the runtime, check whether the key function runs before the lookup. Here the symptom was a 45-second hang traced to a single line, and the first fix -- caching the outer call -- did not help because the inner loop was the cost.",
+  "evidence": {
+   "after": "mult4 completes in 8.7 s including 256-vector enumeration",
+   "before": "mult4 hung past 45 s inside _eval_block from analysis via _score",
+   "shape": "setdefault/get-or both evaluate the default eagerly"
+  },
+  "artifact_sha256": null,
+  "tags": [
+   "caching",
+   "performance",
+   "python"
+  ]
+ },
+ {
+  "id": "edal-f695e711175653b6",
+  "scope": "organization_general",
+  "problem": "The ATPG search objective returned 'detected' when the OPPOSITE-value fault would have been visible, so the search and the verifier disagreed about what detected means.",
+  "decision": "Detection is decided only with the fault's own forced value and the same PPO comparison the coverage stage uses. The opposite value is used only to score a gradient and can never return the verdict.",
+  "applicability": "Any search whose objective is also its acceptance criterion.",
+  "prevention_action": "Separate the objective from the verdict in the code, not just in the comment, and probe the objective against the oracle on known faults.",
+  "evidence": {
+   "after_fix": "1470/1470 probes agree",
+   "observed": "7 of 12 probes disagreed with the oracle on adder8, both directions"
+  },
+  "artifact_sha256": null,
+  "tags": [
+   "atpg",
+   "search",
+   "verification"
+  ]
+ }
+]
