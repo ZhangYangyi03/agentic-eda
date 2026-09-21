@@ -1,0 +1,2797 @@
+{
+ "adder8": {
+  "design": "adder8",
+  "blif": "D:\\eda\\test\\blif\\adder8.blif",
+  "blif_sha256": "74bf4d9ade1f77433a3e24c759f3a6dfcfca506662ed6fc166e4f3c00fecffad",
+  "inputs": 17,
+  "outputs": 9,
+  "latches": 0,
+  "gates": 60,
+  "target": 0.99,
+  "budget_vectors": 800,
+  "seed": 1,
+  "stages": {
+   "random": {
+    "vectors": 400,
+    "detected": 138,
+    "coverage": 0.9324,
+    "seconds": 0.1
+   },
+   "guided": {
+    "vectors": 0,
+    "detected": 138,
+    "coverage": 0.9324,
+    "seconds": 0.3,
+    "attempted": 10,
+    "skipped_for_budget": 0,
+    "budget_s": 8
+   }
+  },
+  "ok": false,
+  "faults_total": 148,
+  "sequential_assumption": "none (combinational)",
+  "lessons_consulted": [
+   {
+    "id": "edal-2db57ab68331780a",
+    "problem": "Cone-accelerated fault simulation with an INPUT cone returned no differences and coverage far too low, because nets in t"
+   },
+   {
+    "id": "edal-f695e711175653b6",
+    "problem": "The ATPG search objective returned 'detected' when the OPPOSITE-value fault would have been visible, so the search and t"
+   },
+   {
+    "id": "edal-2c296555455a0f3a",
+    "problem": "Every design reported 0.0000 coverage and no tool raised an error: fault simulation ran, printed a number, and the numbe"
+   },
+   {
+    "id": "edal-da0a3a66156dad86",
+    "problem": "Coverage was reported too low because the ground-truth oracle never applied the fault: stuck-at faults on primary inputs"
+   },
+   {
+    "id": "edal-b6ec34054f2901cb",
+    "problem": "A guided ATPG stage improved coverage by about 1% over random and stalled, because the objective was flat: a deep fault "
+   }
+  ],
+  "lessons_store": 14,
+  "coverage": 0.9324,
+  "vectors_used": 400,
+  "not_detected": 10,
+  "exhaustive": {
+   "done": false,
+   "reason": "skipped"
+  },
+  "budget_ok": true,
+  "veto": [
+   "coverage 0.9324 < target 0.99 and the input space was too large (2**17) to enumerate"
+  ],
+  "missing_sample": [
+   "$auto$alumacc.cc:474:replace_alu$3.lcu.g[7]/SA0",
+   "$auto$alumacc.cc:474:replace_alu$3.lcu.g[7]/SA1",
+   "$auto$alumacc.cc:474:replace_alu$3.lcu.g[8]/SA0",
+   "$auto$alumacc.cc:474:replace_alu$3.lcu.g[8]/SA1",
+   "$auto$alumacc.cc:490:replace_alu$4[0]/SA0",
+   "$auto$alumacc.cc:490:replace_alu$4[0]/SA1",
+   "$auto$alumacc.cc:490:replace_alu$4[8]/SA0",
+   "$auto$alumacc.cc:490:replace_alu$4[8]/SA1",
+   "$techmap$auto$alumacc.cc:474:replace_alu$3.$and$?techmap.v?:260$52_Y[8]/SA0",
+   "$techmap$auto$alumacc.cc:474:replace_alu$3.$and$?techmap.v?:260$52_Y[8]/SA1"
+  ],
+  "vectors_sha256": "cd4b6e2da03ca493d0cfcc8601c5fbe9b55c73d8323b2fa91a5406d8fb8dde32",
+  "lesson_candidates": [
+   {
+    "problem": "Coverage on adder8 stopped at 0.9324 with 10 faults undetected; the guided stage moved it by only 0.0000.",
+    "decision": "Record the gap and the vector budget rather than raising the budget until a number looks acceptable; 0 of the guided attempts were skipped when the wall-clock budget ran out.",
+    "applicability": "Faults needing many simultaneous side conditions: wide AND trees, priority logic, multiplier arrays.",
+    "prevention_action": "Before adding vectors, measure whether the objective has a gradient on the faults that remain; if the guided stage buys ~1%%, the objective is flat and more time will not fix it.",
+    "scope": "project_only",
+    "evidence": {
+     "coverage": 0.9324,
+     "random": 0.9324,
+     "guided": 0.9324,
+     "undetected": 10,
+     "vectors_used": 400,
+     "budget": 800,
+     "guided_skipped_for_budget": 0,
+     "guided_budget_s": 8
+    },
+    "artifact_sha256": "74bf4d9ade1f77433a3e24c759f3a6dfcfca506662ed6fc166e4f3c00fecffad",
+    "tags": [
+     "atpg",
+     "budget",
+     "adder8"
+    ]
+   }
+  ],
+  "wall_s": 0.4
+ },
+ "adder16": {
+  "design": "adder16",
+  "blif": "D:\\eda\\test\\blif\\adder16.blif",
+  "blif_sha256": "4fd4c25c2a0a5067aa053209e5aed9d11fa419b1a32a6dc84abf9a7810857a18",
+  "inputs": 33,
+  "outputs": 17,
+  "latches": 0,
+  "gates": 121,
+  "target": 0.99,
+  "budget_vectors": 800,
+  "seed": 1,
+  "stages": {
+   "random": {
+    "vectors": 400,
+    "detected": 292,
+    "coverage": 0.9669,
+    "seconds": 0.2
+   },
+   "guided": {
+    "vectors": 0,
+    "detected": 292,
+    "coverage": 0.9669,
+    "seconds": 0.6,
+    "attempted": 10,
+    "skipped_for_budget": 0,
+    "budget_s": 8
+   }
+  },
+  "ok": false,
+  "faults_total": 302,
+  "sequential_assumption": "none (combinational)",
+  "lessons_consulted": [
+   {
+    "id": "edal-2c296555455a0f3a",
+    "problem": "Every design reported 0.0000 coverage and no tool raised an error: fault simulation ran, printed a number, and the numbe"
+   },
+   {
+    "id": "edal-da0a3a66156dad86",
+    "problem": "Coverage was reported too low because the ground-truth oracle never applied the fault: stuck-at faults on primary inputs"
+   },
+   {
+    "id": "edal-2db57ab68331780a",
+    "problem": "Cone-accelerated fault simulation with an INPUT cone returned no differences and coverage far too low, because nets in t"
+   },
+   {
+    "id": "edal-f695e711175653b6",
+    "problem": "The ATPG search objective returned 'detected' when the OPPOSITE-value fault would have been visible, so the search and t"
+   },
+   {
+    "id": "edal-b6ec34054f2901cb",
+    "problem": "A guided ATPG stage improved coverage by about 1% over random and stalled, because the objective was flat: a deep fault "
+   }
+  ],
+  "lessons_store": 14,
+  "coverage": 0.9669,
+  "vectors_used": 400,
+  "not_detected": 10,
+  "exhaustive": {
+   "done": false,
+   "reason": "skipped"
+  },
+  "budget_ok": true,
+  "veto": [
+   "coverage 0.9669 < target 0.99 and the input space was too large (2**33) to enumerate"
+  ],
+  "missing_sample": [
+   "$auto$alumacc.cc:474:replace_alu$3.lcu.g[15]/SA0",
+   "$auto$alumacc.cc:474:replace_alu$3.lcu.g[15]/SA1",
+   "$auto$alumacc.cc:474:replace_alu$3.lcu.g[16]/SA0",
+   "$auto$alumacc.cc:474:replace_alu$3.lcu.g[16]/SA1",
+   "$auto$alumacc.cc:490:replace_alu$4[0]/SA0",
+   "$auto$alumacc.cc:490:replace_alu$4[0]/SA1",
+   "$auto$alumacc.cc:490:replace_alu$4[16]/SA0",
+   "$auto$alumacc.cc:490:replace_alu$4[16]/SA1",
+   "$techmap$auto$alumacc.cc:474:replace_alu$3.$and$?techmap.v?:260$52_Y[16]/SA0",
+   "$techmap$auto$alumacc.cc:474:replace_alu$3.$and$?techmap.v?:260$52_Y[16]/SA1"
+  ],
+  "vectors_sha256": "95849c6c2981b51be514f8d7f7ff246930f99ac8d5ae7f6e351083da03a0f33e",
+  "lesson_candidates": [
+   {
+    "problem": "Coverage on adder16 stopped at 0.9669 with 10 faults undetected; the guided stage moved it by only 0.0000.",
+    "decision": "Record the gap and the vector budget rather than raising the budget until a number looks acceptable; 0 of the guided attempts were skipped when the wall-clock budget ran out.",
+    "applicability": "Faults needing many simultaneous side conditions: wide AND trees, priority logic, multiplier arrays.",
+    "prevention_action": "Before adding vectors, measure whether the objective has a gradient on the faults that remain; if the guided stage buys ~1%%, the objective is flat and more time will not fix it.",
+    "scope": "project_only",
+    "evidence": {
+     "coverage": 0.9669,
+     "random": 0.9669,
+     "guided": 0.9669,
+     "undetected": 10,
+     "vectors_used": 400,
+     "budget": 800,
+     "guided_skipped_for_budget": 0,
+     "guided_budget_s": 8
+    },
+    "artifact_sha256": "4fd4c25c2a0a5067aa053209e5aed9d11fa419b1a32a6dc84abf9a7810857a18",
+    "tags": [
+     "atpg",
+     "budget",
+     "adder16"
+    ]
+   }
+  ],
+  "wall_s": 0.8
+ },
+ "mult4": {
+  "design": "mult4",
+  "blif": "D:\\eda\\test\\blif\\mult4.blif",
+  "blif_sha256": "fb81e9762784f8c2ffdd6f7dd3953256e5f2dd4b636110d85ee0003e9b7bcabb",
+  "inputs": 8,
+  "outputs": 8,
+  "latches": 0,
+  "gates": 153,
+  "target": 0.99,
+  "budget_vectors": 800,
+  "seed": 1,
+  "stages": {
+   "random": {
+    "vectors": 400,
+    "detected": 150,
+    "coverage": 0.4747,
+    "seconds": 0.3
+   },
+   "guided": {
+    "vectors": 0,
+    "detected": 150,
+    "coverage": 0.4747,
+    "seconds": 8.0,
+    "attempted": 143,
+    "skipped_for_budget": 23,
+    "budget_s": 8
+   }
+  },
+  "ok": true,
+  "faults_total": 316,
+  "sequential_assumption": "none (combinational)",
+  "lessons_consulted": [
+   {
+    "id": "edal-da0a3a66156dad86",
+    "problem": "Coverage was reported too low because the ground-truth oracle never applied the fault: stuck-at faults on primary inputs"
+   },
+   {
+    "id": "edal-2db57ab68331780a",
+    "problem": "Cone-accelerated fault simulation with an INPUT cone returned no differences and coverage far too low, because nets in t"
+   },
+   {
+    "id": "edal-f695e711175653b6",
+    "problem": "The ATPG search objective returned 'detected' when the OPPOSITE-value fault would have been visible, so the search and t"
+   },
+   {
+    "id": "edal-b6ec34054f2901cb",
+    "problem": "A guided ATPG stage improved coverage by about 1% over random and stalled, because the objective was flat: a deep fault "
+   },
+   {
+    "id": "edal-2c296555455a0f3a",
+    "problem": "Every design reported 0.0000 coverage and no tool raised an error: fault simulation ran, printed a number, and the numbe"
+   }
+  ],
+  "lessons_store": 14,
+  "coverage": 0.4747,
+  "vectors_used": 400,
+  "not_detected": 166,
+  "undetectable": 166,
+  "undetectable_list": [
+   "$auto$maccmap.cc:111:fulladd$55[0]/SA0",
+   "$auto$maccmap.cc:111:fulladd$55[0]/SA1",
+   "$auto$maccmap.cc:111:fulladd$55[1]/SA0",
+   "$auto$maccmap.cc:111:fulladd$55[1]/SA1",
+   "$auto$maccmap.cc:111:fulladd$55[7]/SA0",
+   "$auto$maccmap.cc:111:fulladd$55[7]/SA1",
+   "$auto$maccmap.cc:111:fulladd$58[0]/SA0",
+   "$auto$maccmap.cc:111:fulladd$58[0]/SA1",
+   "$auto$maccmap.cc:111:fulladd$58[1]/SA0",
+   "$auto$maccmap.cc:111:fulladd$58[1]/SA1",
+   "$auto$maccmap.cc:111:fulladd$58[2]/SA0",
+   "$auto$maccmap.cc:111:fulladd$58[2]/SA1",
+   "$auto$maccmap.cc:111:fulladd$58[6]/SA0",
+   "$auto$maccmap.cc:111:fulladd$58[6]/SA1",
+   "$auto$maccmap.cc:111:fulladd$58[7]/SA0",
+   "$auto$maccmap.cc:111:fulladd$58[7]/SA1",
+   "$auto$maccmap.cc:112:fulladd$56[0]/SA0",
+   "$auto$maccmap.cc:112:fulladd$56[0]/SA1",
+   "$auto$maccmap.cc:112:fulladd$56[5]/SA0",
+   "$auto$maccmap.cc:112:fulladd$56[5]/SA1",
+   "$auto$maccmap.cc:112:fulladd$56[6]/SA0",
+   "$auto$maccmap.cc:112:fulladd$56[6]/SA1",
+   "$auto$maccmap.cc:112:fulladd$56[7]/SA0",
+   "$auto$maccmap.cc:112:fulladd$56[7]/SA1",
+   "$auto$maccmap.cc:112:fulladd$59[0]/SA0",
+   "$auto$maccmap.cc:112:fulladd$59[0]/SA1",
+   "$auto$maccmap.cc:112:fulladd$59[1]/SA0",
+   "$auto$maccmap.cc:112:fulladd$59[1]/SA1",
+   "$auto$maccmap.cc:112:fulladd$59[6]/SA0",
+   "$auto$maccmap.cc:112:fulladd$59[6]/SA1",
+   "$auto$maccmap.cc:112:fulladd$59[7]/SA0",
+   "$auto$maccmap.cc:112:fulladd$59[7]/SA1",
+   "$auto$maccmap.cc:114:fulladd$57.t1[0]/SA0",
+   "$auto$maccmap.cc:114:fulladd$57.t1[0]/SA1",
+   "$auto$maccmap.cc:114:fulladd$57.t1[5]/SA0",
+   "$auto$maccmap.cc:114:fulladd$57.t1[5]/SA1",
+   "$auto$maccmap.cc:114:fulladd$57.t1[6]/SA0",
+   "$auto$maccmap.cc:114:fulladd$57.t1[6]/SA1",
+   "$auto$maccmap.cc:114:fulladd$57.t1[7]/SA0",
+   "$auto$maccmap.cc:114:fulladd$57.t1[7]/SA1"
+  ],
+  "coverage_exhaustive": 0.4747,
+  "exhaustive": {
+   "done": true,
+   "vectors": 256,
+   "vectors_total": 256,
+   "detected": [
+    [
+     "$auto$maccmap.cc:111:fulladd$55[2]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$55[2]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$55[3]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$55[3]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$55[4]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$55[4]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$55[5]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$55[5]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$55[6]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$55[6]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$58[3]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$58[3]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$58[4]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$58[4]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$58[5]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$58[5]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$56[1]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$56[1]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$56[2]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$56[2]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$56[3]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$56[3]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$56[4]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$56[4]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$59[2]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$59[2]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$59[3]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$59[3]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$59[4]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$59[4]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$59[5]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$59[5]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t1[1]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t1[1]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t1[2]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t1[2]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t1[3]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t1[3]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t1[4]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t1[4]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t2[3]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t2[3]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t3[3]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t3[3]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t1[2]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t1[2]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t1[3]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t1[3]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t1[4]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t1[4]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t1[5]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t1[5]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t2[2]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t2[2]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t2[3]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t2[3]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t2[4]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t2[4]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t2[5]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t2[5]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t3[2]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t3[2]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t3[3]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t3[3]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t3[4]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t3[4]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t3[5]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t3[5]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:240:synth$61.lcu.g[3]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:240:synth$61.lcu.g[3]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:240:synth$61.lcu.g[4]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:240:synth$61.lcu.g[4]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:240:synth$61.lcu.g[5]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:240:synth$61.lcu.g[5]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:246:synth$63[4]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:246:synth$63[4]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:246:synth$63[5]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:246:synth$63[5]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:246:synth$63[6]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:246:synth$63[6]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$48[3]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$48[3]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$50[1]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$50[1]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$50[2]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$50[2]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$50[3]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$50[3]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$50[4]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$50[4]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$52[2]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$52[2]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$52[3]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$52[3]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$52[4]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$52[4]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$52[5]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$52[5]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$54[3]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$54[3]",
+     1
+    ],
+    [
+     "$techmap$auto$maccmap.cc:240:synth$61.$and$?techmap.v?:260$104_Y[4]",
+     0
+    ],
+    [
+     "$techmap$auto$maccmap.cc:240:synth$61.$and$?techmap.v?:260$104_Y[4]",
+     1
+    ],
+    [
+     "$techmap$auto$maccmap.cc:240:synth$61.$and$?techmap.v?:260$104_Y[5]",
+     0
+    ],
+    [
+     "$techmap$auto$maccmap.cc:240:synth$61.$and$?techmap.v?:260$104_Y[5]",
+     1
+    ],
+    [
+     "$techmap$auto$maccmap.cc:240:synth$61.$and$?techmap.v?:260$104_Y[6]",
+     0
+    ],
+    [
+     "$techmap$auto$maccmap.cc:240:synth$61.$and$?techmap.v?:260$104_Y[6]",
+     1
+    ],
+    [
+     "$techmap$auto$maccmap.cc:240:synth$61.lcu.$and$?techmap.v?:221$238_Y",
+     0
+    ],
+    [
+     "$techmap$auto$maccmap.cc:240:synth$61.lcu.$and$?techmap.v?:221$238_Y",
+     1
+    ],
+    [
+     "$techmap$auto$maccmap.cc:240:synth$61.lcu.$and$?techmap.v?:222$240_Y",
+     0
+    ],
+    [
+     "$techmap$auto$maccmap.cc:240:synth$61.lcu.$and$?techmap.v?:222$240_Y",
+     1
+    ],
+    [
+     "$techmap$auto$maccmap.cc:240:synth$61.lcu.$and$?techmap.v?:229$253_Y",
+     0
+    ],
+    [
+     "$techmap$auto$maccmap.cc:240:synth$61.lcu.$and$?techmap.v?:229$253_Y",
+     1
+    ],
+    [
+     "$techmap$auto$maccmap.cc:240:synth$61.lcu.$and$?techmap.v?:229$259_Y",
+     0
+    ],
+    [
+     "$techmap$auto$maccmap.cc:240:synth$61.lcu.$and$?techmap.v?:229$259_Y",
+     1
+    ],
+    [
+     "$techmap$auto$maccmap.cc:240:synth$61.lcu.$and$?techmap.v?:229$262_Y",
+     0
+    ],
+    [
+     "$techmap$auto$maccmap.cc:240:synth$61.lcu.$and$?techmap.v?:229$262_Y",
+     1
+    ],
+    [
+     "$techmap$auto$maccmap.cc:240:synth$61.lcu.$or$?techmap.v?:221$239_Y",
+     0
+    ],
+    [
+     "$techmap$auto$maccmap.cc:240:synth$61.lcu.$or$?techmap.v?:221$239_Y",
+     1
+    ],
+    [
+     "a[0]",
+     0
+    ],
+    [
+     "a[0]",
+     1
+    ],
+    [
+     "a[1]",
+     0
+    ],
+    [
+     "a[1]",
+     1
+    ],
+    [
+     "a[2]",
+     0
+    ],
+    [
+     "a[2]",
+     1
+    ],
+    [
+     "a[3]",
+     0
+    ],
+    [
+     "a[3]",
+     1
+    ],
+    [
+     "b[0]",
+     0
+    ],
+    [
+     "b[0]",
+     1
+    ],
+    [
+     "b[1]",
+     0
+    ],
+    [
+     "b[1]",
+     1
+    ],
+    [
+     "b[2]",
+     0
+    ],
+    [
+     "b[2]",
+     1
+    ],
+    [
+     "b[3]",
+     0
+    ],
+    [
+     "b[3]",
+     1
+    ],
+    [
+     "p[0]",
+     0
+    ],
+    [
+     "p[0]",
+     1
+    ],
+    [
+     "p[1]",
+     0
+    ],
+    [
+     "p[1]",
+     1
+    ],
+    [
+     "p[2]",
+     0
+    ],
+    [
+     "p[2]",
+     1
+    ],
+    [
+     "p[3]",
+     0
+    ],
+    [
+     "p[3]",
+     1
+    ],
+    [
+     "p[4]",
+     0
+    ],
+    [
+     "p[4]",
+     1
+    ],
+    [
+     "p[5]",
+     0
+    ],
+    [
+     "p[5]",
+     1
+    ],
+    [
+     "p[6]",
+     0
+    ],
+    [
+     "p[6]",
+     1
+    ],
+    [
+     "p[7]",
+     0
+    ],
+    [
+     "p[7]",
+     1
+    ]
+   ],
+   "undetectable": [
+    [
+     "$auto$maccmap.cc:111:fulladd$55[0]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$55[0]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$55[1]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$55[1]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$55[7]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$55[7]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$58[0]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$58[0]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$58[1]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$58[1]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$58[2]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$58[2]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$58[6]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$58[6]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$58[7]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:111:fulladd$58[7]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$56[0]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$56[0]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$56[5]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$56[5]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$56[6]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$56[6]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$56[7]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$56[7]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$59[0]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$59[0]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$59[1]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$59[1]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$59[6]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$59[6]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$59[7]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:112:fulladd$59[7]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t1[0]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t1[0]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t1[5]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t1[5]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t1[6]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t1[6]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t1[7]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t1[7]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t2[0]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t2[0]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t2[1]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t2[1]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t2[2]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t2[2]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t2[4]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t2[4]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t2[5]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t2[5]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t2[6]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t2[6]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t2[7]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t2[7]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t3[0]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t3[0]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t3[1]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t3[1]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t3[2]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t3[2]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t3[4]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t3[4]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t3[5]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t3[5]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t3[6]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t3[6]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t3[7]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$57.t3[7]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t1[0]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t1[0]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t1[1]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t1[1]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t1[6]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t1[6]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t1[7]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t1[7]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t2[0]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t2[0]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t2[1]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t2[1]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t2[6]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t2[6]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t2[7]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t2[7]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t3[0]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t3[0]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t3[1]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t3[1]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t3[6]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t3[6]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t3[7]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:114:fulladd$60.t3[7]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:240:synth$61.lcu.g[0]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:240:synth$61.lcu.g[0]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:240:synth$61.lcu.g[1]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:240:synth$61.lcu.g[1]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:240:synth$61.lcu.g[2]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:240:synth$61.lcu.g[2]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:240:synth$61.lcu.g[6]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:240:synth$61.lcu.g[6]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:240:synth$61.lcu.g[7]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:240:synth$61.lcu.g[7]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:246:synth$63[0]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:246:synth$63[0]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:246:synth$63[1]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:246:synth$63[1]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:246:synth$63[2]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:246:synth$63[2]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:246:synth$63[3]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:246:synth$63[3]",
+     1
+    ],
+    [
+     "$auto$maccmap.cc:246:synth$63[7]",
+     0
+    ],
+    [
+     "$auto$maccmap.cc:246:synth$63[7]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$48[0]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$48[0]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$48[1]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$48[1]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$48[2]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$48[2]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$48[4]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$48[4]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$48[5]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$48[5]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$48[6]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$48[6]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$48[7]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$48[7]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$50[0]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$50[0]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$50[5]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$50[5]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$50[6]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$50[6]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$50[7]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$50[7]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$52[0]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$52[0]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$52[1]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$52[1]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$52[6]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$52[6]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$52[7]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$52[7]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$54[0]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$54[0]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$54[1]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$54[1]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$54[2]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$54[2]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$54[4]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$54[4]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$54[5]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$54[5]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$54[6]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$54[6]",
+     1
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$54[7]",
+     0
+    ],
+    [
+     "$auto$rtlil.cc:1862:And$54[7]",
+     1
+    ],
+    [
+     "$techmap$auto$maccmap.cc:240:synth$61.$and$?techmap.v?:260$104_Y[0]",
+     0
+    ],
+    [
+     "$techmap$auto$maccmap.cc:240:synth$61.$and$?techmap.v?:260$104_Y[0]",
+     1
+    ],
+    [
+     "$techmap$auto$maccmap.cc:240:synth$61.$and$?techmap.v?:260$104_Y[1]",
+     0
+    ],
+    [
+     "$techmap$auto$maccmap.cc:240:synth$61.$and$?techmap.v?:260$104_Y[1]",
+     1
+    ],
+    [
+     "$techmap$auto$maccmap.cc:240:synth$61.$and$?techmap.v?:260$104_Y[2]",
+     0
+    ],
+    [
+     "$techmap$auto$maccmap.cc:240:synth$61.$and$?techmap.v?:260$104_Y[2]",
+     1
+    ],
+    [
+     "$techmap$auto$maccmap.cc:240:synth$61.$and$?techmap.v?:260$104_Y[3]",
+     0
+    ],
+    [
+     "$techmap$auto$maccmap.cc:240:synth$61.$and$?techmap.v?:260$104_Y[3]",
+     1
+    ],
+    [
+     "$techmap$auto$maccmap.cc:240:synth$61.$and$?techmap.v?:260$104_Y[7]",
+     0
+    ],
+    [
+     "$techmap$auto$maccmap.cc:240:synth$61.$and$?techmap.v?:260$104_Y[7]",
+     1
+    ]
+   ],
+   "undetectable_count": 166,
+   "n_inputs": 8,
+   "seconds": 0.4,
+   "note": "enumeration of 2**8 vectors is a decision procedure for combinational single stuck-at; a fault no vector distinguishes is redundant in this netlist"
+  },
+  "budget_ok": true,
+  "veto": [
+   "guided stage stopped on budget with 23 faults never attempted"
+  ],
+  "reachable_coverage": 0.4747,
+  "coverage_is_ceiling": true,
+  "note": "target 0.99 is not reachable on this netlist: 166 of 316 faults are provably redundant, so 0.4747 is the ceiling, not a shortfall",
+  "missing_sample": [
+   "$auto$maccmap.cc:111:fulladd$55[0]/SA0",
+   "$auto$maccmap.cc:111:fulladd$55[0]/SA1",
+   "$auto$maccmap.cc:111:fulladd$55[1]/SA0",
+   "$auto$maccmap.cc:111:fulladd$55[1]/SA1",
+   "$auto$maccmap.cc:111:fulladd$55[7]/SA0",
+   "$auto$maccmap.cc:111:fulladd$55[7]/SA1",
+   "$auto$maccmap.cc:111:fulladd$58[0]/SA0",
+   "$auto$maccmap.cc:111:fulladd$58[0]/SA1",
+   "$auto$maccmap.cc:111:fulladd$58[1]/SA0",
+   "$auto$maccmap.cc:111:fulladd$58[1]/SA1",
+   "$auto$maccmap.cc:111:fulladd$58[2]/SA0",
+   "$auto$maccmap.cc:111:fulladd$58[2]/SA1",
+   "$auto$maccmap.cc:111:fulladd$58[6]/SA0",
+   "$auto$maccmap.cc:111:fulladd$58[6]/SA1",
+   "$auto$maccmap.cc:111:fulladd$58[7]/SA0",
+   "$auto$maccmap.cc:111:fulladd$58[7]/SA1",
+   "$auto$maccmap.cc:112:fulladd$56[0]/SA0",
+   "$auto$maccmap.cc:112:fulladd$56[0]/SA1",
+   "$auto$maccmap.cc:112:fulladd$56[5]/SA0",
+   "$auto$maccmap.cc:112:fulladd$56[5]/SA1",
+   "$auto$maccmap.cc:112:fulladd$56[6]/SA0",
+   "$auto$maccmap.cc:112:fulladd$56[6]/SA1",
+   "$auto$maccmap.cc:112:fulladd$56[7]/SA0",
+   "$auto$maccmap.cc:112:fulladd$56[7]/SA1",
+   "$auto$maccmap.cc:112:fulladd$59[0]/SA0",
+   "$auto$maccmap.cc:112:fulladd$59[0]/SA1",
+   "$auto$maccmap.cc:112:fulladd$59[1]/SA0",
+   "$auto$maccmap.cc:112:fulladd$59[1]/SA1",
+   "$auto$maccmap.cc:112:fulladd$59[6]/SA0",
+   "$auto$maccmap.cc:112:fulladd$59[6]/SA1",
+   "$auto$maccmap.cc:112:fulladd$59[7]/SA0",
+   "$auto$maccmap.cc:112:fulladd$59[7]/SA1",
+   "$auto$maccmap.cc:114:fulladd$57.t1[0]/SA0",
+   "$auto$maccmap.cc:114:fulladd$57.t1[0]/SA1",
+   "$auto$maccmap.cc:114:fulladd$57.t1[5]/SA0",
+   "$auto$maccmap.cc:114:fulladd$57.t1[5]/SA1",
+   "$auto$maccmap.cc:114:fulladd$57.t1[6]/SA0",
+   "$auto$maccmap.cc:114:fulladd$57.t1[6]/SA1",
+   "$auto$maccmap.cc:114:fulladd$57.t1[7]/SA0",
+   "$auto$maccmap.cc:114:fulladd$57.t1[7]/SA1"
+  ],
+  "vectors_sha256": "f0c26f122b0af0ade6314f2200485491687510b0a10c58e3658952a7c41ad768",
+  "lesson_candidates": [
+   {
+    "problem": "Coverage on mult4 stopped at 0.4747 with 166 faults undetected; the guided stage moved it by only 0.0000.",
+    "decision": "Record the gap and the vector budget rather than raising the budget until a number looks acceptable; 23 of the guided attempts were skipped when the wall-clock budget ran out.",
+    "applicability": "Faults needing many simultaneous side conditions: wide AND trees, priority logic, multiplier arrays.",
+    "prevention_action": "Before adding vectors, measure whether the objective has a gradient on the faults that remain; if the guided stage buys ~1%%, the objective is flat and more time will not fix it.",
+    "scope": "project_only",
+    "evidence": {
+     "coverage": 0.4747,
+     "random": 0.4747,
+     "guided": 0.4747,
+     "undetected": 166,
+     "vectors_used": 400,
+     "budget": 800,
+     "guided_skipped_for_budget": 23,
+     "guided_budget_s": 8
+    },
+    "artifact_sha256": "fb81e9762784f8c2ffdd6f7dd3953256e5f2dd4b636110d85ee0003e9b7bcabb",
+    "tags": [
+     "atpg",
+     "budget",
+     "mult4"
+    ]
+   },
+   {
+    "problem": "166 of 316 faults on mult4 are not detectable by any input vector, and that is now a proof rather than a gap: the input space was enumerated.",
+    "decision": "Separate 'not detected yet' from 'undetectable' in the report, and only claim the second when 2**n_inputs vectors were actually enumerated.",
+    "applicability": "Small combinational blocks; above 14 inputs enumeration stops being a decision procedure.",
+    "prevention_action": "Never print one coverage number for a design whose faults include provably redundant ones; print both and say which is which.",
+    "scope": "organization_general",
+    "evidence": {
+     "undetectable": 166,
+     "faults_total": 316,
+     "vectors_enumerated": 256
+    },
+    "artifact_sha256": "fb81e9762784f8c2ffdd6f7dd3953256e5f2dd4b636110d85ee0003e9b7bcabb",
+    "tags": [
+     "atpg",
+     "redundancy"
+    ]
+   }
+  ],
+  "wall_s": 8.7
+ },
+ "mult8": {
+  "design": "mult8",
+  "blif": "D:\\eda\\test\\blif\\mult8.blif",
+  "blif_sha256": "32735a9e5bf23dbbbe5b90445c4a4334815e0dc128ebd21fc1884414a3443465",
+  "inputs": 16,
+  "outputs": 16,
+  "latches": 0,
+  "gates": 698,
+  "target": 0.99,
+  "budget_vectors": 800,
+  "seed": 1,
+  "stages": {
+   "random": {
+    "vectors": 400,
+    "detected": 728,
+    "coverage": 0.512,
+    "seconds": 2.4
+   },
+   "guided": {
+    "vectors": 0,
+    "detected": 728,
+    "coverage": 0.512,
+    "seconds": 8.0,
+    "attempted": 30,
+    "skipped_for_budget": 664,
+    "budget_s": 8
+   }
+  },
+  "ok": false,
+  "faults_total": 1422,
+  "sequential_assumption": "none (combinational)",
+  "lessons_consulted": [
+   {
+    "id": "edal-da0a3a66156dad86",
+    "problem": "Coverage was reported too low because the ground-truth oracle never applied the fault: stuck-at faults on primary inputs"
+   },
+   {
+    "id": "edal-2db57ab68331780a",
+    "problem": "Cone-accelerated fault simulation with an INPUT cone returned no differences and coverage far too low, because nets in t"
+   },
+   {
+    "id": "edal-f695e711175653b6",
+    "problem": "The ATPG search objective returned 'detected' when the OPPOSITE-value fault would have been visible, so the search and t"
+   },
+   {
+    "id": "edal-b6ec34054f2901cb",
+    "problem": "A guided ATPG stage improved coverage by about 1% over random and stalled, because the objective was flat: a deep fault "
+   },
+   {
+    "id": "edal-2c296555455a0f3a",
+    "problem": "Every design reported 0.0000 coverage and no tool raised an error: fault simulation ran, printed a number, and the numbe"
+   }
+  ],
+  "lessons_store": 14,
+  "coverage": 0.512,
+  "vectors_used": 400,
+  "not_detected": 694,
+  "exhaustive": {
+   "done": false,
+   "reason": "skipped"
+  },
+  "budget_ok": true,
+  "veto": [
+   "coverage 0.5120 < target 0.99 and the input space was too large (2**16) to enumerate",
+   "guided stage stopped on budget with 664 faults never attempted"
+  ],
+  "missing_sample": [
+   "$auto$maccmap.cc:111:fulladd$63[0]/SA0",
+   "$auto$maccmap.cc:111:fulladd$63[0]/SA1",
+   "$auto$maccmap.cc:111:fulladd$63[11]/SA0",
+   "$auto$maccmap.cc:111:fulladd$63[11]/SA1",
+   "$auto$maccmap.cc:111:fulladd$63[12]/SA0",
+   "$auto$maccmap.cc:111:fulladd$63[12]/SA1",
+   "$auto$maccmap.cc:111:fulladd$63[13]/SA0",
+   "$auto$maccmap.cc:111:fulladd$63[13]/SA1",
+   "$auto$maccmap.cc:111:fulladd$63[14]/SA0",
+   "$auto$maccmap.cc:111:fulladd$63[14]/SA1",
+   "$auto$maccmap.cc:111:fulladd$63[15]/SA0",
+   "$auto$maccmap.cc:111:fulladd$63[15]/SA1",
+   "$auto$maccmap.cc:111:fulladd$63[1]/SA0",
+   "$auto$maccmap.cc:111:fulladd$63[1]/SA1",
+   "$auto$maccmap.cc:111:fulladd$66[0]/SA0",
+   "$auto$maccmap.cc:111:fulladd$66[0]/SA1",
+   "$auto$maccmap.cc:111:fulladd$66[13]/SA0",
+   "$auto$maccmap.cc:111:fulladd$66[13]/SA1",
+   "$auto$maccmap.cc:111:fulladd$66[14]/SA0",
+   "$auto$maccmap.cc:111:fulladd$66[14]/SA1",
+   "$auto$maccmap.cc:111:fulladd$66[15]/SA0",
+   "$auto$maccmap.cc:111:fulladd$66[15]/SA1",
+   "$auto$maccmap.cc:111:fulladd$66[1]/SA0",
+   "$auto$maccmap.cc:111:fulladd$66[1]/SA1",
+   "$auto$maccmap.cc:111:fulladd$69[0]/SA0",
+   "$auto$maccmap.cc:111:fulladd$69[0]/SA1",
+   "$auto$maccmap.cc:111:fulladd$69[11]/SA0",
+   "$auto$maccmap.cc:111:fulladd$69[11]/SA1",
+   "$auto$maccmap.cc:111:fulladd$69[12]/SA0",
+   "$auto$maccmap.cc:111:fulladd$69[12]/SA1",
+   "$auto$maccmap.cc:111:fulladd$69[13]/SA0",
+   "$auto$maccmap.cc:111:fulladd$69[13]/SA1",
+   "$auto$maccmap.cc:111:fulladd$69[14]/SA0",
+   "$auto$maccmap.cc:111:fulladd$69[14]/SA1",
+   "$auto$maccmap.cc:111:fulladd$69[15]/SA0",
+   "$auto$maccmap.cc:111:fulladd$69[15]/SA1",
+   "$auto$maccmap.cc:111:fulladd$69[1]/SA0",
+   "$auto$maccmap.cc:111:fulladd$69[1]/SA1",
+   "$auto$maccmap.cc:111:fulladd$69[2]/SA0",
+   "$auto$maccmap.cc:111:fulladd$69[2]/SA1"
+  ],
+  "vectors_sha256": "1a5c6ba834c2a362c7e9b9e5cdb95e2d2128e01def24b746223ce62532dc4768",
+  "lesson_candidates": [
+   {
+    "problem": "Coverage on mult8 stopped at 0.5120 with 694 faults undetected; the guided stage moved it by only 0.0000.",
+    "decision": "Record the gap and the vector budget rather than raising the budget until a number looks acceptable; 664 of the guided attempts were skipped when the wall-clock budget ran out.",
+    "applicability": "Faults needing many simultaneous side conditions: wide AND trees, priority logic, multiplier arrays.",
+    "prevention_action": "Before adding vectors, measure whether the objective has a gradient on the faults that remain; if the guided stage buys ~1%%, the objective is flat and more time will not fix it.",
+    "scope": "project_only",
+    "evidence": {
+     "coverage": 0.512,
+     "random": 0.512,
+     "guided": 0.512,
+     "undetected": 694,
+     "vectors_used": 400,
+     "budget": 800,
+     "guided_skipped_for_budget": 664,
+     "guided_budget_s": 8
+    },
+    "artifact_sha256": "32735a9e5bf23dbbbe5b90445c4a4334815e0dc128ebd21fc1884414a3443465",
+    "tags": [
+     "atpg",
+     "budget",
+     "mult8"
+    ]
+   }
+  ],
+  "wall_s": 10.4
+ },
+ "mult12": {
+  "design": "mult12",
+  "blif": "D:\\eda\\test\\blif\\mult12.blif",
+  "blif_sha256": "c46aa76b3c4abab22a2c7de0bc86a8d44d775c5238562dff0646f2e1a6e4e872",
+  "inputs": 24,
+  "outputs": 24,
+  "latches": 0,
+  "gates": 1634,
+  "target": 0.99,
+  "budget_vectors": 800,
+  "seed": 1,
+  "stages": {
+   "random": {
+    "vectors": 400,
+    "detected": 1723,
+    "coverage": 0.5205,
+    "seconds": 9.4
+   },
+   "guided": {
+    "vectors": 0,
+    "detected": 1723,
+    "coverage": 0.5205,
+    "seconds": 8.0,
+    "attempted": 12,
+    "skipped_for_budget": 1575,
+    "budget_s": 8
+   }
+  },
+  "ok": false,
+  "faults_total": 3310,
+  "sequential_assumption": "none (combinational)",
+  "lessons_consulted": [
+   {
+    "id": "edal-da0a3a66156dad86",
+    "problem": "Coverage was reported too low because the ground-truth oracle never applied the fault: stuck-at faults on primary inputs"
+   },
+   {
+    "id": "edal-2db57ab68331780a",
+    "problem": "Cone-accelerated fault simulation with an INPUT cone returned no differences and coverage far too low, because nets in t"
+   },
+   {
+    "id": "edal-f695e711175653b6",
+    "problem": "The ATPG search objective returned 'detected' when the OPPOSITE-value fault would have been visible, so the search and t"
+   },
+   {
+    "id": "edal-b6ec34054f2901cb",
+    "problem": "A guided ATPG stage improved coverage by about 1% over random and stalled, because the objective was flat: a deep fault "
+   },
+   {
+    "id": "edal-2c296555455a0f3a",
+    "problem": "Every design reported 0.0000 coverage and no tool raised an error: fault simulation ran, printed a number, and the numbe"
+   }
+  ],
+  "lessons_store": 14,
+  "coverage": 0.5205,
+  "vectors_used": 400,
+  "not_detected": 1587,
+  "exhaustive": {
+   "done": false,
+   "reason": "skipped"
+  },
+  "budget_ok": true,
+  "veto": [
+   "coverage 0.5205 < target 0.99 and the input space was too large (2**24) to enumerate",
+   "guided stage stopped on budget with 1575 faults never attempted"
+  ],
+  "missing_sample": [
+   "$auto$maccmap.cc:111:fulladd$71[0]/SA0",
+   "$auto$maccmap.cc:111:fulladd$71[0]/SA1",
+   "$auto$maccmap.cc:111:fulladd$71[15]/SA0",
+   "$auto$maccmap.cc:111:fulladd$71[15]/SA1",
+   "$auto$maccmap.cc:111:fulladd$71[16]/SA0",
+   "$auto$maccmap.cc:111:fulladd$71[16]/SA1",
+   "$auto$maccmap.cc:111:fulladd$71[17]/SA0",
+   "$auto$maccmap.cc:111:fulladd$71[17]/SA1",
+   "$auto$maccmap.cc:111:fulladd$71[18]/SA0",
+   "$auto$maccmap.cc:111:fulladd$71[18]/SA1",
+   "$auto$maccmap.cc:111:fulladd$71[19]/SA0",
+   "$auto$maccmap.cc:111:fulladd$71[19]/SA1",
+   "$auto$maccmap.cc:111:fulladd$71[1]/SA0",
+   "$auto$maccmap.cc:111:fulladd$71[1]/SA1",
+   "$auto$maccmap.cc:111:fulladd$71[20]/SA0",
+   "$auto$maccmap.cc:111:fulladd$71[20]/SA1",
+   "$auto$maccmap.cc:111:fulladd$71[21]/SA0",
+   "$auto$maccmap.cc:111:fulladd$71[21]/SA1",
+   "$auto$maccmap.cc:111:fulladd$71[22]/SA0",
+   "$auto$maccmap.cc:111:fulladd$71[22]/SA1",
+   "$auto$maccmap.cc:111:fulladd$71[23]/SA0",
+   "$auto$maccmap.cc:111:fulladd$71[23]/SA1",
+   "$auto$maccmap.cc:111:fulladd$74[0]/SA0",
+   "$auto$maccmap.cc:111:fulladd$74[0]/SA1",
+   "$auto$maccmap.cc:111:fulladd$74[17]/SA0",
+   "$auto$maccmap.cc:111:fulladd$74[17]/SA1",
+   "$auto$maccmap.cc:111:fulladd$74[18]/SA0",
+   "$auto$maccmap.cc:111:fulladd$74[18]/SA1",
+   "$auto$maccmap.cc:111:fulladd$74[19]/SA0",
+   "$auto$maccmap.cc:111:fulladd$74[19]/SA1",
+   "$auto$maccmap.cc:111:fulladd$74[1]/SA0",
+   "$auto$maccmap.cc:111:fulladd$74[1]/SA1",
+   "$auto$maccmap.cc:111:fulladd$74[20]/SA0",
+   "$auto$maccmap.cc:111:fulladd$74[20]/SA1",
+   "$auto$maccmap.cc:111:fulladd$74[21]/SA0",
+   "$auto$maccmap.cc:111:fulladd$74[21]/SA1",
+   "$auto$maccmap.cc:111:fulladd$74[22]/SA0",
+   "$auto$maccmap.cc:111:fulladd$74[22]/SA1",
+   "$auto$maccmap.cc:111:fulladd$74[23]/SA0",
+   "$auto$maccmap.cc:111:fulladd$74[23]/SA1"
+  ],
+  "vectors_sha256": "ac91b67b1784dfd04cb903288e0cb51fe5989b19e553a67d034da06c0ca700bc",
+  "lesson_candidates": [
+   {
+    "problem": "Coverage on mult12 stopped at 0.5205 with 1587 faults undetected; the guided stage moved it by only 0.0000.",
+    "decision": "Record the gap and the vector budget rather than raising the budget until a number looks acceptable; 1575 of the guided attempts were skipped when the wall-clock budget ran out.",
+    "applicability": "Faults needing many simultaneous side conditions: wide AND trees, priority logic, multiplier arrays.",
+    "prevention_action": "Before adding vectors, measure whether the objective has a gradient on the faults that remain; if the guided stage buys ~1%%, the objective is flat and more time will not fix it.",
+    "scope": "project_only",
+    "evidence": {
+     "coverage": 0.5205,
+     "random": 0.5205,
+     "guided": 0.5205,
+     "undetected": 1587,
+     "vectors_used": 400,
+     "budget": 800,
+     "guided_skipped_for_budget": 1575,
+     "guided_budget_s": 8
+    },
+    "artifact_sha256": "c46aa76b3c4abab22a2c7de0bc86a8d44d775c5238562dff0646f2e1a6e4e872",
+    "tags": [
+     "atpg",
+     "budget",
+     "mult12"
+    ]
+   }
+  ],
+  "wall_s": 17.5
+ },
+ "prio32": {
+  "design": "prio32",
+  "blif": "D:\\eda\\test\\blif\\prio32.blif",
+  "blif_sha256": "f824e3cd619738d6f3e32b685724cf145f0ca590b02fbdb8d443ddaf34afb618",
+  "inputs": 32,
+  "outputs": 33,
+  "latches": 0,
+  "gates": 183,
+  "target": 0.99,
+  "budget_vectors": 800,
+  "seed": 1,
+  "stages": {
+   "random": {
+    "vectors": 400,
+    "detected": 193,
+    "coverage": 0.4552,
+    "seconds": 4.2
+   },
+   "guided": {
+    "vectors": 99,
+    "detected": 225,
+    "coverage": 0.5307,
+    "seconds": 9.2,
+    "attempted": 101,
+    "skipped_for_budget": 130,
+    "budget_s": 8
+   }
+  },
+  "ok": false,
+  "faults_total": 424,
+  "sequential_assumption": "none (combinational)",
+  "lessons_consulted": [
+   {
+    "id": "edal-2db57ab68331780a",
+    "problem": "Cone-accelerated fault simulation with an INPUT cone returned no differences and coverage far too low, because nets in t"
+   },
+   {
+    "id": "edal-b6ec34054f2901cb",
+    "problem": "A guided ATPG stage improved coverage by about 1% over random and stalled, because the objective was flat: a deep fault "
+   },
+   {
+    "id": "edal-da0a3a66156dad86",
+    "problem": "Coverage was reported too low because the ground-truth oracle never applied the fault: stuck-at faults on primary inputs"
+   },
+   {
+    "id": "edal-f695e711175653b6",
+    "problem": "The ATPG search objective returned 'detected' when the OPPOSITE-value fault would have been visible, so the search and t"
+   },
+   {
+    "id": "edal-2c296555455a0f3a",
+    "problem": "Every design reported 0.0000 coverage and no tool raised an error: fault simulation ran, printed a number, and the numbe"
+   }
+  ],
+  "lessons_store": 14,
+  "coverage": 0.5307,
+  "vectors_used": 499,
+  "not_detected": 199,
+  "exhaustive": {
+   "done": false,
+   "reason": "skipped"
+  },
+  "budget_ok": true,
+  "veto": [
+   "coverage 0.5307 < target 0.99 and the input space was too large (2**32) to enumerate",
+   "guided stage stopped on budget with 130 faults never attempted"
+  ],
+  "missing_sample": [
+   "$add$/mnt/d/eda/bench/src/prio32.v:3$3_Y[0]/SA1",
+   "$add$/mnt/d/eda/bench/src/prio32.v:3$3_Y[11]/SA0",
+   "$add$/mnt/d/eda/bench/src/prio32.v:3$3_Y[12]/SA0",
+   "$add$/mnt/d/eda/bench/src/prio32.v:3$3_Y[13]/SA0",
+   "$add$/mnt/d/eda/bench/src/prio32.v:3$3_Y[14]/SA0",
+   "$add$/mnt/d/eda/bench/src/prio32.v:3$3_Y[15]/SA0",
+   "$add$/mnt/d/eda/bench/src/prio32.v:3$3_Y[17]/SA0",
+   "$add$/mnt/d/eda/bench/src/prio32.v:3$3_Y[18]/SA0",
+   "$add$/mnt/d/eda/bench/src/prio32.v:3$3_Y[19]/SA0",
+   "$add$/mnt/d/eda/bench/src/prio32.v:3$3_Y[20]/SA0",
+   "$add$/mnt/d/eda/bench/src/prio32.v:3$3_Y[21]/SA0",
+   "$add$/mnt/d/eda/bench/src/prio32.v:3$3_Y[22]/SA0",
+   "$add$/mnt/d/eda/bench/src/prio32.v:3$3_Y[23]/SA0",
+   "$add$/mnt/d/eda/bench/src/prio32.v:3$3_Y[24]/SA0",
+   "$add$/mnt/d/eda/bench/src/prio32.v:3$3_Y[25]/SA0",
+   "$add$/mnt/d/eda/bench/src/prio32.v:3$3_Y[26]/SA0",
+   "$add$/mnt/d/eda/bench/src/prio32.v:3$3_Y[27]/SA0",
+   "$add$/mnt/d/eda/bench/src/prio32.v:3$3_Y[28]/SA0",
+   "$add$/mnt/d/eda/bench/src/prio32.v:3$3_Y[29]/SA0",
+   "$add$/mnt/d/eda/bench/src/prio32.v:3$3_Y[30]/SA0",
+   "$add$/mnt/d/eda/bench/src/prio32.v:3$3_Y[31]/SA0",
+   "$add$/mnt/d/eda/bench/src/prio32.v:3$3_Y[8]/SA0",
+   "$auto$alumacc.cc:474:replace_alu$5.BB[16]/SA0",
+   "$auto$alumacc.cc:474:replace_alu$5.BB[17]/SA0",
+   "$auto$alumacc.cc:474:replace_alu$5.BB[18]/SA0",
+   "$auto$alumacc.cc:474:replace_alu$5.BB[19]/SA0",
+   "$auto$alumacc.cc:474:replace_alu$5.BB[20]/SA0",
+   "$auto$alumacc.cc:474:replace_alu$5.BB[21]/SA0",
+   "$auto$alumacc.cc:474:replace_alu$5.BB[22]/SA0",
+   "$auto$alumacc.cc:474:replace_alu$5.BB[23]/SA0",
+   "$auto$alumacc.cc:474:replace_alu$5.BB[24]/SA0",
+   "$auto$alumacc.cc:474:replace_alu$5.BB[25]/SA0",
+   "$auto$alumacc.cc:474:replace_alu$5.BB[26]/SA0",
+   "$auto$alumacc.cc:474:replace_alu$5.BB[27]/SA0",
+   "$auto$alumacc.cc:474:replace_alu$5.BB[28]/SA0",
+   "$auto$alumacc.cc:474:replace_alu$5.BB[29]/SA0",
+   "$auto$alumacc.cc:474:replace_alu$5.BB[30]/SA0",
+   "$auto$alumacc.cc:474:replace_alu$5.BB[31]/SA0",
+   "$auto$alumacc.cc:474:replace_alu$5.lcu.g[0]/SA0",
+   "$auto$alumacc.cc:474:replace_alu$5.lcu.g[0]/SA1"
+  ],
+  "vectors_sha256": "00b41e11c5ca4d86a12c3c9bbb461ca493065e73e1b83c05b76056bc9c8d98af",
+  "lesson_candidates": [
+   {
+    "problem": "Coverage on prio32 stopped at 0.5307 with 199 faults undetected; the guided stage moved it by only 0.0755.",
+    "decision": "Record the gap and the vector budget rather than raising the budget until a number looks acceptable; 130 of the guided attempts were skipped when the wall-clock budget ran out.",
+    "applicability": "Faults needing many simultaneous side conditions: wide AND trees, priority logic, multiplier arrays.",
+    "prevention_action": "Before adding vectors, measure whether the objective has a gradient on the faults that remain; if the guided stage buys ~1%%, the objective is flat and more time will not fix it.",
+    "scope": "project_only",
+    "evidence": {
+     "coverage": 0.5307,
+     "random": 0.4552,
+     "guided": 0.5307,
+     "undetected": 199,
+     "vectors_used": 499,
+     "budget": 800,
+     "guided_skipped_for_budget": 130,
+     "guided_budget_s": 8
+    },
+    "artifact_sha256": "f824e3cd619738d6f3e32b685724cf145f0ca590b02fbdb8d443ddaf34afb618",
+    "tags": [
+     "atpg",
+     "budget",
+     "prio32"
+    ]
+   }
+  ],
+  "wall_s": 13.3
+ },
+ "arbiter16": {
+  "design": "arbiter16",
+  "blif": "D:\\eda\\test\\blif\\arbiter16.blif",
+  "blif_sha256": "c0088aa5da8322077fe25e5ec30fddc1afa7a960c5c1a86cd148140168fd6e42",
+  "inputs": 16,
+  "outputs": 16,
+  "latches": 0,
+  "gates": 135,
+  "target": 0.99,
+  "budget_vectors": 800,
+  "seed": 1,
+  "stages": {
+   "random": {
+    "vectors": 400,
+    "detected": 229,
+    "coverage": 0.7736,
+    "seconds": 0.7
+   },
+   "guided": {
+    "vectors": 22,
+    "detected": 229,
+    "coverage": 0.7736,
+    "seconds": 4.3,
+    "attempted": 67,
+    "skipped_for_budget": 0,
+    "budget_s": 8
+   }
+  },
+  "ok": false,
+  "faults_total": 296,
+  "sequential_assumption": "none (combinational)",
+  "lessons_consulted": [
+   {
+    "id": "edal-da0a3a66156dad86",
+    "problem": "Coverage was reported too low because the ground-truth oracle never applied the fault: stuck-at faults on primary inputs"
+   },
+   {
+    "id": "edal-2db57ab68331780a",
+    "problem": "Cone-accelerated fault simulation with an INPUT cone returned no differences and coverage far too low, because nets in t"
+   },
+   {
+    "id": "edal-f695e711175653b6",
+    "problem": "The ATPG search objective returned 'detected' when the OPPOSITE-value fault would have been visible, so the search and t"
+   },
+   {
+    "id": "edal-b6ec34054f2901cb",
+    "problem": "A guided ATPG stage improved coverage by about 1% over random and stalled, because the objective was flat: a deep fault "
+   },
+   {
+    "id": "edal-2c296555455a0f3a",
+    "problem": "Every design reported 0.0000 coverage and no tool raised an error: fault simulation ran, printed a number, and the numbe"
+   }
+  ],
+  "lessons_store": 14,
+  "coverage": 0.7736,
+  "vectors_used": 422,
+  "not_detected": 67,
+  "exhaustive": {
+   "done": false,
+   "reason": "skipped"
+  },
+  "budget_ok": true,
+  "veto": [
+   "coverage 0.7736 < target 0.99 and the input space was too large (2**16) to enumerate"
+  ],
+  "missing_sample": [
+   "$auto$alumacc.cc:474:replace_alu$5.lcu.g[0]/SA0",
+   "$auto$alumacc.cc:474:replace_alu$5.lcu.g[0]/SA1",
+   "$auto$alumacc.cc:474:replace_alu$5.lcu.g[11]/SA1",
+   "$auto$alumacc.cc:474:replace_alu$5.lcu.g[12]/SA1",
+   "$auto$alumacc.cc:474:replace_alu$5.lcu.g[13]/SA1",
+   "$auto$alumacc.cc:474:replace_alu$5.lcu.g[14]/SA1",
+   "$auto$alumacc.cc:474:replace_alu$5.lcu.g[1]/SA0",
+   "$auto$alumacc.cc:474:replace_alu$5.lcu.g[1]/SA1",
+   "$auto$alumacc.cc:490:replace_alu$6[0]/SA0",
+   "$auto$alumacc.cc:490:replace_alu$6[0]/SA1",
+   "$not$/mnt/d/eda/bench/src/arbiter16.v:3$3_Y[0]/SA0",
+   "$not$/mnt/d/eda/bench/src/arbiter16.v:3$3_Y[0]/SA1",
+   "$sub$/mnt/d/eda/bench/src/arbiter16.v:3$2_Y[0]/SA0",
+   "$sub$/mnt/d/eda/bench/src/arbiter16.v:3$2_Y[0]/SA1",
+   "$sub$/mnt/d/eda/bench/src/arbiter16.v:3$2_Y[1]/SA0",
+   "$sub$/mnt/d/eda/bench/src/arbiter16.v:3$2_Y[1]/SA1",
+   "$techmap$auto$alumacc.cc:474:replace_alu$5.lcu.$and$?techmap.v?:221$190_Y/SA1",
+   "$techmap$auto$alumacc.cc:474:replace_alu$5.lcu.$and$?techmap.v?:221$193_Y/SA1",
+   "$techmap$auto$alumacc.cc:474:replace_alu$5.lcu.$and$?techmap.v?:221$205_Y/SA1",
+   "$techmap$auto$alumacc.cc:474:replace_alu$5.lcu.$and$?techmap.v?:222$180_Y/SA1",
+   "$techmap$auto$alumacc.cc:474:replace_alu$5.lcu.$and$?techmap.v?:222$183_Y/SA1",
+   "$techmap$auto$alumacc.cc:474:replace_alu$5.lcu.$and$?techmap.v?:222$186_Y/SA1",
+   "$techmap$auto$alumacc.cc:474:replace_alu$5.lcu.$and$?techmap.v?:222$189_Y/SA1",
+   "$techmap$auto$alumacc.cc:474:replace_alu$5.lcu.$and$?techmap.v?:222$192_Y/SA1",
+   "$techmap$auto$alumacc.cc:474:replace_alu$5.lcu.$and$?techmap.v?:222$195_Y/SA1",
+   "$techmap$auto$alumacc.cc:474:replace_alu$5.lcu.$and$?techmap.v?:222$204_Y/SA1",
+   "$techmap$auto$alumacc.cc:474:replace_alu$5.lcu.$and$?techmap.v?:222$207_Y/SA1",
+   "$techmap$auto$alumacc.cc:474:replace_alu$5.lcu.$and$?techmap.v?:229$220_Y/SA1",
+   "$techmap$auto$alumacc.cc:474:replace_alu$5.lcu.$and$?techmap.v?:229$229_Y/SA1",
+   "$techmap$auto$alumacc.cc:474:replace_alu$5.lcu.$and$?techmap.v?:229$247_Y/SA1",
+   "$techmap$auto$alumacc.cc:474:replace_alu$5.lcu.$and$?techmap.v?:229$250_Y/SA1",
+   "$techmap$auto$alumacc.cc:474:replace_alu$5.lcu.$or$?techmap.v?:221$191_Y/SA1",
+   "$techmap$auto$alumacc.cc:474:replace_alu$5.lcu.$or$?techmap.v?:221$194_Y/SA1",
+   "$techmap$auto$alumacc.cc:474:replace_alu$5.lcu.$or$?techmap.v?:221$206_Y/SA1",
+   "gnt[0]/SA0",
+   "m[0]/SA0",
+   "m[0]/SA1",
+   "m[10]/SA0",
+   "m[10]/SA1",
+   "m[11]/SA0"
+  ],
+  "vectors_sha256": "dface27cbb8ce3c36a7e6e1a98c3116db6e8fec6ca9cb4767546283df8c294c5",
+  "lesson_candidates": [
+   {
+    "problem": "Coverage on arbiter16 stopped at 0.7736 with 67 faults undetected; the guided stage moved it by only 0.0000.",
+    "decision": "Record the gap and the vector budget rather than raising the budget until a number looks acceptable; 0 of the guided attempts were skipped when the wall-clock budget ran out.",
+    "applicability": "Faults needing many simultaneous side conditions: wide AND trees, priority logic, multiplier arrays.",
+    "prevention_action": "Before adding vectors, measure whether the objective has a gradient on the faults that remain; if the guided stage buys ~1%%, the objective is flat and more time will not fix it.",
+    "scope": "project_only",
+    "evidence": {
+     "coverage": 0.7736,
+     "random": 0.7736,
+     "guided": 0.7736,
+     "undetected": 67,
+     "vectors_used": 422,
+     "budget": 800,
+     "guided_skipped_for_budget": 0,
+     "guided_budget_s": 8
+    },
+    "artifact_sha256": "c0088aa5da8322077fe25e5ec30fddc1afa7a960c5c1a86cd148140168fd6e42",
+    "tags": [
+     "atpg",
+     "budget",
+     "arbiter16"
+    ]
+   }
+  ],
+  "wall_s": 5.0
+ },
+ "barrel16": {
+  "design": "barrel16",
+  "blif": "D:\\eda\\test\\blif\\barrel16.blif",
+  "blif_sha256": "001b01c9bc3d9f810f90d3fde27af5f03d05273baf94fb1502a3c49aabdbb703",
+  "inputs": 20,
+  "outputs": 16,
+  "latches": 0,
+  "gates": 67,
+  "target": 0.99,
+  "budget_vectors": 800,
+  "seed": 1,
+  "stages": {
+   "random": {
+    "vectors": 400,
+    "detected": 168,
+    "coverage": 1.0,
+    "seconds": 0.0
+   },
+   "guided": {
+    "vectors": 0,
+    "detected": 168,
+    "coverage": 1.0,
+    "seconds": 0.0,
+    "attempted": 0,
+    "skipped_for_budget": 0,
+    "budget_s": 8
+   }
+  },
+  "ok": true,
+  "faults_total": 168,
+  "sequential_assumption": "none (combinational)",
+  "lessons_consulted": [
+   {
+    "id": "edal-da0a3a66156dad86",
+    "problem": "Coverage was reported too low because the ground-truth oracle never applied the fault: stuck-at faults on primary inputs"
+   },
+   {
+    "id": "edal-2db57ab68331780a",
+    "problem": "Cone-accelerated fault simulation with an INPUT cone returned no differences and coverage far too low, because nets in t"
+   },
+   {
+    "id": "edal-f695e711175653b6",
+    "problem": "The ATPG search objective returned 'detected' when the OPPOSITE-value fault would have been visible, so the search and t"
+   },
+   {
+    "id": "edal-b6ec34054f2901cb",
+    "problem": "A guided ATPG stage improved coverage by about 1% over random and stalled, because the objective was flat: a deep fault "
+   },
+   {
+    "id": "edal-2c296555455a0f3a",
+    "problem": "Every design reported 0.0000 coverage and no tool raised an error: fault simulation ran, printed a number, and the numbe"
+   }
+  ],
+  "lessons_store": 14,
+  "coverage": 1.0,
+  "vectors_used": 400,
+  "not_detected": 0,
+  "exhaustive": {
+   "done": false,
+   "reason": "skipped"
+  },
+  "budget_ok": true,
+  "veto": [],
+  "missing_sample": [],
+  "vectors_sha256": "680a362553ee33ddd18481830d1b9f41b1b19d2af09be9288f302d08b413b0c6",
+  "lesson_candidates": [],
+  "wall_s": 0.1
+ },
+ "lfsr16": {
+  "design": "lfsr16",
+  "blif": "D:\\eda\\test\\blif\\lfsr16.blif",
+  "blif_sha256": "a988fb6f5dec839ddc338a3cbee156cddc17472eb0bff7d732e5c3d64e2890f9",
+  "inputs": 2,
+  "outputs": 16,
+  "latches": 16,
+  "gates": 38,
+  "target": 0.99,
+  "budget_vectors": 800,
+  "seed": 1,
+  "stages": {
+   "random": {
+    "vectors": 400,
+    "detected": 1,
+    "coverage": 0.0135,
+    "seconds": 0.2
+   },
+   "guided": {
+    "vectors": 3,
+    "detected": 1,
+    "coverage": 0.0135,
+    "seconds": 1.3,
+    "attempted": 73,
+    "skipped_for_budget": 0,
+    "budget_s": 8
+   }
+  },
+  "ok": true,
+  "faults_total": 74,
+  "sequential_assumption": "full scan: 16 latch(es) treated as pseudo-inputs and pseudo-outputs. Coverage below is the combinational core's; a real scan chain is not built here.",
+  "lessons_consulted": [
+   {
+    "id": "edal-da0a3a66156dad86",
+    "problem": "Coverage was reported too low because the ground-truth oracle never applied the fault: stuck-at faults on primary inputs"
+   },
+   {
+    "id": "edal-2db57ab68331780a",
+    "problem": "Cone-accelerated fault simulation with an INPUT cone returned no differences and coverage far too low, because nets in t"
+   },
+   {
+    "id": "edal-f695e711175653b6",
+    "problem": "The ATPG search objective returned 'detected' when the OPPOSITE-value fault would have been visible, so the search and t"
+   },
+   {
+    "id": "edal-b6ec34054f2901cb",
+    "problem": "A guided ATPG stage improved coverage by about 1% over random and stalled, because the objective was flat: a deep fault "
+   },
+   {
+    "id": "edal-2c296555455a0f3a",
+    "problem": "Every design reported 0.0000 coverage and no tool raised an error: fault simulation ran, printed a number, and the numbe"
+   }
+  ],
+  "lessons_store": 14,
+  "coverage": 0.0135,
+  "vectors_used": 403,
+  "not_detected": 73,
+  "undetectable": 73,
+  "undetectable_list": [
+   "$0\\q[15:0][0]/SA1",
+   "$0\\q[15:0][10]/SA0",
+   "$0\\q[15:0][10]/SA1",
+   "$0\\q[15:0][11]/SA0",
+   "$0\\q[15:0][11]/SA1",
+   "$0\\q[15:0][12]/SA0",
+   "$0\\q[15:0][12]/SA1",
+   "$0\\q[15:0][13]/SA0",
+   "$0\\q[15:0][13]/SA1",
+   "$0\\q[15:0][14]/SA0",
+   "$0\\q[15:0][14]/SA1",
+   "$0\\q[15:0][15]/SA0",
+   "$0\\q[15:0][15]/SA1",
+   "$0\\q[15:0][1]/SA0",
+   "$0\\q[15:0][1]/SA1",
+   "$0\\q[15:0][2]/SA0",
+   "$0\\q[15:0][2]/SA1",
+   "$0\\q[15:0][3]/SA0",
+   "$0\\q[15:0][3]/SA1",
+   "$0\\q[15:0][4]/SA0",
+   "$0\\q[15:0][4]/SA1",
+   "$0\\q[15:0][5]/SA0",
+   "$0\\q[15:0][5]/SA1",
+   "$0\\q[15:0][6]/SA0",
+   "$0\\q[15:0][6]/SA1",
+   "$0\\q[15:0][7]/SA0",
+   "$0\\q[15:0][7]/SA1",
+   "$0\\q[15:0][8]/SA0",
+   "$0\\q[15:0][8]/SA1",
+   "$0\\q[15:0][9]/SA0",
+   "$0\\q[15:0][9]/SA1",
+   "$auto$simplemap.cc:127:simplemap_reduce$53[0]/SA0",
+   "$auto$simplemap.cc:127:simplemap_reduce$53[0]/SA1",
+   "$auto$simplemap.cc:127:simplemap_reduce$53[1]/SA0",
+   "$auto$simplemap.cc:127:simplemap_reduce$53[1]/SA1",
+   "$auto$simplemap.cc:127:simplemap_reduce$56/SA0",
+   "$auto$simplemap.cc:127:simplemap_reduce$56/SA1",
+   "$auto$wreduce.cc:455:run$8[0]/SA0",
+   "$auto$wreduce.cc:455:run$8[0]/SA1",
+   "$auto$wreduce.cc:455:run$8[10]/SA0"
+  ],
+  "coverage_exhaustive": 0.0135,
+  "exhaustive": {
+   "done": true,
+   "vectors": 4,
+   "vectors_total": 4,
+   "detected": [
+    [
+     "$0\\q[15:0][0]",
+     0
+    ]
+   ],
+   "undetectable": [
+    [
+     "$0\\q[15:0][0]",
+     1
+    ],
+    [
+     "$0\\q[15:0][10]",
+     0
+    ],
+    [
+     "$0\\q[15:0][10]",
+     1
+    ],
+    [
+     "$0\\q[15:0][11]",
+     0
+    ],
+    [
+     "$0\\q[15:0][11]",
+     1
+    ],
+    [
+     "$0\\q[15:0][12]",
+     0
+    ],
+    [
+     "$0\\q[15:0][12]",
+     1
+    ],
+    [
+     "$0\\q[15:0][13]",
+     0
+    ],
+    [
+     "$0\\q[15:0][13]",
+     1
+    ],
+    [
+     "$0\\q[15:0][14]",
+     0
+    ],
+    [
+     "$0\\q[15:0][14]",
+     1
+    ],
+    [
+     "$0\\q[15:0][15]",
+     0
+    ],
+    [
+     "$0\\q[15:0][15]",
+     1
+    ],
+    [
+     "$0\\q[15:0][1]",
+     0
+    ],
+    [
+     "$0\\q[15:0][1]",
+     1
+    ],
+    [
+     "$0\\q[15:0][2]",
+     0
+    ],
+    [
+     "$0\\q[15:0][2]",
+     1
+    ],
+    [
+     "$0\\q[15:0][3]",
+     0
+    ],
+    [
+     "$0\\q[15:0][3]",
+     1
+    ],
+    [
+     "$0\\q[15:0][4]",
+     0
+    ],
+    [
+     "$0\\q[15:0][4]",
+     1
+    ],
+    [
+     "$0\\q[15:0][5]",
+     0
+    ],
+    [
+     "$0\\q[15:0][5]",
+     1
+    ],
+    [
+     "$0\\q[15:0][6]",
+     0
+    ],
+    [
+     "$0\\q[15:0][6]",
+     1
+    ],
+    [
+     "$0\\q[15:0][7]",
+     0
+    ],
+    [
+     "$0\\q[15:0][7]",
+     1
+    ],
+    [
+     "$0\\q[15:0][8]",
+     0
+    ],
+    [
+     "$0\\q[15:0][8]",
+     1
+    ],
+    [
+     "$0\\q[15:0][9]",
+     0
+    ],
+    [
+     "$0\\q[15:0][9]",
+     1
+    ],
+    [
+     "$auto$simplemap.cc:127:simplemap_reduce$53[0]",
+     0
+    ],
+    [
+     "$auto$simplemap.cc:127:simplemap_reduce$53[0]",
+     1
+    ],
+    [
+     "$auto$simplemap.cc:127:simplemap_reduce$53[1]",
+     0
+    ],
+    [
+     "$auto$simplemap.cc:127:simplemap_reduce$53[1]",
+     1
+    ],
+    [
+     "$auto$simplemap.cc:127:simplemap_reduce$56",
+     0
+    ],
+    [
+     "$auto$simplemap.cc:127:simplemap_reduce$56",
+     1
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[0]",
+     0
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[0]",
+     1
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[10]",
+     0
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[10]",
+     1
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[11]",
+     0
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[11]",
+     1
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[12]",
+     0
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[12]",
+     1
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[13]",
+     0
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[13]",
+     1
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[14]",
+     0
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[14]",
+     1
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[15]",
+     0
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[15]",
+     1
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[1]",
+     0
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[1]",
+     1
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[2]",
+     0
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[2]",
+     1
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[3]",
+     0
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[3]",
+     1
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[4]",
+     0
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[4]",
+     1
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[5]",
+     0
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[5]",
+     1
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[6]",
+     0
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[6]",
+     1
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[7]",
+     0
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[7]",
+     1
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[8]",
+     0
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[8]",
+     1
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[9]",
+     0
+    ],
+    [
+     "$auto$wreduce.cc:455:run$8[9]",
+     1
+    ],
+    [
+     "clk",
+     0
+    ],
+    [
+     "clk",
+     1
+    ],
+    [
+     "rst",
+     0
+    ],
+    [
+     "rst",
+     1
+    ]
+   ],
+   "undetectable_count": 73,
+   "n_inputs": 2,
+   "seconds": 0.0,
+   "note": "enumeration of 2**2 vectors is a decision procedure for combinational single stuck-at; a fault no vector distinguishes is redundant in this netlist"
+  },
+  "budget_ok": true,
+  "veto": [],
+  "reachable_coverage": 0.0135,
+  "coverage_is_ceiling": true,
+  "note": "target 0.99 is not reachable on this netlist: 73 of 74 faults are provably redundant, so 0.0135 is the ceiling, not a shortfall",
+  "missing_sample": [
+   "$0\\q[15:0][0]/SA1",
+   "$0\\q[15:0][10]/SA0",
+   "$0\\q[15:0][10]/SA1",
+   "$0\\q[15:0][11]/SA0",
+   "$0\\q[15:0][11]/SA1",
+   "$0\\q[15:0][12]/SA0",
+   "$0\\q[15:0][12]/SA1",
+   "$0\\q[15:0][13]/SA0",
+   "$0\\q[15:0][13]/SA1",
+   "$0\\q[15:0][14]/SA0",
+   "$0\\q[15:0][14]/SA1",
+   "$0\\q[15:0][15]/SA0",
+   "$0\\q[15:0][15]/SA1",
+   "$0\\q[15:0][1]/SA0",
+   "$0\\q[15:0][1]/SA1",
+   "$0\\q[15:0][2]/SA0",
+   "$0\\q[15:0][2]/SA1",
+   "$0\\q[15:0][3]/SA0",
+   "$0\\q[15:0][3]/SA1",
+   "$0\\q[15:0][4]/SA0",
+   "$0\\q[15:0][4]/SA1",
+   "$0\\q[15:0][5]/SA0",
+   "$0\\q[15:0][5]/SA1",
+   "$0\\q[15:0][6]/SA0",
+   "$0\\q[15:0][6]/SA1",
+   "$0\\q[15:0][7]/SA0",
+   "$0\\q[15:0][7]/SA1",
+   "$0\\q[15:0][8]/SA0",
+   "$0\\q[15:0][8]/SA1",
+   "$0\\q[15:0][9]/SA0",
+   "$0\\q[15:0][9]/SA1",
+   "$auto$simplemap.cc:127:simplemap_reduce$53[0]/SA0",
+   "$auto$simplemap.cc:127:simplemap_reduce$53[0]/SA1",
+   "$auto$simplemap.cc:127:simplemap_reduce$53[1]/SA0",
+   "$auto$simplemap.cc:127:simplemap_reduce$53[1]/SA1",
+   "$auto$simplemap.cc:127:simplemap_reduce$56/SA0",
+   "$auto$simplemap.cc:127:simplemap_reduce$56/SA1",
+   "$auto$wreduce.cc:455:run$8[0]/SA0",
+   "$auto$wreduce.cc:455:run$8[0]/SA1",
+   "$auto$wreduce.cc:455:run$8[10]/SA0"
+  ],
+  "vectors_sha256": "6cfb09faaec0d49794880b059b5278ef12fdaf69599fc347198ba59f41b89f0c",
+  "lesson_candidates": [
+   {
+    "problem": "Coverage on lfsr16 stopped at 0.0135 with 73 faults undetected; the guided stage moved it by only 0.0000.",
+    "decision": "Record the gap and the vector budget rather than raising the budget until a number looks acceptable; 0 of the guided attempts were skipped when the wall-clock budget ran out.",
+    "applicability": "Faults needing many simultaneous side conditions: wide AND trees, priority logic, multiplier arrays.",
+    "prevention_action": "Before adding vectors, measure whether the objective has a gradient on the faults that remain; if the guided stage buys ~1%%, the objective is flat and more time will not fix it.",
+    "scope": "project_only",
+    "evidence": {
+     "coverage": 0.0135,
+     "random": 0.0135,
+     "guided": 0.0135,
+     "undetected": 73,
+     "vectors_used": 403,
+     "budget": 800,
+     "guided_skipped_for_budget": 0,
+     "guided_budget_s": 8
+    },
+    "artifact_sha256": "a988fb6f5dec839ddc338a3cbee156cddc17472eb0bff7d732e5c3d64e2890f9",
+    "tags": [
+     "atpg",
+     "budget",
+     "lfsr16"
+    ]
+   },
+   {
+    "problem": "73 of 74 faults on lfsr16 are not detectable by any input vector, and that is now a proof rather than a gap: the input space was enumerated.",
+    "decision": "Separate 'not detected yet' from 'undetectable' in the report, and only claim the second when 2**n_inputs vectors were actually enumerated.",
+    "applicability": "Small combinational blocks; above 14 inputs enumeration stops being a decision procedure.",
+    "prevention_action": "Never print one coverage number for a design whose faults include provably redundant ones; print both and say which is which.",
+    "scope": "organization_general",
+    "evidence": {
+     "undetectable": 73,
+     "faults_total": 74,
+     "vectors_enumerated": 4
+    },
+    "artifact_sha256": "a988fb6f5dec839ddc338a3cbee156cddc17472eb0bff7d732e5c3d64e2890f9",
+    "tags": [
+     "atpg",
+     "redundancy"
+    ]
+   }
+  ],
+  "wall_s": 1.5
+ }
+}

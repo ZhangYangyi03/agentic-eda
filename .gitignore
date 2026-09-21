@@ -48,3 +48,21 @@ flow/*.blif
 flow/*.log
 cec/*.blif
 phys/probe_*.tcl
+
+# the vendored KiCad footprint library: 96 MB of someone else's data, cloned not
+# committed, with its own LICENSE. Re-clone with:
+#   git clone --depth 1 https://github.com/KiCad/kicad-footprints vendor/kicad-footprints
+vendor/
+
+# the parsed footprint index: 8.7 MB, regenerated from vendor/ by
+# agentic/packflow.py::library() in a few seconds
+pack/lib_index*.json
+
+# per-design substrate run directories: Gerbers are results, scribble is not
+pack/*/logs/
+
+# debugging scratch from this session: transcripts and one-off drivers
+test/*.out
+test/dbg*.py
+test/dbg*.json
+test/run_batch.py
