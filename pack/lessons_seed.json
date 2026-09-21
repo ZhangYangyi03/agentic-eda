@@ -239,6 +239,25 @@
   ]
  },
  {
+  "id": "edal-ccbbe59ea2d67742",
+  "scope": "organization_general",
+  "problem": "A dependency was placed on knowledge rather than on no-knowledge having been tried: nothing in the flow read the lesson store before proposing, so 18 worked-out failures from earlier in the same session -- the net-definition parse, the router/signoff disagreement, the make_tracks ordering -- were available to be re-made on the next design.",
+  "decision": "Retrieval is a call at the top of the run that may return [], never a gate that must return something, and the run RECORDS which lessons it consulted. 'ran without experience' and 'ran against experience' then differ in the artefact, not in a recollection.",
+  "applicability": "Any agent that accumulates knowledge: the failure is not an empty store, it is an unread one. An empty store is a fine answer; an unqueried store is a mistake.",
+  "prevention_action": "Make the negative case cheap -- search() returns [] on a missing, empty or corrupt store and raises nothing -- because a retrieval that can fail is a retrieval a caller will learn to skip. Then record the hits, so that skipping it is visible.",
+  "evidence": {
+   "query": "design-tagged + discipline terms, at the top of run_design",
+   "recorded": "lessons_consulted (ids) and lessons_store (total) in every design record",
+   "store": "18 lessons, 181 retrievals logged in uses"
+  },
+  "artifact_sha256": null,
+  "tags": [
+   "agents",
+   "lessons",
+   "retrieval"
+  ]
+ },
+ {
   "id": "edal-d6d98aa894b0c894",
   "scope": "organization_general",
   "problem": "A net that yosys defines with four separate .names blocks was losing three of them; one of those blocks held the empty-table constant 0 that made $false false.",
