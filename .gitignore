@@ -65,4 +65,4 @@ pack/*/logs/
 test/*.out
 test/dbg*.py
 test/dbg*.json
-test/run_batch.py
+test/run_*.py
