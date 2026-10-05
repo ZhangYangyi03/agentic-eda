@@ -338,3 +338,12 @@ against integer arithmetic on 1470 random probes -- not against a commercial ATP
 tool, and not against silicon.
 
 MIT.
+
+## Related work by the same author
+
+The same claim -- *a number is meaningless until it is shown to survive its own verification* -- is made and measured in other domains:
+
+- [autoforge](https://github.com/ZhangYangyi03/autoforge) -- a tool's fitness, until an oracle outside the tool agrees
+- [debt-verify](https://github.com/ZhangYangyi03/debt-verify) -- a debt clause decision, until it survives the published revision record
+- [tool-market](https://github.com/ZhangYangyi03/tool-market) -- a tool's liveness, until the hash chain says which revision is live
+- [agent-safety-bench](https://github.com/ZhangYangyi03/agent-safety-bench) -- a model's safety compliance, measured rather than assumed
