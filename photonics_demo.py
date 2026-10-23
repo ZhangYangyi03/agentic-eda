@@ -17,10 +17,12 @@ def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--dL", type=float, default=30.0, help="臂长差 (um)")
     ap.add_argument("--out", default=os.path.join("build", "photonic"), help="GDS 输出目录")
+    ap.add_argument("--ring-radius", type=float, default=20.0, help="环半径 (um)")
     ap.add_argument("--skip-layout", action="store_true", help="只跑电路级与闸门")
     a = ap.parse_args(argv)
 
-    from photonic import mzi, check_mzi, co_design
+    from photonic import (mzi, check_mzi, co_design, ring_add_drop, check_ring,
+                         check_ring_resonances, fsr_nm)
 
     S, wl = mzi(dL_um=a.dL)
     o1 = np.abs(np.asarray(S[("in1", "out1")])) ** 2
@@ -35,6 +37,21 @@ def main(argv=None):
     print(v.lines())
     if not v.ok:
         return 1
+
+    # ---- 环形谐振器 ----
+    print()
+    S, wl = ring_add_drop(a.ring_radius, 0.2, 0.2, 2.0), None
+    th = np.abs(np.asarray(S[("in1", "out1")]))
+    dr = np.abs(np.asarray(S[("in1", "out2")]))
+    print(f"add-drop 环 R={a.ring_radius}um, kappa=0.2, 2 dB/cm")
+    print(f"  FSR {fsr_nm(a.ring_radius):.2f} nm | through 动态范围 "
+          f"{-20*np.log10(th.min()/th.max()):.1f} dB | drop 峰值 {dr.max():.3f}")
+    for v in (check_ring(radius_um=a.ring_radius),
+              check_ring_resonances(radius_um=a.ring_radius)):
+        print()
+        print(v.lines())
+        if not v.ok:
+            return 1
 
     if a.skip_layout:
         return 0
