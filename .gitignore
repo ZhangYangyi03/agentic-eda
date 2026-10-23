@@ -66,3 +66,7 @@ test/*.out
 test/dbg*.py
 test/dbg*.json
 test/run_*.py
+
+# photonic (光芯片) 本地环境与产物
+.venv-photonic/
+build/photonic/
