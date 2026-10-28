@@ -15,6 +15,35 @@ from typing import Callable, Optional
 
 ART = "artifacts"
 
+def _core_v1(prev, stage, ok, hashes):
+    """What the chain covered before 2026-10-28: the digest, and nothing else.
+
+    Kept only so that manifests written then still verify. It is not enough on
+    its own -- see _core_v2.
+    """
+    return {"prev": prev, "stage": stage, "ok": ok,
+            "hashes": {r: (v if isinstance(v, str) else v["sha256"])
+                       for r, v in hashes.items()}}
+
+
+def _core_v2(prev, stage, ok, hashes):
+    """The chain now covers the path and the byte count too.
+
+    It used to cover only the sha256 of each artifact. So a manifest could be
+    rewritten to point an artifact at a different path, with a different byte
+    count, and still verify clean -- measured: editing path and bytes of a
+    complete manifest, then verify_manifest(check_files=False), returned
+    (True, []). A record whose provenance can be repointed at will is not
+    evidence, so the whole record of each artifact goes into the link.
+    """
+    cov = {}
+    for r, v in hashes.items():
+        cov[r] = v if isinstance(v, str) else {
+            "sha256": v["sha256"], "path": v.get("path", ""),
+            "bytes": v.get("bytes")}
+    return {"prev": prev, "stage": stage, "ok": ok, "hashes": cov}
+
+
 def sha256(p: str) -> str:
     h = hashlib.sha256()
     with open(p, "rb") as f:
@@ -115,9 +144,7 @@ class Flow:
         prev = "genesis"
         chain = []
         for r in self.results:
-            core = {"prev": prev, "stage": r.stage, "ok": r.ok,
-                    "hashes": {k: (v if isinstance(v, str) else v["sha256"])
-                               for k, v in r.hashes.items()}}
+            core = _core_v2(prev, r.stage, r.ok, r.hashes)
             blob = json.dumps(core, sort_keys=True).encode()
             link = hashlib.sha256(blob).hexdigest()
             chain.append({"stage": r.stage, "ok": r.ok, "hashes": r.hashes,
@@ -133,6 +160,10 @@ class Flow:
             json.dump(self.manifest(), f, indent=2)
         return path
 
+def _digest(core) -> str:
+    return hashlib.sha256(json.dumps(core, sort_keys=True).encode()).hexdigest()
+
+
 def verify_manifest(path: str, check_files: bool = True) -> tuple[bool, list[str]]:
     """Re-derive the hash chain, and re-hash every artifact on disk.
 
@@ -146,16 +177,13 @@ def verify_manifest(path: str, check_files: bool = True) -> tuple[bool, list[str
         m = json.load(f)
     prev, problems = "genesis", []
     for s in m["stages"]:
-        for role, rec in s["hashes"].items():
-            if isinstance(rec, str):                     # legacy: bare hex digest
-                continue
-            blob = json.dumps({"role": role, "sha256": rec["sha256"],
-                               "path": rec.get("path", "")}, sort_keys=True).encode()
-        core = {"prev": prev, "stage": s["stage"], "ok": s["ok"],
-                "hashes": {r: (v if isinstance(v, str) else v["sha256"])
-                           for r, v in s["hashes"].items()}}
-        if hashlib.sha256(json.dumps(core, sort_keys=True).encode()).hexdigest() != s["link"]:
+        ok_v2 = (_digest(_core_v2(prev, s["stage"], s["ok"], s["hashes"])) == s["link"])
+        ok_v1 = (_digest(_core_v1(prev, s["stage"], s["ok"], s["hashes"])) == s["link"])
+        if not ok_v2 and not ok_v1:
             problems.append(f"chain break at stage {s['stage']!r}: record was edited")
+        elif not ok_v2:
+            problems.append(f"{s['stage']}: legacy link -- path and byte count not "
+                            f"covered, re-run to get a manifest worth quoting")
         prev = s["link"]
         if check_files:
             for role, rec in s["hashes"].items():

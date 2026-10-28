@@ -6,25 +6,24 @@ on:
   workflow_dispatch:
 
 jobs:
-  manifest:
+  chain:
     # No yosys, no klayout, no GDS: this job checks the thing that makes the
     # rest of the repo believable -- that the manifest's chain of custody
-    # notices when an artefact changes on disk, when a record is edited, and
-    # when the tail is truncated. That is pure standard library.
+    # notices when an artefact changes on disk, when a record is edited, when
+    # an artefact is repointed, and when the tail is truncated. Standard
+    # library only, so it runs everywhere.
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.11", "3.13"]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
-      - name: the manifest notices tampering
-        run: |
-          python test_manifest.py | tee out.txt
-          grep -q "1) fresh manifest      : (True, " out.txt
-          grep -q "2) after touching mapped.blif : (False" out.txt
-          grep -q "3) after editing record: (False" out.txt
-          grep -q "4) after truncating    : (False" out.txt
-      - name: every .v in the bench is parseable as text (no truncated files)
+          python-version: ${{ matrix.python }}
+      - name: the chain catches what it claims to catch
+        run: python -m unittest discover -s tests -v
+      - name: every tracked .v is non-empty
         run: |
           for f in $(git ls-files '*.v'); do
             test -s "$f" || { echo "empty: $f"; exit 1; }
